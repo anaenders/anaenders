@@ -10,7 +10,7 @@ $(function(){
   );
   
   $('.small-thumb').each(function() {
-    $(this).append('<div class = "grey-overlay"><img src = "/images/portfolio/grey_overlay.png"/></div>')
+    $(this).append('<div class = "grey-overlay"><img src = "/images/portfolio/web/grey_overlay.png"/></div>')
   });
   
   $(".small-thumb").hover(
