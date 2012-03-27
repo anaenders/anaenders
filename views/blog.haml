@@ -11,7 +11,7 @@
       %img.btn(src="/images/navigation/blog.jpg" alt="blog")/
 
 .blog
-  %table
+  %table{:cellspacing => "0", :cellpadding => "0"}
     %tr
       %th{:colspan => "2"}
         November, December, January
@@ -30,6 +30,77 @@
       %tr
         %td.center{:colspan => "2"}
           %img(src="/images/blog/blog_pic1.JPG" alt="pic")/
-          
-  .archives
-    %h4 ARCHIVES
+      %tr
+        %td.comments-link{:colspan => "2"}
+          %a(href="#")
+            comments (2)
+            
+  %table{:cellspacing => "0", :cellpadding => "0"}
+    %tr
+      %th{:colspan => "2"}
+        October
+        .title-date 
+          Mon November 28 2011
+    %tr
+      %td.left
+        %p
+          October: We went on our honeymoon, returned to Toronto to pack for our move to San Francisco, and I had a birthday.
+        %p
+          This month was far less stressful than September, though it was still hectic and I hardly had a chance to breathe and relax.
+        %p
+          Honeymoon had many moments of rest and relaxation but just as many moments of running around trying not to miss trains, and more walking and hiking than I would have liked. It was a good time regardless. The best meals of my life were had in small towns like Cinque Terre, and bigger food obsessed cities like Bologna. It was romantic, fun, exciting, and absolutely breathtaking. We started our two week vacation in Rome, followed by Florence, Pisa, Cinque Terre, Venice, Bologna and back to Rome.
+      %td
+        %p 
+          Of all the places we visited, I absolutely loved Cinque Terre. Ian and I might just have to retire there. It's an incredible place with its quaint towns composed of colorful houses built on mountain sides, facing the Mediterranean. It has lovely sunsets, amazing food, breathtaking views and nature.
+        %p
+          After our 2 week vacation, we came back home to Toby and Butters, who were being cared for my our dear friend Kendra. We were together again as a family briefly before I took off to San Francisco with Butters to apartment hunt, while Ian worked remotely and coordinated the move of our things to SF.
+      %tr
+        %td.center{:colspan => "2"}
+          %img(src="/images/blog/blog_pic2.JPG" alt="pic")/
+      %tr
+        %td.comments-link{:colspan => "2"}
+          %a(href="#")
+            comments (1)
+  .clear
+  .pagination
+    .prev
+      %a(href="#")
+        %img(src="/images/blog/previous.jpg" alt="previous")/
+    .next
+      %a(href="#")
+        %img(src="/images/blog/next.jpg" alt="next")/
+        
+.archives
+  %h4 ARCHIVES
+  %ul
+    %li 
+      %a(href="#")
+        November, December, January
+      %br/
+      %span January 23 2012
+    %li
+      %a(href="#")
+        October
+      %br/
+      %span November 28 2011
+    %li
+      %a(href="#")
+        Where do I begin ... September
+      %br/
+      %span November 27 2011
+    %li
+      %a(href="#")
+        Craziness
+      %br/
+      %span August 01 2011
+    %li
+      %a(href="#")
+        Vintage and modern
+      %br/
+      %span July 04 2011
+    %li
+      %a(href="#")
+        Intermediate Java: complete!
+      %br/
+      %span May 012 2011
+      

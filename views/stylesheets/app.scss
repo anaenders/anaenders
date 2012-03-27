@@ -1,6 +1,19 @@
+/***********************variables***********************/
 $grey: #d7d7d7;
+$dark-grey: #4c4c4c;
 $green: #74fae2;
 
+/***********************buttons***********************/
+@mixin button($image) {
+	height: 58px;
+	width: 58px; 
+	text-indent: -9999px;
+	border: 0px;
+	background: url($image) 0px 0px;
+	&:hover { background-position: 0px -58px; }
+}
+
+/***********************anaenders***********************/
 body {
   margin: 0px;
   padding: 0px;
@@ -16,7 +29,7 @@ a {
   text-decoration: none;
   color: #000;
   &:hover {
-    color: yellow;
+    text-decoration: underline;
   }
 }
 
@@ -206,19 +219,37 @@ p { padding-bottom: 10px; line-height: 1.4em; margin: 0px }
         }
         &.contact-icons {
           margin: 30px 0 50px 0;
-          td { text-align: center; padding: 0px; width: auto }
+          td { 
+            text-align: center; 
+            padding: 0px; 
+            width: auto;
+            a {
+              width: 58px;
+              height: 58px;
+              float: left;
+              &.email { @include button('/images/about/btns/email.jpg') }
+              &.google { @include button('/images/about/btns/google.jpg') }
+              &.rss { @include button('/images/about/btns/rss.jpg') }
+              &.linkedIn { @include button('/images/about/btns/linkedIn.jpg') }
+              &.pinterest { @include button('/images/about/btns/pinterest.jpg') }
+              &.facebook { @include button('/images/about/btns/facebook.jpg') }
+              &.twitter { @include button('/images/about/btns/twitter.jpg') }
+              &.github { @include button('/images/about/btns/github.jpg') }
+            }
+          }
         }
       }
     }
   }  
   .blog {
-    width: 986px;
-    margin: 0 18px;
+    width: 723px;
+    margin: 0 26px 0 18px;
     float: left;
     table {
-      width: 724px;
+      width: 100%;
       float: left;
-      margin: 0 26px 20px 0;
+      color: $dark-grey;
+      margin-bottom: 20px;
       text-align: left;
       border-bottom: 1px solid $grey;
       padding: 0 0 20px 0;
@@ -239,15 +270,50 @@ p { padding-bottom: 10px; line-height: 1.4em; margin: 0px }
       }
       td { 
         vertical-align: top; 
+        width: 50%;
         padding: 0;
         &.left { padding-right: 15px }
-        &.center { padding-top: 20px; text-align: center; }
+        &.center { padding: 20px 0; text-align: center; }
+        &.comments-link {
+          font-style: italic;
+          text-align: right;
+          padding: 3px 28px 6px 0; 
+          background: url('/images/blog/comment.jpg') no-repeat top right;
+          a { font-weight: normal; color: $dark-grey; }
+        }
       }
       p { line-height: 1.5em; padding-bottom: 15px }
     }
-    .archives {
+    .pagination {
+      width: 100%;
+      margin: 20px 0 50px 0;
       float: left;
-      width: 232px; 
+      .prev { width: 50%; float: left; text-align: left }
+      .next { width: 50%; float: left; text-align: right }
     }
   } 
+  .archives {
+    float: left;
+    width: 255px; 
+    height: 100%;
+    // overflow-y: scroll;
+    ul {
+      padding: 0px;
+      margin: 20px 0;
+      font-size: 11px;
+      li {
+        padding-left: 2em;
+        background: url('/images/blog/bullet.jpg') no-repeat 0px 0px;
+        margin-bottom: 20px;
+        list-style-type: none;
+        a { font-weight: normal }
+        span { 
+          color: #6e6e6e; 
+          font-style: italic; 
+          display: block; 
+          padding-top: 6px 
+        }
+      }
+    }
+  }
 }
