@@ -1,9 +1,12 @@
 /***********************variables***********************/
 $grey: #d7d7d7;
 $dark-grey: #4c4c4c;
+$almost-black: #454343;
 $green: #74fae2;
+$neon-pink: #f65f5f;
+$neon-green: #dcf74a;
 
-/***********************buttons***********************/
+/***********************mixins***********************/
 @mixin button($image) {
 	height: 58px;
 	width: 58px; 
@@ -11,6 +14,23 @@ $green: #74fae2;
 	border: 0px;
 	background: url($image) 0px 0px;
 	&:hover { background-position: 0px -58px; }
+}
+
+@mixin frame($color) {
+  border: 8px solid ($color);
+  position: relative;
+  margin-bottom: 8px;
+  float: left;
+  padding: 0 0 0 1px;
+}
+
+@mixin label($x-coordinate) {
+  position: absolute;
+  top: -30px;
+  left: $x-coordinate;
+  z-index: 100;
+  width: 69px;
+  height: 67px
 }
 
 /***********************anaenders***********************/
@@ -21,8 +41,11 @@ body {
   font-family: Helvetica, "Helvetica Neue";
   color: 000;
   font-size: 12px;
-  $grey: #d7d7d7;
+  color: $dark-grey;
 }
+
+.generic { float: left; width: 100% }
+.group-float { float: left; width: 542px }
 
 a {
   font-weight: bold;
@@ -42,25 +65,24 @@ p { padding-bottom: 10px; line-height: 1.4em; margin: 0px }
 }
 
 .content {
-  width: 1187px;
-  margin: 68px auto;
-  padding: 0 50px;
+  width: 1203px;
+  margin: 0px auto;
+  padding: 50px 50px 20px 100px;
+  background: url('/images/logo.png') no-repeat 10px 10px;
   header {
-    height: 78px;
-    width: 100%;
-    float: left;
-    margin: 0 0 30px 0;
+    @extend .generic; 
+    height: 77px;
+    margin: 0 0 17px 0;
     background: url('/images/header.jpg') no-repeat top right;
     img { float: left }
   }
   nav {
     float: left;
-    width: 165px;
+    width: 163px;
     z-index: 15;
     overflow: hidden;
     div {
-      float: left;
-      width: 100%;
+      @extend .generic; 
       height: 34px;
       position: relative;
     }
@@ -79,240 +101,245 @@ p { padding-bottom: 10px; line-height: 1.4em; margin: 0px }
       }
     }
   }
-  .portfolio {
-    float: left;
-    width: 1023px;
-    margin: -1px -1px 0 0; 
-    z-index: 50;
-    .web, .print {
+}
+
+/***********************portfolio***********************/
+.portfolio {
+  float: left;
+  width: 1040px; 
+  z-index: 50;
+  .web {
+    @include frame($almost-black);
+    .web-logo { @include label(981px) }
+    .small-thumb {
+      float: left;
       position: relative;
-      margin-bottom: 20px;
-      .web-logo {
-        position: absolute;
-        top: -25px;
-        right: -25px;
-        z-index: 100;
-        width: 69px;
-        height: 67px
-      }
-      .small-thumb {
+      width: 340px;
+      height: 100px;
+      margin: 1px 1px 0 0;
+      img { 
         float: left;
-        position: relative;
         width: 340px;
-        height: 100px;
-        margin: 1px 1px 0 0;
-        img { 
-          float: left;
-          width: 340px;
-          height: 100px 
-        }
-        .grey-overlay {
-          display: none;
-          z-index: 20;
-          position: absolute;
-          top: 0px;
-          left: 0px;
-          width: 340px;
-          height: 100px
-        }
+        height: 100px 
+      }
+      .grey-overlay {
+        display: none;
+        z-index: 20;
+        position: absolute;
+        top: 0px;
+        left: 0px;
+        width: 340px;
+        height: 100px
       }
     }
   }
-  .about {
-    width: 1022px;
-    float: left;
-    .slideshow {
-      float: left;
-      width: 100%;
-      margin-bottom: 25px;
-      img { float: left }
-    }
-    .casual-intro {
-      width: 525px;
-      float: left;
-      margin: 0 15px 10px 0
-    }
-    .twitter-feed {
-      width: 482px;
-      height: 252px;
-      float: left;  
-      overflow-y: scroll;
-      .tweet {
-        margin: 0px;
-        padding: 15px 0 15px 40px;
-        border-bottom: 1px solid $grey;
-        background: url('/images/about/twitter_bird.png') no-repeat 0% 50%;
-        font-weight: bold;
-        span { 
-          font-size: 11px; 
-          font-weight: normal; 
-          display: block;
-          margin-top: 10px;
-        }
-      }
-    }
+  .print {
+    @include frame($neon-pink);
+    padding-bottom: 1px;
+    .print-logo { @include label(-25px) }
+    img { float: left; margin: 1px 1px 0 0 }
   }
-  .resume {
-    width: 100%;
+  .woodwork {
+    @include frame($neon-green);
+    padding-bottom: 1px;
+    .woodwork-logo { @include label(981px) }
+    img { float: left; margin: 1px 1px 0 0 }
+  }
+}
+
+/***********************about***********************/
+.about {
+  width: 1040px;
+  float: left;
+  .slideshow {
+    @extend .generic; 
+    margin-bottom: 25px;
+    img { float: left }
+  }
+  .casual-intro {
+    width: 525px;
     float: left;
-    position: relative;
-    background: url('/images/about/border_bg.jpg') repeat-x top left;
-    margin: 25px 0 0 0;
-    .follow {
-      position: absolute;
-      top: 93px;
-      left: 0px;
-    }
-    .dload {
-      position: absolute;
-      top: 85px;
-      right: 0px;
-      width: 135px;
-      height: 27px;
-      background: url('/images/about/btns/dload_resume.jpg') repeat 0px 0px;
-      &:hover { background: url('/images/about/btns/dload_resume.jpg') repeat 0px 27px; }
-    }
-    h1 {
-      background-color: #fff;
-      margin: -10px auto 0 auto;
-      width: 594px;
-      z-index: 5;
-      line-height: 1.3em;
-      font-size: 24px;
-      text-align: center;
-    }
-    description {
-      text-align: justify;
-      margin: 10px auto;
-      width: 636px;
-      display: block;
-      font-weight: normal;
-      font-size: 13px;
-      line-height: 1.4em;
-    }
-    .category {
-      border-top: 1px dotted $grey;
-      margin: 10px 0 20px 0;
-      float: left;
-      width: 100%;
+    margin: 0 15px 10px 0
+  }
+  .twitter-feed {
+    width: 482px;
+    height: 252px;
+    float: left;  
+    overflow-y: scroll;
+    .tweet {
+      margin: 0px;
+      padding: 15px 0 15px 40px;
+      border-bottom: 1px solid $grey;
+      background: url('/images/about/twitter_bird.png') no-repeat 0% 50%;
+      font-weight: bold;
       span { 
-        float: left;
-        margin-top: -1px;
-        color: #fff; 
-        background-color: #000; 
-        letter-spacing: 5px; 
-        padding: 5px 10px;
-        font-size: 11px
+        font-size: 11px; 
+        font-weight: normal; 
+        display: block;
+        margin-top: 10px;
       }
-      table {
-        width: 100%; 
-        font-family: Georgia;
-        float: left;
-        margin-top: 22px;
-        th, td { 
-          line-height: 1.3em; 
-          text-align: left; 
-          width: 20%; 
-          vertical-align: top; 
-          padding: 0 10px 10px 0;
-          .date { clear: both; font-weight: normal; margin-top: 5px }
-        }
-        &.contact-icons {
-          margin: 30px 0 50px 0;
-          td { 
-            text-align: center; 
-            padding: 0px; 
-            width: auto;
-            a {
-              width: 58px;
-              height: 58px;
-              float: left;
-              &.email { @include button('/images/about/btns/email.jpg') }
-              &.google { @include button('/images/about/btns/google.jpg') }
-              &.rss { @include button('/images/about/btns/rss.jpg') }
-              &.linkedIn { @include button('/images/about/btns/linkedIn.jpg') }
-              &.pinterest { @include button('/images/about/btns/pinterest.jpg') }
-              &.facebook { @include button('/images/about/btns/facebook.jpg') }
-              &.twitter { @include button('/images/about/btns/twitter.jpg') }
-              &.github { @include button('/images/about/btns/github.jpg') }
-            }
+    }
+  }
+}
+
+.resume {
+  @extend .generic; 
+  position: relative;
+  background: url('/images/about/border_bg.jpg') repeat-x top left;
+  margin: 25px 0 0 0;
+  .follow {
+    position: absolute;
+    top: 93px;
+    left: 0px;
+  }
+  .dload {
+    position: absolute;
+    top: 85px;
+    right: 0px;
+    width: 135px;
+    height: 27px;
+    background: url('/images/about/btns/dload_resume.jpg') repeat 0px 0px;
+    &:hover { background: url('/images/about/btns/dload_resume.jpg') repeat 0px 27px; }
+  }
+  h1 {
+    background-color: #fff;
+    margin: -10px auto 0 auto;
+    width: 594px;
+    z-index: 5;
+    line-height: 1.3em;
+    font-size: 24px;
+    text-align: center;
+  }
+  description {
+    text-align: justify;
+    margin: 10px auto;
+    width: 636px;
+    display: block;
+    font-weight: normal;
+    font-size: 13px;
+    line-height: 1.4em;
+  }
+  .category {
+    border-top: 1px dotted $grey;
+    margin: 10px 0 20px 0;
+    @extend .generic; 
+    span { 
+      float: left;
+      margin-top: -1px;
+      color: #fff; 
+      background-color: #000; 
+      letter-spacing: 5px; 
+      padding: 5px 10px;
+      font-size: 11px
+    }
+    table {
+      @extend .generic;  
+      font-family: Georgia;
+      margin-top: 22px;
+      th, td { 
+        line-height: 1.3em; 
+        text-align: left; 
+        width: 20%; 
+        vertical-align: top; 
+        padding: 0 10px 10px 0;
+        .date { clear: both; font-weight: normal; margin-top: 5px }
+      }
+      &.contact-icons {
+        margin: 30px 0 50px 0;
+        td { 
+          text-align: center; 
+          padding: 0px; 
+          width: auto;
+          a {
+            width: 58px;
+            height: 58px;
+            float: left;
+            &.email { @include button('/images/about/btns/email.jpg') }
+            &.google { @include button('/images/about/btns/google.jpg') }
+            &.rss { @include button('/images/about/btns/rss.jpg') }
+            &.linkedIn { @include button('/images/about/btns/linkedIn.jpg') }
+            &.pinterest { @include button('/images/about/btns/pinterest.jpg') }
+            &.facebook { @include button('/images/about/btns/facebook.jpg') }
+            &.twitter { @include button('/images/about/btns/twitter.jpg') }
+            &.github { @include button('/images/about/btns/github.jpg') }
           }
         }
       }
     }
-  }  
-  .blog {
-    width: 723px;
-    margin: 0 26px 0 18px;
-    float: left;
-    table {
-      width: 100%;
-      float: left;
-      color: $dark-grey;
+  }
+}  
+
+/***********************blog***********************/
+.blog {
+  width: 723px;
+  margin: 0 26px 0 18px;
+  float: left;
+  table {
+    @extend .generic; 
+    color: $dark-grey;
+    margin-bottom: 20px;
+    text-align: left;
+    border-bottom: 1px solid $grey;
+    padding: 0 0 20px 0;
+    th { 
+      font-size: 20px;
+      padding: 15px 0; 
+      font-weight: normal; 
+      .title-date {
+        font-size: 12px;
+        text-align: right;
+        color: $green;
+        font-weight: bold;
+        float: right;
+        margin-top: -10px;
+        padding: 10px;
+        background: url('/images/blog/title_bg.png') repeat 0px 0px;
+      }
+    }
+    td { 
+      vertical-align: top; 
+      width: 50%;
+      padding: 0;
+      &.left { padding-right: 15px }
+      &.center { padding: 20px 0; text-align: center; }
+      &.comments-link {
+        font-style: italic;
+        text-align: right;
+        padding: 3px 28px 6px 0; 
+        background: url('/images/blog/comment.jpg') no-repeat top right;
+        a { font-weight: normal; color: $dark-grey; }
+      }
+    }
+    p { line-height: 1.5em; padding-bottom: 15px }
+  }
+  .pagination {
+    @extend .generic; 
+    margin: 20px 0 50px 0;
+    .prev { width: 50%; float: left; text-align: left }
+    .next { width: 50%; float: left; text-align: right }
+  }
+} 
+
+.archives {
+  float: left;
+  width: 255px; 
+  height: 100%;
+  // overflow-y: scroll;
+  ul {
+    padding: 0px;
+    margin: 20px 0;
+    font-size: 11px;
+    li {
+      padding-left: 2em;
+      background: url('/images/blog/bullet.jpg') no-repeat 0px 0px;
       margin-bottom: 20px;
-      text-align: left;
-      border-bottom: 1px solid $grey;
-      padding: 0 0 20px 0;
-      th { 
-        font-size: 20px;
-        padding: 15px 0; 
-        font-weight: normal; 
-        .title-date {
-          font-size: 12px;
-          text-align: right;
-          color: $green;
-          font-weight: bold;
-          float: right;
-          margin-top: -10px;
-          padding: 10px;
-          background: url('/images/blog/title_bg.png') repeat 0px 0px;
-        }
-      }
-      td { 
-        vertical-align: top; 
-        width: 50%;
-        padding: 0;
-        &.left { padding-right: 15px }
-        &.center { padding: 20px 0; text-align: center; }
-        &.comments-link {
-          font-style: italic;
-          text-align: right;
-          padding: 3px 28px 6px 0; 
-          background: url('/images/blog/comment.jpg') no-repeat top right;
-          a { font-weight: normal; color: $dark-grey; }
-        }
-      }
-      p { line-height: 1.5em; padding-bottom: 15px }
-    }
-    .pagination {
-      width: 100%;
-      margin: 20px 0 50px 0;
-      float: left;
-      .prev { width: 50%; float: left; text-align: left }
-      .next { width: 50%; float: left; text-align: right }
-    }
-  } 
-  .archives {
-    float: left;
-    width: 255px; 
-    height: 100%;
-    // overflow-y: scroll;
-    ul {
-      padding: 0px;
-      margin: 20px 0;
-      font-size: 11px;
-      li {
-        padding-left: 2em;
-        background: url('/images/blog/bullet.jpg') no-repeat 0px 0px;
-        margin-bottom: 20px;
-        list-style-type: none;
-        a { font-weight: normal }
-        span { 
-          color: #6e6e6e; 
-          font-style: italic; 
-          display: block; 
-          padding-top: 6px 
-        }
+      list-style-type: none;
+      a { font-weight: normal }
+      span { 
+        color: #6e6e6e; 
+        font-style: italic; 
+        display: block; 
+        padding-top: 6px 
       }
     }
   }
