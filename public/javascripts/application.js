@@ -27,8 +27,8 @@ $(function(){
   );
   
   $('.category').each(function() {
-    $(this).click(function() {
-      $(this).find(".category-container").slideToggle("slow");
+    $(this).find("span").click(function() {
+      $(this).find('.category-container').slideToggle("slow");
     });
   });
   

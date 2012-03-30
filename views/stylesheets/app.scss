@@ -110,7 +110,7 @@ p { padding-bottom: 10px; line-height: 1.4em; margin: 0px }
   z-index: 50;
   .web {
     @include frame($almost-black);
-    .web-logo { @include label(981px) }
+    .web-logo { @include label(991px) }
     .small-thumb {
       float: left;
       position: relative;
@@ -136,13 +136,13 @@ p { padding-bottom: 10px; line-height: 1.4em; margin: 0px }
   .print {
     @include frame($neon-pink);
     padding-bottom: 1px;
-    .print-logo { @include label(-25px) }
+    .print-logo { @include label(-35px) }
     img { float: left; margin: 1px 1px 0 0 }
   }
   .woodwork {
     @include frame($neon-green);
     padding-bottom: 1px;
-    .woodwork-logo { @include label(981px) }
+    .woodwork-logo { @include label(991px) }
     img { float: left; margin: 1px 1px 0 0 }
   }
 }
@@ -162,7 +162,7 @@ p { padding-bottom: 10px; line-height: 1.4em; margin: 0px }
     margin: 0 15px 10px 0
   }
   .twitter-feed {
-    width: 482px;
+    width: 500px;
     height: 252px;
     float: left;  
     overflow-y: scroll;
@@ -225,6 +225,7 @@ p { padding-bottom: 10px; line-height: 1.4em; margin: 0px }
     @extend .generic; 
     span { 
       float: left;
+      cursor: pointer;
       margin-top: -1px;
       color: #fff; 
       background-color: #000; 
@@ -271,46 +272,42 @@ p { padding-bottom: 10px; line-height: 1.4em; margin: 0px }
 
 /***********************blog***********************/
 .blog {
-  width: 723px;
-  margin: 0 26px 0 18px;
+  width: 1012px;
+  margin: 0 0 26px 26px;
   float: left;
-  table {
+  .post {
     @extend .generic; 
     color: $dark-grey;
     margin-bottom: 20px;
     text-align: left;
     border-bottom: 1px solid $grey;
     padding: 0 0 20px 0;
-    th { 
+    .title-date {
+      font-size: 12px;
+      float: left;
+      color: $green;
+      font-weight: bold;
+      margin: 0 0 10px 0;
+      padding: 10px;
+      background: url('/images/blog/title_bg.png') repeat 0px 0px;
+    }
+    h4 { 
+      margin: 0px;
+      padding: 0px;
+      clear: both;
       font-size: 20px;
       padding: 15px 0; 
       font-weight: normal; 
-      .title-date {
-        font-size: 12px;
-        text-align: right;
-        color: $green;
-        font-weight: bold;
-        float: right;
-        margin-top: -10px;
-        padding: 10px;
-        background: url('/images/blog/title_bg.png') repeat 0px 0px;
-      }
     }
-    td { 
-      vertical-align: top; 
-      width: 50%;
-      padding: 0;
-      &.left { padding-right: 15px }
-      &.center { padding: 20px 0; text-align: center; }
-      &.comments-link {
-        font-style: italic;
-        text-align: right;
-        padding: 3px 28px 6px 0; 
-        background: url('/images/blog/comment.jpg') no-repeat top right;
-        a { font-weight: normal; color: $dark-grey; }
-      }
+    .comments-link {
+      font-style: italic;
+      text-align: right;
+      padding: 3px 28px 6px 0; 
+      background: url('/images/blog/comment.jpg') no-repeat top right;
     }
-    p { line-height: 1.5em; padding-bottom: 15px }
+    p { line-height: 1.5em; padding-bottom: 12px; }
+    a { font-weight: normal; color: $dark-grey; float: right; clear: both }
+    img { float: right; margin: 0 0 5px 10px; }
   }
   .pagination {
     @extend .generic; 
@@ -322,18 +319,18 @@ p { padding-bottom: 10px; line-height: 1.4em; margin: 0px }
 
 .archives {
   float: left;
-  width: 255px; 
-  height: 100%;
-  // overflow-y: scroll;
+  width: 100%; 
   ul {
     padding: 0px;
-    margin: 20px 0;
+    margin: 0px;
     font-size: 11px;
     li {
       padding-left: 2em;
       background: url('/images/blog/bullet.jpg') no-repeat 0px 0px;
-      margin-bottom: 20px;
+      margin: 0 10px 15px 10px;
       list-style-type: none;
+      text-align: center;
+      float: left;
       a { font-weight: normal }
       span { 
         color: #6e6e6e; 
