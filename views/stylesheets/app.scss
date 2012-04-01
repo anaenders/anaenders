@@ -38,7 +38,7 @@ body {
   margin: 0px;
   padding: 0px;
   background-color: #fff;
-  font-family: Helvetica, "Helvetica Neue";
+  font-family: Helvetica, "Helvetica Neue","Sans-serif";
   color: 000;
   font-size: 12px;
   color: $dark-grey;
@@ -292,6 +292,8 @@ p { padding-bottom: 10px; line-height: 1.4em; margin: 0px }
       background: url('/images/blog/title_bg.png') repeat 0px 0px;
     }
     h4 { 
+      text-transform: capitalize;
+      // font-variant: small-caps;
       margin: 0px;
       padding: 0px;
       clear: both;
@@ -323,12 +325,12 @@ p { padding-bottom: 10px; line-height: 1.4em; margin: 0px }
   ul {
     padding: 0px;
     margin: 0px;
+    list-style-type: none;
     font-size: 11px;
     li {
-      padding-left: 2em;
+      padding-left: 32px;
       background: url('/images/blog/bullet.jpg') no-repeat 0px 0px;
       margin: 0 10px 15px 10px;
-      list-style-type: none;
       text-align: center;
       float: left;
       a { font-weight: normal }
