@@ -1,3 +1,8 @@
+function linkify(text) {
+    var exp = /(\b(https?|ftp|file):\/\/[-A-Z0-9+&@#\/%?=~_|!:,.;]*[-A-Z0-9+&@#\/%=~_|])/gi;
+    return text.replace(exp,"<a href='$1' target='_blank'>$1</a>"); 
+}
+
 $(function(){
 
   $(".off").hover(
@@ -27,9 +32,29 @@ $(function(){
   );
   
   $('.category').each(function() {
-    $(this).find("span").click(function() {
-      $(this).find('.category-container').slideToggle("slow");
+    var cat = $(this);
+    cat.find("span").click(function() {
+      cat.find('.category-container').slideToggle("slow");
     });
   });
   
+  if ($('.twitter-feed').size() > 0) {
+    var tweetTemplate = _.template($('#tweet-template').html());
+    $('.twitter-feed').html('');
+    $.getJSON(
+      'http://api.twitter.com/1/statuses/user_timeline.json?callback=?',
+      { screen_name: 'anaecarter', count: 5 },
+      function(data) {
+        $('.twitter-feed').html('');
+        _(data).each(function(tweet) {
+          console.log(tweet);
+          $('.twitter-feed').append(tweetTemplate({
+            text: linkify(tweet.text),
+            time: Date.create(tweet.created_at).relative(),
+            from: tweet.source
+          }));
+        });
+      }
+    );
+  }
 });

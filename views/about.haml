@@ -27,29 +27,19 @@
       Thank You!!
       
   .twitter-feed
+
+  %script(type="text/template" id="tweet-template")
     .tweet
-      Shit Native New Yorkers Say: http://youtu.be/4EAkfVw8PFE via @youtube
-      %span 5 days ago from web
-    .tweet
-      @orsellareyes Too funny ;) I'm happy to report nothing I currently own has a bird on it ... yet.
-      %span 17 days ago from web
-    .tweet
-      Had an excellent time at Napa Valley!
-      %span 25 days ago from web
-    .tweet
-      Butters enjoying some home grown wheatgrass http://t.co/MvB4HEN7
-      %span 29 days ago from web
-    .tweet
-      Food in San Francisco is delicious! It's good to be an omnivore out here.
-      %span 33 days ago from web
-    
+      <%= text %>
+      %span <%= time %> from <%= from %>
+
   .resume
     %h1 Freelance Web Designer and Front End Developer
     %description 
       I am a website designer and developer interested in user interfaces and website implementation. My experience ranges from the design phase to frontend engineering. I have formal training in design and am well versed in graphic tools such as Photoshop and Illustrator. Most of the sites I’ve worked on live on the Rails framework, in which I write web compliant views in HTML, HAML, CSS, SASS, JavaScript, and basic Ruby. My personal interest in programming languages has led me into the world of Java, Ruby, Python, and PHP/MySQL, learning the basics of Object Oriented Programming, which has made it possible for me to tinker with frontend code written by other developers. I have also become a site-wide QA expert on various platforms and operating systems. In other words, I am a pixel perfect attention to detail kind of gal.
     .follow
       %a(href="https://twitter.com/#!/anaecarter" class="twitter-follow-button" data-show-count="false" data-lang="en")Follow @anaecarter
-    %a.dload(href="/public/resume")
+    %a.dload(href="/resume")
     .category
       %span education
       .clear
@@ -145,7 +135,7 @@
           %td
             %a.google{:target => 'blank'}(href="https://plus.google.com/u/1/107903893980438786456/posts")
           %td
-            %a.rss(href="#")
+            %a.rss(href="/feed.rss")
           %td
             %a.linkedIn{:target => 'blank'}(href="http://www.linkedin.com/in/anaenders")
           %td
