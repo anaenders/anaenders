@@ -1,13 +1,19 @@
 ---
-- url: vintage-and-modern
-  title: I Was Eaten By a Shark!
+- url: java
+  title: java
+  date: May 12 2011
+- url: interior-design-inspiration
+  title: interior design ideas
   date: July 04 2011
-- url: look-whos-taking-the-f-train
-  title: Motherfuckin Placeholder Text Motherfucker! 
-  date: October 22 2010
-- url: im-engaged
-  title: Uuummmm, this is a tasty burger!
-  date: March 22 2011
-- url: hows-it-taste
-  title: How's it Taste Mothafucka?
-  date: April 01 2012
+- url: september-wedding
+  title: my september wedding
+  date: November 27 2011
+- url: october
+  title: october
+  date: November 28 2011
+- url: november-december-january
+  title: november, december, january
+  date: January 31 2012
+- url: my-new-website
+  title: welcome to my new website
+  date: April 04 2012

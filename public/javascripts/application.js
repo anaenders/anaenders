@@ -14,8 +14,12 @@ $(function(){
     }
   );
   
+  $('.alt').each(function() {
+    $(this).append('<div><img src = "/images/about/dots.jpg"/></div>')
+  });
+  
   $('.small-thumb').each(function() {
-    $(this).append('<div class = "grey-overlay"><img src = "/images/portfolio/web/grey_overlay.png"/></div>')
+    $(this).append('<div class = "grey-overlay"><img src = "/images/portfolio/grey_overlay.png"/></div>')
   });
   
   $(".small-thumb").hover(
@@ -43,7 +47,7 @@ $(function(){
     $('.twitter-feed').html('');
     $.getJSON(
       'http://api.twitter.com/1/statuses/user_timeline.json?callback=?',
-      { screen_name: 'anaecarter', count: 5 },
+      { screen_name: 'anaecarter', count: 15 },
       function(data) {
         $('.twitter-feed').html('');
         _(data).each(function(tweet) {
