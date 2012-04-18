@@ -51,7 +51,6 @@ $(function(){
       function(data) {
         $('.twitter-feed').html('');
         _(data).each(function(tweet) {
-          console.log(tweet);
           $('.twitter-feed').append(tweetTemplate({
             text: linkify(tweet.text),
             time: Date.create(tweet.created_at).relative(),
