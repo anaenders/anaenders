@@ -24,7 +24,9 @@
   .post
     .title-date= @blog['date']
     %h4= @blog['title']
+    .clear
     = File.open("blogs/#{@blog['url']}.html").read
+    
     
     .fb-comment-wrapper
       .fb-comments{'data-href' => "http://www.anaenders.com/blog/#{@blog['url']}", 'data-num-posts' => 5, 'data-width' => 506}

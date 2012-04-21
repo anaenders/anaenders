@@ -16,6 +16,13 @@ $neon-green: #dcf74a;
 	&:hover { background-position: 0px -58px; }
 }
 
+@mixin main_container {
+  float: left;
+  width: 1040px;
+  margin: 127px 0 0 163px;
+  z-index: 200
+}
+
 @mixin graph($x-coordinate) {
 	height: 98px;
 	width: 8px; 
@@ -25,7 +32,7 @@ $neon-green: #dcf74a;
 	text-align: center;
 	position: relative;
 	background: url('/images/about/graph_sprite.png') $x-coordinate 0px no-repeat;
-	&:hover { background-position: $x-coordinate - 9px 0px; font-weight: bold; }
+	&:hover, &.on { background-position: $x-coordinate - 9px 0px; font-weight: bold; }
 	&.alt {
 	  padding: 0 0 17px 0;
 	  div {  position: absolute; bottom: 0px; left: 3px }
@@ -34,6 +41,7 @@ $neon-green: #dcf74a;
 
 @mixin thumb-container($width, $height) {
   float: left;
+  cursor: pointer;
   position: relative;
   width: $width;
   height: $height;
@@ -61,11 +69,20 @@ $neon-green: #dcf74a;
 
 @mixin label($x-coordinate) {
   position: absolute;
-  top: -30px;
+  top: -8px;
   left: $x-coordinate;
   z-index: 100;
-  width: 69px;
-  height: 67px
+  width: 83px;
+  height: 64px
+}
+
+@mixin columns($col_count, $col_gap) {
+  -moz-column-count:$col_count; /* Firefox */
+  -webkit-column-count:$col_count; /* Safari and Chrome */
+  column-count:$col_count; 
+  -moz-column-gap:$col_gap; /* Firefox */
+  -webkit-column-gap:$col_gap; /* Safari and Chrome */
+  column-gap:$col_gap;
 }
 
 @font-face {
@@ -115,20 +132,28 @@ p {
   height: 0px; 
 }
 
+.wrapper { float: left; width: 1203px; margin-left: 80px; }
+
 .content {
-  width: 1203px;
+  width: 1283px;
   margin: 0px auto;
-  padding: 50px 50px 20px 100px;
-  background: url('/images/logo.png') no-repeat 10px 10px;
+  padding: 0px;
   header {
     @extend .generic; 
-    height: 77px;
+    z-index: 600;
+    position: fixed;
+    z-index: 500;
+    width: 1283px;
+    height: 110px;
     margin: 0 0 17px 0;
-    background: url('/images/header.jpg') no-repeat top right;
-    img { float: left }
+    background: url('/images/header.jpg') #fff no-repeat 0px 0px;
+    img { float: left; margin: 32px 0 0 78px; }
   }
   nav {
+    z-index: 0;
     float: left;
+    position: fixed;
+    margin-top: 127px;
     width: 163px;
     z-index: 15;
     overflow: hidden;
@@ -156,17 +181,15 @@ p {
 
 /***********************portfolio***********************/
 .portfolio {
-  float: left;
-  width: 1040px; 
-  z-index: 50;
+  @include main_container;
   .web {
     @include frame($almost-black);
-    .web-logo { @include label(1001px) }
+    .web-logo { @include label(949px) }
     .small-thumb { @include thumb-container(340px, 100px); }
   }
   .print {
     @include frame($neon-pink);
-    .print-logo { @include label(-45px) }
+    .print-logo { @include label(-8px) }
     .small-thumb { @include thumb-container(480px, 341px); }
     .group-float { 
       .small-thumb { @include thumb-container(541px, 170px); }
@@ -176,7 +199,7 @@ p {
   }
   .woodwork {
     @include frame($neon-green);
-    .woodwork-logo { @include label(1001px) }
+    .woodwork-logo { @include label(949px) }
     .small-thumb.one { @include thumb-container(235px, 160px); }
     .small-thumb.two { @include thumb-container(224px, 160px); }
     .small-thumb.three { @include thumb-container(216px, 160px); }
@@ -184,10 +207,59 @@ p {
   }
 }
 
+.detail-container {
+  .inner-container {
+    width: 100%;
+    float: left;
+    position: relative;
+    .close { 
+      background: url('/images/btns/close.png') no-repeat 5px 5px; 
+      position: absolute;
+      top: 10px;
+      right: 10px;
+      width: 31px;
+      height: 22px;
+      z-index: 1000;
+      outline: 0px;
+      background-color: #fff;
+      border-radius:5px;
+      -moz-border-radius:5px; /* Firefox 3.6 and earlier */
+      padding: 5px;
+    }
+    img { float: left }
+    .project-description {
+      background-color: #fff;
+      margin: 10px 0;
+      float: left;
+      width: 100%;
+      font-family: Helvetica;
+      opacity: 0.8;
+      filter: alpha(opacity=80); /* For IE8 and earlier */
+      span { 
+        color: #fff; 
+        text-transform: capitalize;
+        background: #000; 
+        font-size: 12px; 
+        float: left;
+        font-weight: bold;
+        padding: 5px 10px;
+      }
+      p { 
+        font-size: 12px; 
+        clear: both; 
+        margin: 10px 0 0 0; 
+        float: left; 
+        padding: 0px;
+        color: #000;
+        @include columns(2, 10px);
+      }
+    }
+  }
+}
+
 /***********************about***********************/
 .about {
-  width: 1040px;
-  float: left;
+  @include main_container;
   .slideshow {
     @extend .generic; 
     margin-bottom: 25px;
@@ -322,6 +394,7 @@ p {
           font-size: 11px;
           text-align: center;
           width: auto;
+          label:hover, label.on { color: $grey; cursor: pointer }
         }
         .beginner { @include graph(-75px) }
         .intermediate { @include graph(-50px) }
@@ -369,9 +442,7 @@ p {
 
 /***********************blog***********************/
 .blog {
-  width: 1012px;
-  margin: 0 0 26px 26px;
-  float: left;
+  @include main_container;
   .post {
     @extend .generic; 
     color: $dark-grey;
@@ -385,7 +456,8 @@ p {
       color: $green;
       font-weight: bold;
       margin: 0 0 10px 0;
-      padding: 10px;
+      height: 14px;
+      padding: 10px 30px;
       background: url('/images/blog/title_bg.png') repeat 0px 0px;
     }
     h4 { 
@@ -394,21 +466,16 @@ p {
       // font-variant: small-caps;
       margin: 0px;
       padding: 0px;
-      clear: both;
+      float: left;
       font-size: 20px;
-      padding: 15px 0; 
+      padding: 8px 0 8px 10px; 
       font-weight: normal; 
     }
     .blog_content { 
       float: left; 
       width: 496px; 
-      margin-right: 10px; 
-      -moz-column-count:2; /* Firefox */
-      -webkit-column-count:2; /* Safari and Chrome */
-      column-count:2; 
-      -moz-column-gap:10px; /* Firefox */
-      -webkit-column-gap:10px; /* Safari and Chrome */
-      column-gap:10px;
+      margin-left: 10px; 
+      @include columns(2, 10px);
     }
     .fb-comment-wrapper {
       width: 506px;

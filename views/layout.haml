@@ -6,18 +6,22 @@
     %meta{:name => "author", :content => "Ana Enders"}/
     %meta{:name => "keywords", :content => "Freelance, web developer, web designer"}/
     %meta{:name => "description", :content => "Ana Enders' web portfolio"}/
-    %link(href="/stylesheets/app.css" media="screen" rel ="stylesheet" type="text/css")/
     %link(href="/feed.rss" rel="alternate" type="application/rss+xml" title="Ana Enders Blog RSS")/
-    %script(src="/javascripts/jquery-1.7.1.min.js" type="text/javascript")
+    %link(href="/stylesheets/app.css" media="screen" rel ="stylesheet" type="text/css")/
+    %link(href="/stylesheets/jquery-ui.css" media="screen" rel="stylesheet" type="text/css")/
+    %script(src="/javascripts/jquery-1.7.2.min.js" type="text/javascript")
+    %script(src="/javascripts/jquery-ui-1.8.19.min.js" type="text/javascript")
     %script(src="/javascripts/underscore-1.3.1.min.js" type="text/javascript")
     %script(src="/javascripts/sugar-1.2.4.min.js" type="text/javascript")
     %script(src="/javascripts/application.js" type="text/javascript")
+    %script(src="/javascripts/dialog.js" type="text/javascript")
     
   %body
     .content
       %header
         %a(href="/")
           %img(src="/images/btns/logo.jpg" alt="anaenders")/
-
-      = yield
+      
+      .wrapper
+        = yield
 

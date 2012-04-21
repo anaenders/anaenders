@@ -4,7 +4,7 @@ function linkify(text) {
 }
 
 $(function(){
-
+  
   $(".off").hover(
     function () {
       $(this).find('.btn').animate({"left": "-=120px"}, "slow");
@@ -60,4 +60,24 @@ $(function(){
       }
     );
   }
+  
+  $('figure div').hover(
+    function() {
+      $(this).siblings('label').addClass('on');
+    },
+    function() {
+      $(this).siblings('label').removeClass('on');
+    }
+  );
+  
+  $('figure label').hover(
+    function() {
+      $(this).siblings('div').addClass('on');
+    },
+    function() {
+      $(this).siblings('div').removeClass('on');
+    }
+  );
+  
+  
 });
