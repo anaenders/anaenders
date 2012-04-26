@@ -36,12 +36,15 @@ var Dialog = function() {
       this.dialog_mally_v1();
       this.dialog_kates();
       this.dialog_kimara();
+      this.dialog_cinemax();
       this.dialog_bw_collage1();
       this.dialog_bw_collage2();
       this.dialog_bw_collage3();
       this.dialog_color_collage1();
       this.dialog_color_collage2();
       this.dialog_color_collage3();
+      this.dialog_abstract();
+      this.dialog_signage();
       this.dialog_sycamore();
       this.dialog_walnut();
       this.dialog_walnut_shelves();
@@ -648,6 +651,26 @@ var Dialog = function() {
       });
     },
     
+    dialog_cinemax: function() {   
+      $('#cinemax').dialog({
+        autoOpen: false,
+      	modal: true,
+      	resizable: false,
+      	width: 780,
+      	position:  [ 'center', 'center' ]
+      });
+      
+      $('#cinemax_opener').live('click', function() {
+    	  Dialog.open('#cinemax');
+        return false;
+    	});
+    	
+    	$('#js-close-modal').live('click', function() {
+        Dialog.close('#cinemax');
+        return false;
+      });
+    },
+    
     dialog_bw_collage1: function() {   
       $('#bwcollage1').dialog({
         autoOpen: false,
@@ -764,6 +787,46 @@ var Dialog = function() {
     	
     	$('#js-close-modal').live('click', function() {
         Dialog.close('#color_collage3');
+        return false;
+      });
+    },
+    
+    dialog_abstract: function() {   
+      $('#abstract').dialog({
+        autoOpen: false,
+      	modal: true,
+      	resizable: false,
+      	width: 660,
+      	position:  [ 'center', 'center' ]
+      });
+      
+      $('#abstract_opener').live('click', function() {
+    	  Dialog.open('#abstract');
+        return false;
+    	});
+    	
+    	$('#js-close-modal').live('click', function() {
+        Dialog.close('#abstract');
+        return false;
+      });
+    },
+    
+    dialog_signage: function() {   
+      $('#signage').dialog({
+        autoOpen: false,
+      	modal: true,
+      	resizable: false,
+      	width: 660,
+      	position:  [ 'center', 'center' ]
+      });
+      
+      $('#signage_opener').live('click', function() {
+    	  Dialog.open('#signage');
+        return false;
+    	});
+    	
+    	$('#js-close-modal').live('click', function() {
+        Dialog.close('#signage');
         return false;
       });
     },

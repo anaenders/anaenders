@@ -20,7 +20,14 @@ $neon-green: #dcf74a;
   float: left;
   width: 1040px;
   margin: 127px 0 30px 163px;
-  z-index: 200
+  z-index: 400;
+  background-color: #fff
+}
+
+@mixin bring_to_front {
+  background-color: #fff;
+  z-index: 400;
+  position: relative;
 }
 
 @mixin graph($x-coordinate) {
@@ -92,6 +99,12 @@ $neon-green: #dcf74a;
   font-family: BotonBQ;
   src: url('/fonts/BotonBQ.ttf'),
       url('/fonts/BotonBQ.ttf'); /* IE9+ */
+  font-family: Archer-Light;
+  src: url('/fonts/Archer-Light-Pro.otf'),
+      url('/fonts/Archer-Light-Pro.otf'); /* IE9+ */
+  font-family: Archer-Medium;
+  src: url('/fonts/Archer-Medium-Pro.otf'),
+      url('/fonts/Archer-Medium-Pro.otf'); /* IE9+ */
 }
 
 ::selection { background-color:#b4fef1; }
@@ -155,7 +168,7 @@ p {
     position: fixed;
     margin-top: 127px;
     width: 163px;
-    z-index: 15;
+    z-index: 0;
     overflow: hidden;
     div {
       @extend .generic; 
@@ -182,6 +195,7 @@ p {
 /***********************portfolio***********************/
 .portfolio {
   @include main_container;
+  @include bring_to_front;
   .web {
     @include frame($almost-black);
     .web-logo { @include label(949px) }
@@ -195,6 +209,15 @@ p {
       .small-thumb { @include thumb-container(541px, 170px); }
       float: left; 
       width: 542px;
+    }
+    .short-row {
+      float: left;
+      &.abstract { 
+        .small-thumb { @include thumb-container(447px, 98px); }
+      }
+      &.signage {
+        .small-thumb { @include thumb-container(574px, 98px); }
+      }
     }
   }
   .woodwork {
@@ -251,7 +274,7 @@ p {
         float: left; 
         padding: 0px;
         color: #000;
-        @include columns(2, 10px);
+        // @include columns(2, 10px);
       }
     }
   }
@@ -261,15 +284,18 @@ p {
 .about {
   @include main_container;
   .slideshow {
+    @include bring_to_front;
     @extend .generic; 
-    margin-bottom: 25px;
+    height: 376px;
+    padding-bottom: 10px;
     img { float: left }
   }
   .casual-intro {
+    @include bring_to_front;
     width: 475px;
     font-size: 13px;
     float: left;
-    margin: 0 15px 10px 0;
+    padding: 0 15px 10px 0;
     p:first-child {
       &:first-letter {
         font-size: 20px;
@@ -277,6 +303,7 @@ p {
     }
   }
   .twitter-feed {
+    @include bring_to_front;
     width: 550px;
     height: 252px;
     float: left;  
@@ -297,152 +324,160 @@ p {
       }
     }
   }
-}
-
-.resume {
-  @extend .generic; 
-  position: relative;
-  background: url('/images/about/border_bg.jpg') repeat-x top left;
-  margin: 25px 0 0 0;
-  .follow {
-    position: absolute;
-    top: 93px;
-    left: 0px;
-  }
-  .dload {
-    position: absolute;
-    top: 85px;
-    right: 0px;
-    width: 135px;
-    height: 27px;
-    background: url('/images/about/btns/dload_resume.jpg') repeat 0px 0px;
-    &:hover { background: url('/images/about/btns/dload_resume.jpg') repeat 0px 27px; font-weight: bold }
-  }
-  h1 {
-    background-color: #fff;
-    margin: -10px auto 0 auto;
-    width: 594px;
-    z-index: 5;
-    line-height: 1.3em;
-    font-size: 24px;
-    text-align: center;
-    font-weight: normal;
-    font-family: BotonBQ, Rockwell, Georgia, Serif;
-  }
-  description {
-    text-align: justify;
-    margin: 10px auto;
-    width: 636px;
-    display: block;
-    font-weight: normal;
-    font-size: 13px;
-    line-height: 1.4em;
-  }
-  .category {
-    border-top: 1px dotted $grey;
-    margin: 10px 0 20px 0;
+  .resume {
     @extend .generic; 
-    span { 
-      float: left;
-      cursor: pointer;
-      margin-top: -1px;
-      color: #fff; 
-      background-color: #000; 
-      letter-spacing: 5px; 
-      padding: 5px 10px;
-      font-size: 11px
+    position: relative;
+    background: url('/images/about/border_bg.jpg') #fff repeat-x top left;
+    border-top: 25px solid #fff;
+    margin: 0;
+    .follow {
+      position: absolute;
+      top: 93px;
+      left: 0px;
     }
-    .skill-list {
-      width: 100px;
-      float: left;
-      ul {
-        @extend .generic; 
-        padding: 0px;
-        margin: 23px 0 0 0;
-        li {
-          list-style-type: none;
-          height: 17px;
-          margin: 0 10px 0 0;
-          padding-right: 6px;
-          font-style: italic;
-          font-family: Georgia;
-          font-weight: bold;
-          font-size: 11px;
-          background: url('/images/about/dash.jpg') no-repeat 100% 50%;
-        }
-      }
+    .dload {
+      position: absolute;
+      top: 85px;
+      right: 0px;
+      width: 135px;
+      height: 27px;
+      background: url('/images/about/btns/dload_resume.jpg') repeat 0px 0px;
+      &:hover { background: url('/images/about/btns/dload_resume.jpg') repeat 0px 27px; font-weight: bold }
     }
-    figure {
-      width: 940px;
-      height: 170px;
-      float: left;
-      background: url('/images/about/chartBG.jpg') no-repeat 0px 98px;
-      margin: 0px;
-      table {
-        font-family: Georgia;
-        height: 150px;
+    h1 {
+      background-color: #fff;
+      margin: -10px auto 0 auto;
+      width: 594px;
+      z-index: 5;
+      line-height: 1.3em;
+      font-size: 24px;
+      text-align: center;
+      font-weight: normal;
+      font-family: "Archer-Medium", BotonBQ, Rockwell, Georgia, Serif;
+    }
+    description {
+      text-align: justify;
+      margin: 10px auto;
+      width: 636px;
+      display: block;
+      font-weight: normal;
+      font-size: 13px;
+      line-height: 1.4em;
+    }
+    .category {
+      border-top: 1px dotted $grey;
+      margin: 10px 0 20px 0;
+      @extend .generic; 
+      span { 
         float: left;
-        margin-top: 25px;
-        padding-right: 15px;
-        &.frontend { width: 315px; td { width: 16% } }
-        &.programming { width: 270px; td { width: 25% }}
-        &.design { width: 193px; td { width: 33% } }
-        &.additional { width: 162px; td { width: 50% } }
-        td {
+        cursor: pointer;
+        margin-top: -1px;
+        color: #fff; 
+        background-color: #000; 
+        letter-spacing: 5px; 
+        padding: 5px 10px;
+        font-size: 11px
+      }
+      .skill-list {
+        width: 100px;
+        float: left;
+        ul {
+          @extend .generic; 
           padding: 0px;
-          font-style: italic;
-          font-size: 11px;
-          text-align: center;
-          width: auto;
-          label:hover, label.on { color: $grey; cursor: pointer }
+          margin: 20px 0 0 0;
+          li {
+            list-style-type: none;
+            height: 17px;
+            margin: 0 10px 0 0;
+            padding-right: 6px;
+            font-style: italic;
+            font-family: Georgia;
+            font-weight: bold;
+            font-size: 11px;
+            background: url('/images/about/dash.jpg') no-repeat 100% 50%;
+          }
         }
-        .beginner { @include graph(-75px) }
-        .intermediate { @include graph(-50px) }
-        .advanced { @include graph(-25px) }
-        .expert { @include graph(0px) }
       }
-    }
-    table {
-      @extend .generic;  
-      font-family: Georgia;
-      margin-top: 22px;
-      th { font-family: Georgia, Rockwell, Serif; }
-      th, td { 
-        line-height: 1.3em; 
-        text-align: left; 
-        width: 20%; 
-        vertical-align: top; 
-        padding: 0 10px 10px 0;
-        .date { clear: both; font-weight: normal; margin-top: 5px }
+      figure {
+        width: 940px;
+        height: 170px;
+        float: left;
+        background: url('/images/about/chartBG.jpg') transparent no-repeat 0px 98px;
+        margin: 0px;
+        table {
+          font-family: Georgia;
+          height: 150px;
+          float: left;
+          margin-top: 25px;
+          padding-right: 15px;
+          &.frontend { width: 315px; td { width: 16% } }
+          &.programming { width: 270px; td { width: 25% }}
+          &.design { width: 193px; td { width: 33% } }
+          &.additional { width: 162px; td { width: 50% } }
+          td {
+            padding: 0px;
+            font-style: italic;
+            font-size: 11px;
+            text-align: center;
+            width: auto;
+            label:hover, label.on { color: $grey; cursor: pointer }
+          }
+          .beginner { @include graph(-75px) }
+          .intermediate { @include graph(-50px) }
+          .advanced { @include graph(-25px) }
+          .expert { @include graph(0px) }
+        }
       }
-      &.contact-icons {
-        margin: 30px 0 50px 0;
-        td { 
-          text-align: center; 
-          padding: 0px; 
-          width: auto;
-          a {
-            width: 58px;
-            height: 58px;
-            float: left;
-            &.email { @include button('/images/about/btns/email.jpg') }
-            &.google { @include button('/images/about/btns/google.jpg') }
-            &.rss { @include button('/images/about/btns/rss.jpg') }
-            &.linkedIn { @include button('/images/about/btns/linkedIn.jpg') }
-            &.pinterest { @include button('/images/about/btns/pinterest.jpg') }
-            &.facebook { @include button('/images/about/btns/facebook.jpg') }
-            &.twitter { @include button('/images/about/btns/twitter.jpg') }
-            &.github { @include button('/images/about/btns/github.jpg') }
+      table {
+        @extend .generic;  
+        font-family: Georgia;
+        margin-top: 25px;
+        th { font-family: "Archer-Medium", Georgia, Rockwell, Serif; font-size: 16px; font-weight: normal }
+        th, td { 
+          line-height: 1.3em; 
+          text-align: left; 
+          width: 20%; 
+          vertical-align: top; 
+          padding: 0 15px 15px 0;
+          &.date { 
+            font-family: "Archer-Medium";
+            clear: both; 
+            font-weight: normal;
+            margin-top: 5px;
+            font-size: 13px;
+            .job { font-style: italic; color: #6f6f6f; a { font-weight: normal; color: #6f6f6f; font-size: 13px } }
+          }
+        }
+        &.contact-icons {
+          margin: 30px 0 50px 0;
+          td { 
+            text-align: center; 
+            padding: 0px; 
+            width: auto;
+            a {
+              width: 58px;
+              height: 58px;
+              float: left;
+              &.email { @include button('/images/about/btns/email.jpg') }
+              &.google { @include button('/images/about/btns/google.jpg') }
+              &.rss { @include button('/images/about/btns/rss.jpg') }
+              &.linkedIn { @include button('/images/about/btns/linkedIn.jpg') }
+              &.pinterest { @include button('/images/about/btns/pinterest.jpg') }
+              &.facebook { @include button('/images/about/btns/facebook.jpg') }
+              &.twitter { @include button('/images/about/btns/twitter.jpg') }
+              &.github { @include button('/images/about/btns/github.jpg') }
+            }
           }
         }
       }
     }
   }
-}  
+}
 
 /***********************blog***********************/
 .blog {
   @include main_container;
+  @include bring_to_front;
   .post {
     @extend .generic; 
     color: $dark-grey;
@@ -453,39 +488,41 @@ p {
     .title-date {
       font-size: 12px;
       float: left;
+      clear: both;
       color: $green;
       font-weight: bold;
-      margin: 0 0 10px 0;
       height: 14px;
       padding: 10px 30px;
       background: url('/images/blog/title_bg.png') repeat 0px 0px;
     }
-    h4 { 
-      text-transform: capitalize;
-      font-family: BotonBQ, Rockwell, Georgia, Serif;
-      // font-variant: small-caps;
-      margin: 0px;
-      padding: 0px;
-      float: left;
-      font-size: 20px;
-      padding: 8px 0 8px 10px; 
-      font-weight: normal; 
+    .blog_post {
+      margin: 0 auto;
+      width: 560px;
+      clear: both;
+      text-align: center;
+      h4 { 
+        text-transform: capitalize;
+        font-family: "Archer-Medium", BotonBQ, Rockwell, Georgia, Serif;
+        margin: 0px;
+        font-size: 20px;
+        padding: 30px 150px; 
+        font-weight: normal; 
+        text-align: center;
+        background:url('/images/ornament_left.png') no-repeat top left,url('/images/ornament_right.png') no-repeat top right;
+      }
+      .blog_content { 
+        padding: 0px 30px;
+        // @include columns(2, 10px);
+      }
+      .fb-comment-wrapper {
+        width: 506px;
+        margin: 0 auto;
+      }
+      p { line-height: 1.3em; padding-bottom: 12px; font-size: 12px; text-align: left }
+      a { font-weight: normal; color: $dark-grey; font-style: italic }
+      .image { text-align: center; margin: 20px 0 }
     }
-    .blog_content { 
-      float: left; 
-      width: 496px; 
-      margin-left: 10px; 
-      @include columns(2, 10px);
-    }
-    .fb-comment-wrapper {
-      width: 506px;
-      float: left;
-      margin: 10px 0 0 0px;
-    }
-    p { line-height: 1.5em; padding-bottom: 12px; font-size: 13px }
-    a { font-weight: normal; color: $dark-grey; font-style: italic }
-    img { float: right; margin: 0 0 10px 0;  }
-  }
+  }  
   .pagination {
     @extend .generic; 
     margin: 0 0 20px 0;
