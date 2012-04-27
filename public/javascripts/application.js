@@ -35,6 +35,16 @@ $(function(){
     }
   );
   
+  $('#slides').slides({
+		preload: true,
+		preloadImage: 'img/loading.gif',
+		play: 5000,
+		effect: 'fade',
+		crossfade: true,
+		slideSpeed: 350,
+		fadeSpeed: 500
+	});
+  
   $('.category').each(function() {
     var cat = $(this);
     cat.find("span").click(function() {

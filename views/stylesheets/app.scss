@@ -286,9 +286,47 @@ p {
   .slideshow {
     @include bring_to_front;
     @extend .generic; 
-    height: 376px;
-    padding-bottom: 10px;
-    img { float: left }
+    position: relative;
+    z-index: 0;
+    height: 400px;
+    #slides {
+      position: absolute;
+      top: 0px;
+      left: 0px;
+      z-index: 100;
+      .slides_container {
+        display: none;
+        overflow: hidden;
+        position: relative;
+        width: 1040px;
+        div {
+        	width:1040px;
+        	height:351px;
+        	display:block;
+        	img { display:block; }
+        }
+      }
+      .pagination {
+      	margin:20px auto 0;
+      	width:200px;
+      	li {
+        	float:left;
+        	margin:0 1px;
+        	list-style:none;
+        	&.current a { background-position:0 -12px; }
+        	a {
+          	display:block;
+          	width:12px;
+          	height:0;
+          	padding-top:12px;
+          	background-image:url('/images/about/btns/pagination.png');
+          	background-position:0 0;
+          	float:left;
+          	overflow:hidden;
+          }
+        }
+      }
+    }
   }
   .casual-intro {
     @include bring_to_front;
@@ -334,6 +372,8 @@ p {
       position: absolute;
       top: 93px;
       left: 0px;
+      height: 20px;
+      -webkit-box-reflect: below 0px -webkit-gradient( linear, left top, left bottom, color-stop(0.0, rgba(255, 255, 255, 0.0)), color-stop(0.6, rgba(255,255,255,0.3)), color-stop(0.9, rgba(255, 255, 255, 0.7)));
     }
     .dload {
       position: absolute;
@@ -341,7 +381,8 @@ p {
       right: 0px;
       width: 135px;
       height: 27px;
-      background: url('/images/about/btns/dload_resume.jpg') repeat 0px 0px;
+      background: url('/images/about/btns/dload_resume.jpg') repeat  0px 0px;
+      -webkit-box-reflect: below 0px -webkit-gradient( linear, left top, left bottom, color-stop(0.0, rgba(255, 255, 255, 0.0)), color-stop(0.6, rgba(255,255,255,0.3)), color-stop(0.9, rgba(255, 255, 255, 0.7)));
       &:hover { background: url('/images/about/btns/dload_resume.jpg') repeat 0px 27px; font-weight: bold }
     }
     h1 {
@@ -376,7 +417,8 @@ p {
         background-color: #000; 
         letter-spacing: 5px; 
         padding: 5px 10px;
-        font-size: 11px
+        font-size: 11px;
+        -webkit-box-reflect: below 0px -webkit-gradient( linear, left top, left bottom, color-stop(0.0, rgba(255, 255, 255, 0.0)), color-stop(0.9, rgba(255,255,255,0.3)), color-stop(1.0, rgba(255, 255, 255, 0.7)));
       }
       .skill-list {
         width: 100px;
@@ -458,6 +500,7 @@ p {
               width: 58px;
               height: 58px;
               float: left;
+              -webkit-box-reflect: below 0px -webkit-gradient( linear, left top, left bottom, color-stop(0.0, rgba(255, 255, 255, 0.0)), color-stop(0.6, rgba(255,255,255,0.3)), color-stop(0.9, rgba(255, 255, 255, 0.7)));
               &.email { @include button('/images/about/btns/email.jpg') }
               &.google { @include button('/images/about/btns/google.jpg') }
               &.rss { @include button('/images/about/btns/rss.jpg') }
