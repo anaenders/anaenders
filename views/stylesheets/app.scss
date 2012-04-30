@@ -398,14 +398,13 @@ img { border: 0px }
       font-weight: normal;
       font-family: "Archer-Medium", BotonBQ, Rockwell, Georgia, Serif;
     }
-    description {
+    summary {
       text-align: justify;
       margin: 10px auto;
       width: 636px;
       display: block;
       font-weight: normal;
       font-size: 13px;
-      p { display: block; width: 636px; margin: 10px auto }
     }
     .category {
       border-top: 1px dotted $grey;
