@@ -49,6 +49,8 @@ class AnaEnders < Sinatra::Base
     @blogs = BLOGS
     haml :blog
   end
+  
+  run! if app_file == $0
 
 end
 
