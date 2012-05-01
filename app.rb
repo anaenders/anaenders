@@ -49,9 +49,6 @@ class AnaEnders < Sinatra::Base
     @blogs = BLOGS
     haml :blog
   end
-  
-  run! if app_file == $0
-
 end
 
 static_dir = File.join(File.dirname(__FILE__), 'static')
@@ -60,3 +57,5 @@ FileUtils.rm_rf(static_dir)
 FileUtils.mkdir_p(static_dir)
 SinatraStatic.new(AnaEnders).build!(static_dir)
 FileUtils.cp_r(Dir.glob(File.join(File.dirname(__FILE__), 'public') + '/*'), static_dir)
+
+AnaEnders.run!
