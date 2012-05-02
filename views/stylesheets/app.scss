@@ -5,6 +5,7 @@ $almost-black: #454343;
 $green: #74fae2;
 $neon-pink: #f65f5f;
 $neon-green: #dcf74a;
+$aqua: #59edd3;
 
 /***********************mixins***********************/
 @mixin button($image) {
@@ -196,13 +197,19 @@ img { border: 0px }
   @include main_container;
   @include bring_to_front;
   .web {
-    @include frame($almost-black);
-    .web-logo { @include label(949px) }
     .small-thumb { @include thumb-container(340px, 100px); }
+    &.professional { 
+      @include frame($almost-black); 
+      .web-logo { @include label(932px) }
+    }
+    &.personal {
+      @include frame($aqua); 
+      .web-logo { @include label(-8px) }
+    }
   }
   .print {
     @include frame($neon-pink);
-    .print-logo { @include label(-8px) }
+    .print-logo { @include label(949px) }
     .small-thumb { @include thumb-container(480px, 341px); }
     .group-float { 
       .small-thumb { @include thumb-container(541px, 170px); }
@@ -221,7 +228,7 @@ img { border: 0px }
   }
   .woodwork {
     @include frame($neon-green);
-    .woodwork-logo { @include label(949px) }
+    .woodwork-logo { @include label(-8px) }
     .small-thumb.one { @include thumb-container(235px, 160px); }
     .small-thumb.two { @include thumb-container(224px, 160px); }
     .small-thumb.three { @include thumb-container(216px, 160px); }
