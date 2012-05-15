@@ -57,7 +57,7 @@ $(function(){
     $('.twitter-feed').html('');
     $.getJSON(
       'http://api.twitter.com/1/statuses/user_timeline.json?callback=?',
-      { screen_name: 'anaecarter', count: 15 },
+      { screen_name: 'anaenders', count: 15 },
       function(data) {
         $('.twitter-feed').html('');
         _(data).each(function(tweet) {
