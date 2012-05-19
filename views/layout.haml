@@ -4,8 +4,8 @@
     %title Ana Enders
     %meta{:name => "google-site-verification", :content => "BJ-AxCSPNC8koVmBDKh5DbCcxjXmAU56jBf3Hsxqbuw"}/
     %meta{:name => "author", :content => "Ana Enders"}/
-    %meta{:name => "keywords", :content => "Freelance, web developer, web designer"}/
-    %meta{:name => "description", :content => "Ana Enders' web portfolio"}/
+    %meta{:name => "keywords", :content => "Web developer, Web designer"}/
+    %meta{:name => "description", :content => "Ana Enders"}/
     %link(href="/feed.rss" rel="alternate" type="application/rss+xml" title="Ana Enders Blog RSS")/
     %link(href="/stylesheets/app.css" media="screen" rel ="stylesheet" type="text/css")/
     %link(href="/stylesheets/jquery-ui.css" media="screen" rel="stylesheet" type="text/css")/
@@ -19,6 +19,17 @@
     %script(src="/javascripts/slides.min.jquery.js" type="text/javascript")
     / [if lt IE 9]
       %script(src="/javascripts/html5shiv.js" type="text/javascript")
+    %script(type="text/javascript")
+
+      var _gaq = _gaq || [];
+      _gaq.push(['_setAccount', 'UA-10030932-1']);
+      _gaq.push(['_trackPageview']);
+
+      (function() {
+        var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+        ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+      })();
     
   %body
     .content
@@ -28,4 +39,3 @@
       
       .wrapper
         = yield
-
