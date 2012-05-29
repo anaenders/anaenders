@@ -6,6 +6,8 @@ var Dialog = function() {
   
   return {
     init: function() {
+      this.dialog_tiffany();
+      this.dialog_juicegeneration();
       this.dialog_wedding_site();
       this.dialog_scully();
       this.dialog_mally();
@@ -51,6 +53,46 @@ var Dialog = function() {
       this.dialog_cherry();
     },
     
+    dialog_tiffany: function() {   
+      $('#tiffany').dialog({
+        autoOpen: false,
+      	modal: true,
+      	resizable: false,
+      	width: 780,
+      	position:  [ 'center', 'center' ]
+      });
+      
+      $('#tiffany_opener').live('click', function() {
+    	  Dialog.open('#tiffany');
+        return false;
+    	});
+    	
+      $('#js-close-modal').live('click', function() {
+        Dialog.close('#tiffany');
+        return false;
+      });
+    },
+    
+    dialog_juicegeneration: function() {   
+      $('#juicegeneration').dialog({
+        autoOpen: false,
+      	modal: true,
+      	resizable: false,
+      	width: 780,
+      	position:  [ 'center', 'center' ]
+      });
+      
+      $('#juicegeneration_opener').live('click', function() {
+    	  Dialog.open('#juicegeneration');
+        return false;
+    	});
+    	
+      $('#js-close-modal').live('click', function() {
+        Dialog.close('#juicegeneration');
+        return false;
+      });
+    },
+
     dialog_wedding_site: function() {   
       $('#wedding_site').dialog({
         autoOpen: false,

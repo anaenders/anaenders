@@ -106,6 +106,9 @@ $aqua: #59edd3;
   font-family: Archer-Medium;
   src: url('/fonts/Archer-Medium-Pro.otf'),
       url('/fonts/Archer-Medium-Pro.otf'); /* IE9+ */
+  font-family: TradeGothic;
+  src: url('/fonts/TradeGothicLTStd-Cn18.otf'),
+      url('/fonts/TradeGothicLTStd-Cn18.otf'); /* IE9+ */
 }
 
 ::selection { background-color:#fce7e7; }
@@ -258,7 +261,7 @@ img { border: 0px }
     img { float: left }
     .project-description {
       background-color: #fff;
-      margin: 10px 0;
+      margin: 0 0 15px 0;
       float: left;
       width: 100%;
       font-family: Helvetica;
@@ -268,19 +271,21 @@ img { border: 0px }
         color: #fff; 
         text-transform: capitalize;
         background: #000; 
-        font-size: 12px; 
+        font-size: 17px; 
         float: left;
-        font-weight: bold;
-        padding: 5px 10px;
+        font-weight: normal;
+        padding: 10px 35px;
+        font-family: TradeGothic;
       }
       p { 
         font-size: 12px; 
         clear: both; 
         display: block;
-        margin: 10px 0 0 0; 
+        margin: 15px 0 0 0; 
         float: left; 
         padding: 0px;
-        color: #000;
+        color: #454545;
+        line-height: 1.6em;
         // @include columns(2, 10px);
       }
     }
