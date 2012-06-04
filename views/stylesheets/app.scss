@@ -97,9 +97,9 @@ $aqua: #59edd3;
   cursor: pointer;
   color: #fff; 
   background-color: #000; 
-  letter-spacing: 5px; 
+  letter-spacing: 4px; 
   padding: 8px 20px;
-  font-size: 9px;
+  font-size: 10px;
   z-index: 100;
   // -webkit-box-reflect: below 0px -webkit-gradient( linear, left top, left bottom, color-stop(0.0, rgba(255, 255, 255, 0.0)), color-stop(0.9, rgba(255,255,255,0.3)), color-stop(1.0, rgba(255, 255, 255, 0.7)));
 }
@@ -502,7 +502,7 @@ img { border: 0px }
         @extend .generic;  
         font-family: Georgia;
         margin-top: 25px;
-        th { font-family: "Archer-Medium", Georgia, Rockwell, Serif; font-size: 16px; font-weight: normal }
+        th { font-family: "Archer-Medium", BotonBQ, Rockwell, Georgia, Serif; font-size: 15px; font-weight: normal }
         th, td { 
           line-height: 1.3em; 
           text-align: left; 
@@ -510,7 +510,7 @@ img { border: 0px }
           vertical-align: top; 
           padding: 0 15px 15px 0;
           &.date { 
-            font-family: "Archer-Medium";
+            font-family: "Archer-Medium", BotonBQ, Rockwell, Georgia, Serif;
             clear: both; 
             font-weight: normal;
             margin-top: 5px;
