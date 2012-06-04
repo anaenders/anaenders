@@ -93,6 +93,17 @@ $aqua: #59edd3;
   column-gap:$col_gap;
 }
 
+@mixin black_box {
+  cursor: pointer;
+  color: #fff; 
+  background-color: #000; 
+  letter-spacing: 5px; 
+  padding: 8px 20px;
+  font-size: 9px;
+  z-index: 100;
+  // -webkit-box-reflect: below 0px -webkit-gradient( linear, left top, left bottom, color-stop(0.0, rgba(255, 255, 255, 0.0)), color-stop(0.9, rgba(255,255,255,0.3)), color-stop(1.0, rgba(255, 255, 255, 0.7)));
+}
+
 @font-face {
   font-family: Rockwell;
   src: url('/fonts/Rockwell.ttf'),
@@ -201,18 +212,24 @@ img { border: 0px }
   @include bring_to_front;
   .web {
     .small-thumb { @include thumb-container(340px, 100px); }
-    &.professional { 
+    &.professional, &.personal { 
       @include frame($almost-black); 
-      .web-logo { @include label(932px) }
-    }
-    &.personal {
-      @include frame($aqua); 
-      .web-logo { @include label(-8px) }
+      .section_label { 
+        @include black_box;
+        position: absolute;
+        top: -8px;
+        right: -8px;
+      }
     }
   }
   .print {
     @include frame($neon-pink);
-    .print-logo { @include label(949px) }
+    .section_label { 
+      @include black_box;
+      position: absolute;
+      top: -8px;
+      right: -8px;
+    }
     .small-thumb { @include thumb-container(480px, 341px); }
     .group-float { 
       .small-thumb { @include thumb-container(541px, 170px); }
@@ -231,7 +248,12 @@ img { border: 0px }
   }
   .woodwork {
     @include frame($neon-green);
-    .woodwork-logo { @include label(-8px) }
+    .section_label { 
+      @include black_box;
+      position: absolute;
+      top: -8px;
+      right: -8px;
+    }
     .small-thumb.one { @include thumb-container(235px, 160px); }
     .small-thumb.two { @include thumb-container(224px, 160px); }
     .small-thumb.three { @include thumb-container(216px, 160px); }
@@ -422,15 +444,9 @@ img { border: 0px }
       margin: 10px 0 20px 0;
       @extend .generic; 
       span { 
+        @include black_box;
         float: left;
-        cursor: pointer;
         margin-top: -1px;
-        color: #fff; 
-        background-color: #000; 
-        letter-spacing: 5px; 
-        padding: 5px 10px;
-        font-size: 11px;
-        // -webkit-box-reflect: below 0px -webkit-gradient( linear, left top, left bottom, color-stop(0.0, rgba(255, 255, 255, 0.0)), color-stop(0.9, rgba(255,255,255,0.3)), color-stop(1.0, rgba(255, 255, 255, 0.7)));
       }
       .skill-list {
         width: 100px;
