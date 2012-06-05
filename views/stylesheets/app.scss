@@ -94,7 +94,6 @@ $aqua: #59edd3;
 }
 
 @mixin black_box {
-  cursor: pointer;
   color: #fff; 
   background-color: #000; 
   letter-spacing: 4px; 
@@ -422,7 +421,7 @@ img { border: 0px }
     h1 {
       background-color: #fff;
       margin: -10px auto 0 auto;
-      width: 465px;
+      width: 205px;
       z-index: 5;
       line-height: 1.3em;
       font-size: 24px;
@@ -445,6 +444,7 @@ img { border: 0px }
       @extend .generic; 
       span { 
         @include black_box;
+        cursor: pointer;
         float: left;
         margin-top: -1px;
       }
