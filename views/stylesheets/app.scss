@@ -498,6 +498,69 @@ img { border: 0px }
           .expert { @include graph(0px) }
         }
       }
+      .slide_window {
+        background-color: #FFFFFF;
+        position: relative;
+        z-index: 0;
+        height: 310px;
+        .slide_tiles {
+          overflow: hidden;
+          position: relative;
+          width: 1040px;
+          height: 310px;
+          .next_container {
+            z-index: 200;
+            background-color: #fff;
+            width: 50px;
+            height: 310px;
+            opacity: 0.6;
+            filter: alpha(opacity=60); /* For IE8 and earlier */
+            position: absolute;
+            top: 0px;
+            right: 0px;
+            .next {
+              z-index: 400;
+              padding: 147px 0 0 10px;
+              float: left;
+              height: 23px;
+              width: 30px;
+              a { 
+                width: 30px;
+                height: 23px;
+                text-indent: -9999;
+                border: 0px;
+                float: left;
+                background: url('/images/btns/next.png') no-repeat 0px 0px;
+                &:hover { background-position: 0px -22px; }
+              }
+            }
+          }
+          .prev_container {
+            @extend .next_container;
+            left: 0px;
+            .previous { 
+              @extend .next;
+              a {
+                background: url('/images/btns/previous.png') no-repeat 0px 0px;
+                &:hover { background-position: 0px -22px; }
+              }
+            }
+          }
+          .slide_tiles_container {
+            left: 0;
+            position: absolute;
+            top: 0;
+            z-index: 100;
+            .slide_inner {
+              width: 3000px;
+              table { 
+                width: auto; 
+                th, td { width: 193px }
+              }
+            }
+          }
+        }
+      }
       table {
         @extend .generic;  
         font-family: Georgia;

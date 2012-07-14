@@ -70,7 +70,7 @@
     %h1 Junior Frontend Developer
     .clear
     %summary 
-      I am a website developer interested in user interfaces and website implementation. Most of the sites I&rsquo;ve worked on live on the Rails framework, in which I write web compliant views in HTML, HAML, CSS, SASS, JavaScript (through JQuery), and basic Ruby. Due to my basic understanding of Object Oriented Programming and my personal interest in programming languages, such as Java, Ruby and Python, I feel comfortable tinkering with frontend code written by other developers, though I do not write much code myself. All the while, I am a designer and creative at heart, which I express primarily through Photoshop. My design intuition and experience as a developer have made me particularly qualified to do site-wide QA testing on various platforms and operating systems. In short, I am the pixel&#45;perfect attention&#45;to&#45;detail glue between the design and engineering teams using my skills to facilitate and contribute to both worlds.
+      I am a website developer interested in user interfaces and website implementation. Most of the sites I&rsquo;ve worked on live on the Rails framework, in which I write web compliant views in HTML, HAML, CSS, SASS, JavaScript (through JQuery), and basic Ruby. Due to my basic understanding of Object Oriented Programming and my personal interest in programming languages, such as Java, Ruby and Python, I feel comfortable tinkering with frontend code written by other developers. All the while, I am a designer and creative at heart, which I express primarily through Photoshop. My design intuition and experience as a developer have made me particularly qualified to do site-wide QA testing on various platforms and operating systems. In short, I am the pixel&#45;perfect attention&#45;to&#45;detail glue between the design and engineering teams using my skills to facilitate and contribute to both worlds.
     .follow
       %a(href="https://twitter.com/anaenders" class="twitter-follow-button" data-show-count="false")Follow @anaenders
     %a.dload(href="/ana_enders.pdf" target="_blank")
@@ -174,73 +174,94 @@
       %span experience
       .clear
       .category-container
-        %table{:cellspacing => "0", :cellpadding => "0"}
-          %tr
-            %th 
-              Freelance Junior Frontend Developer
-            %th 
-              Junior Frontend Developer
-            %th 
-              Design Intern
-            %th 
-              Freelance Web Designer and Developer
-            %th 
-              Junior Woodworker and Website Manager
+        .slide_window
+          .slide_tiles
+            .next_container
+              .next
+                %a(id = "next" href = "#")
+            .prev_container
+              .previous
+                %a(id = "previous" href = "#")
+            .slide_tiles_container
+              .slide_inner
+                %table{:cellspacing => "0", :cellpadding => "0"}
+                  %tr
+                    %th
+                      Frontend Developer
+                    %th 
+                      Freelance Frontend Developer
+                    %th 
+                      Junior Frontend Developer
+                    %th 
+                      Design Intern
+                    %th 
+                      Freelance Web Designer and Developer
+                    %th 
+                      Junior Woodworker and Website Manager
+  
+                  %tr
+                    %td.date 
+                      New York, NY / San Francisco, CA
+                      .job
+                        %a(href="http://www.thedailymuse.com/")
+                          The Daily Muse
+                    %td.date 
+                      San Francisco, CA
+                      .job
+                        %a(href="/")
+                          Self Employed
+                    %td.date 
+                      New York, NY
+                      .job
+                        %a(href="http://intersectnyc.com" target="_blank")
+                          Intersect NYC
+                    %td.date 
+                      Brooklyn, NY
+                      .job
+                        %a(href="http://creativelabny.com/" target="_blank")
+                          Creative Lab
+                    %td.date 
+                      New York, NY
+                      .job
+                        %a(href="/")
+                          Self Employed
+                    %td.date 
+                      Brooklyn, NY
+                      .job
+                        %a(href="http://cityjoinery.com/" target="_blank")
+                          City Joinery
       
-          %tr
-            %td.date 
-              San Francisco, CA
-              .job
-                %a(href="/")
-                  Self Employed
-            %td.date 
-              New York, NY
-              .job
-                %a(href="http://intersectnyc.com" target="_blank")
-                  Intersect NYC
-            %td.date 
-              Brooklyn, NY
-              .job
-                %a(href="http://creativelabny.com/" target="_blank")
-                  Creative Lab
-            %td.date 
-              New York, NY
-              .job
-                %a(href="/")
-                  Self Employed
-            %td.date 
-              Brooklyn, NY
-              .job
-                %a(href="http://cityjoinery.com/" target="_blank")
-                  City Joinery
-          
-          %tr
-            %td 
-              September 2011 &#45; Present 
-              %br/
-              (8 months)
-            %td 
-              September 2008 &#45; September 2011 
-              %br/
-              (3 years 1 month)
-            %td 
-              June 2008 &#45; September 2008 
-              %br/
-              (4 months)	
-            %td 
-              August 2008 &#45; August 2008 
-              %br/
-              (1 month)	
-            %td 
-              February 2006 &#45; February 2007 
-              %br/
-              (1 year 1 month)	
-          %tr 
-            %td Freelancing for old clients in need of frontend adjustments to their existing sites.
-            %td As a member of the development team, I worked closely with the designers, backend programmers, and software engineers in producing custom sites and content management software.
-            %td In addition to being a photo shoot and set design assistant, I worked on image post-production editing, logo design, graphic design, web design and web development using Photoshop, HTML, CSS and Flash.
-            %td Designed and developed a housing site using HTML, CSS, Javascript, PHP and MySql. Created design templates and programmed both client and server sides.
-            %td Responsible for managing content and editing product images through Photoshop for the company website. Office tasks included proofreading and editing written content for web and printed brochure. Assisted in the production of custom wood furniture making.
+                  %tr
+                    %td 
+                      July 2012 &#45; Present 
+                    %td 
+                      September 2011 &#45; July 2012 
+                      %br/
+                      (9 months)
+                    %td 
+                      September 2008 &#45; September 2011 
+                      %br/
+                      (3 years 1 month)
+                    %td 
+                      June 2008 &#45; September 2008 
+                      %br/
+                      (4 months)	
+                    %td 
+                      August 2008 &#45; August 2008 
+                      %br/
+                      (1 month)	
+                    %td 
+                      February 2006 &#45; February 2007 
+                      %br/
+                      (1 year 1 month)	
+                  %tr 
+                    %td Lead frontend developer designing and implementing features for The Daily Muse, focusing primarily on their job board, The Company Muse.
+                    %td Freelancing for old clients in need of frontend adjustments to their existing sites.
+                    %td As a member of the development team, I worked closely with the designers, backend programmers, and software engineers in producing custom sites and content management software.
+                    %td In addition to being a photo shoot and set design assistant, I worked on image post-production editing, logo design, graphic design, web design and web development using Photoshop, HTML, CSS and Flash.
+                    %td Designed and developed a housing site using HTML, CSS, Javascript, PHP and MySql. Created design templates and programmed both client and server sides.
+                    %td Responsible for managing content and editing product images through Photoshop for the company website. Office tasks included proofreading and editing written content for web and printed brochure. Assisted in the production of custom wood furniture making.
+        
     .category
       %span additional information
       .clear

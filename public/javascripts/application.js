@@ -89,5 +89,22 @@ $(function(){
     }
   );
   
+  $('#next').click(function() {
+    $('.slide_tiles_container').animate({
+      left: '-=208',
+    }, 500, function() {
+      // Animation complete.
+    });
+    return false;
+  });
+  
+  $('#previous').click(function() {
+    $('.slide_tiles_container').animate({
+      left: '+=208',
+    }, 500, function() {
+      // Animation complete.
+    });
+    return false;
+  });
   
 });
