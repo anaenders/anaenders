@@ -93,7 +93,8 @@ $(function(){
     $('.slide_tiles_container').animate({
       left: '-=208',
     }, 500, function() {
-      // Animation complete.
+      $('.next_container').fadeOut("300");
+      $('.prev_container').fadeIn("300");
     });
     return false;
   });
@@ -102,7 +103,8 @@ $(function(){
     $('.slide_tiles_container').animate({
       left: '+=208',
     }, 500, function() {
-      // Animation complete.
+      $('.prev_container').fadeOut("300");
+      $('.next_container').fadeIn("300");
     });
     return false;
   });

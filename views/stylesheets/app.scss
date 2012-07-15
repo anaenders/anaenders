@@ -537,6 +537,7 @@ img { border: 0px }
           }
           .prev_container {
             @extend .next_container;
+            display: none;
             left: 0px;
             .previous { 
               @extend .next;
