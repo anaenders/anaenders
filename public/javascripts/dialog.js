@@ -6,6 +6,7 @@ var Dialog = function() {
   
   return {
     init: function() {
+      this.dialog_hackbright();
       this.dialog_tiffany();
       this.dialog_juicegeneration();
       this.dialog_wedding_site();
@@ -53,6 +54,26 @@ var Dialog = function() {
       this.dialog_cherry();
     },
     
+    dialog_hackbright: function() {   
+      $('#hackbright').dialog({
+        autoOpen: false,
+      	modal: true,
+      	resizable: false,
+      	width: 780,
+      	position:  [ 'center', 'center' ]
+      });
+      
+      $('#hackbright_opener').live('click', function() {
+    	  Dialog.open('#hackbright');
+        return false;
+    	});
+    	
+      $('#js-close-modal').live('click', function() {
+        Dialog.close('#hackbright');
+        return false;
+      });
+    },
+
     dialog_tiffany: function() {   
       $('#tiffany').dialog({
         autoOpen: false,

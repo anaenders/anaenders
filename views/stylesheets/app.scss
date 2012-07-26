@@ -96,46 +96,23 @@ $aqua: #59edd3;
 @mixin black_box {
   color: #fff; 
   background-color: #000; 
-  letter-spacing: 4px; 
+  letter-spacing: 3.5px; 
   padding: 8px 20px;
-  font-size: 10px;
+  font-size: 11px;
   z-index: 100;
   // -webkit-box-reflect: below 0px -webkit-gradient( linear, left top, left bottom, color-stop(0.0, rgba(255, 255, 255, 0.0)), color-stop(0.9, rgba(255,255,255,0.3)), color-stop(1.0, rgba(255, 255, 255, 0.7)));
 }
 
 @font-face {
-  font-family: Rockwell;
-  src: url('/fonts/Rockwell.ttf');
-  src: url('/fonts/Rockwell.eot'); /* IE9+ */
-  font-style: normal;     
-}
-
-@font-face {
-  font-family: BotonBQ;
-  src: url('/fonts/BotonBQ.ttf');
-  src: url('/fonts/BotonBQ.eot'); /* IE9+ */
-  font-style: normal;     
-}
-
-@font-face {
   font-family: Archer-Book;
   src: url('/fonts/Archer-Book-Pro.otf');
-  src: url('/fonts/Archer-Book-Pro.eot'); /* IE9+ */
   font-style: normal;     
 }
 
 @font-face {
-  font-family: TradeGothic;
+  font-family: Trade-Gothic;
   src: url('/fonts/TradeGothicLTStd-Cn18.otf');
-  src: url('/fonts/TradeGothicLTStd-Cn18.eot'); /* IE9+ */
   font-style: normal;     
-}
-
-@font-face {
-  font-family: 'TiffanyRegular';
-  src: url('/fonts/stertrom-webfont.eot');
-  src: url('/fonts/stertrom-webfont.ttf') format('truetype'), url('/fonts/stertrom-webfont.svg#webfontYd5lzfxa') format('svg');
-  font-style: normal;
 }
 
 ::selection { background-color:#fce7e7; }
@@ -313,7 +290,7 @@ img { border: 0px }
         float: left;
         font-weight: normal;
         padding: 10px 35px;
-        font-family: TradeGothic;
+        font-family: "Trade-Gothic", Helvetica;
       }
       p { 
         font-size: 12px; 
@@ -444,7 +421,7 @@ img { border: 0px }
       font-size: 24px;
       text-align: center;
       font-weight: normal;
-      font-family: "Archer-Book", BotonBQ, Rockwell, "TiffanyRegular", Helvetica, Serif;
+      font-family: "Archer-Book", Georgia, Serif;
     }
     summary {
       text-align: justify;
@@ -585,7 +562,7 @@ img { border: 0px }
         @extend .generic;  
         font-family: Georgia;
         margin-top: 25px;
-        th { font-family: "Archer-Medium", BotonBQ, Rockwell, "TiffanyRegular", Georgia, Serif; font-size: 15px; font-weight: normal }
+        th { font-family: "Archer-Book", Georgia, Serif; font-size: 15px; font-weight: normal }
         th, td { 
           line-height: 1.3em; 
           text-align: left; 
@@ -593,7 +570,7 @@ img { border: 0px }
           vertical-align: top; 
           padding: 0 15px 15px 0;
           &.date { 
-            font-family: "Archer-Medium", BotonBQ, Rockwell, "TiffanyRegular", Georgia, Serif;
+            font-family: "Archer-Book", Georgia, Serif;
             clear: both; 
             font-weight: normal;
             margin-top: 5px;
@@ -656,7 +633,7 @@ img { border: 0px }
       text-align: center;
       h4 { 
         text-transform: capitalize;
-        font-family: "Archer-Medium", BotonBQ, Rockwell, "TiffanyRegular", Georgia, Serif;
+        font-family: "Archer-Medium", Georgia, Serif;
         margin: 0px;
         font-size: 20px;
         padding: 30px 150px; 
