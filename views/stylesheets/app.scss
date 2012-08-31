@@ -167,8 +167,18 @@ img { border: 0px }
     width: 1283px;
     height: 110px;
     margin: 0 0 17px 0;
-    background: url('/images/header.jpg') #fff no-repeat 0px 0px;
-    img { float: left; margin: 34px 0 0 78px; }
+    background-color: rgba(255, 255, 255, 0.8);
+    .dots { position: absolute; top: 0px; left: 0px; width: 1283px; height: 110px; }
+    a { 
+      font-family: Georgia; 
+      font-size: 72px; 
+      font-style: italic; 
+      margin: 20px 0 0 86px; 
+      text-decoration: none; 
+      color: #f65f5f; 
+      float: left;
+      letter-spacing: -2px;
+    }
   }
   nav {
     z-index: 0;
@@ -185,14 +195,14 @@ img { border: 0px }
    .on {
       img {
        position: absolute;
-       left: 0px;
+       left: 10px;
        top: 0px;
       }
     }
     .off { 
       img {
         position: absolute;
-        left: 120px;
+        left: 110px;
         top: 0px; 
       }
     }
@@ -266,7 +276,7 @@ img { border: 0px }
       right: 10px;
       width: 31px;
       height: 22px;
-      z-index: 1000;
+      z-index: 5000;
       outline: 0px;
       background-color: #fff;
       border-radius:5px;

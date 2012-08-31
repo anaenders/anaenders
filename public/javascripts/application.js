@@ -7,10 +7,10 @@ $(function(){
   
   $(".off").hover(
     function () {
-      $(this).find('.btn').animate({"left": "-=120px"}, "slow");
+      $(this).find('.btn').animate({"left": "-=100px"}, 300);
     }, 
     function () {
-      $(this).find('.btn').animate({"left": "+=120px"}, "slow");
+      $(this).find('.btn').animate({"left": "+=100px"}, 200);
     }
   );
   
