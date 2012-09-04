@@ -37,8 +37,10 @@ $(function(){
   
   $('#slides').slides({
 		preload: true,
-		preloadImage: 'img/loading.gif',
-		play: 5000,
+		preloadImage: '/images/about/btns/loading.gif',
+		play: 3000,
+		pause: 100,
+		hoverPause: true,
 		effect: 'fade',
 		crossfade: true,
 		slideSpeed: 350,
