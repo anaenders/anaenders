@@ -106,13 +106,13 @@ $aqua: #59edd3;
 @font-face {
   font-family: Archer-Book;
   src: url('/fonts/Archer-Book-Pro.otf');
-  font-style: normal;     
+  src: local('Archer-Book'), url('/fonts/Archer-Book-Pro.otf') format('opentype'); 
 }
 
 @font-face {
   font-family: Trade-Gothic;
-  src: url('/fonts/TradeGothicLTStd-Cn18.otf');
-  font-style: normal;     
+  src: url("/fonts/TradeGothicLTStd-Cn18.otf");
+  src: local('Trade-Gothic'), url('/fonts/TradeGothicLTStd-Cn18.otf') format('opentype');
 }
 
 ::selection { background-color:#fce7e7; }
@@ -168,7 +168,6 @@ img { border: 0px }
     height: 110px;
     margin: 0 0 17px 0;
     background-color: rgba(255, 255, 255, 0.8);
-    .dots { position: absolute; top: 0px; left: 0px; width: 1283px; height: 110px; }
     a { 
       font-family: Georgia; 
       font-size: 72px; 
@@ -178,6 +177,16 @@ img { border: 0px }
       color: #f65f5f; 
       float: left;
       letter-spacing: -2px;
+      z-index: 9000;
+    }
+    .dots { 
+      position: absolute; 
+      top: 0px; 
+      left: 0px; 
+      width: 1283px; 
+      height: 110px; 
+      z-index: 1;
+      img { z-index: 1; }
     }
   }
   nav {
@@ -514,11 +523,9 @@ img { border: 0px }
           height: 332px;
           .next_container {
             z-index: 200;
-            background-color: #fff;
             width: 100px;
             height: 310px;
-            opacity: 0.6;
-            filter: alpha(opacity=60); /* For IE8 and earlier */
+            background-color: rgba(255, 255, 255, 0.8);
             position: absolute;
             top: 0px;
             right: 0px;
@@ -534,13 +541,16 @@ img { border: 0px }
                 text-indent: -9999;
                 border: 0px;
                 float: left;
-                background: url('/images/btns/next.png') no-repeat 0px 0px;
+                background-image: url('/images/btns/next.png');
+                background-repeat: no-repeat;
+                background-position: 0px 0px;
                 &:hover { background-position: 0px -22px; }
               }
             }
           }
           .prev_container {
             @extend .next_container;
+            background-color: rgba(255, 255, 255, 0.8);
             display: none;
             left: 0px;
             .previous { 
@@ -548,8 +558,7 @@ img { border: 0px }
               padding: 147px 0px 0 20px;
               float: left;
               a {
-                background: url('/images/btns/previous.png') no-repeat 0px 0px;
-                &:hover { background-position: 0px -22px; }
+                background-image: url('/images/btns/previous.png');
               }
             }
           }

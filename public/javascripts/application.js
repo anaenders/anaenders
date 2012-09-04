@@ -1,10 +1,9 @@
 function linkify(text) {
-    var exp = /(\b(https?|ftp|file):\/\/[-A-Z0-9+&@#\/%?=~_|!:,.;]*[-A-Z0-9+&@#\/%=~_|])/gi;
-    return text.replace(exp,"<a href='$1' target='_blank'>$1</a>"); 
+  var exp = /(\b(https?|ftp|file):\/\/[-A-Z0-9+&@#\/%?=~_|!:,.;]*[-A-Z0-9+&@#\/%=~_|])/gi;
+  return text.replace(exp,"<a href='$1' target='_blank'>$1</a>"); 
 }
 
-$(function(){
-  
+$(function () {
   $(".off").hover(
     function () {
       $(this).find('.btn').animate({"left": "-=100px"}, 300);
@@ -14,12 +13,12 @@ $(function(){
     }
   );
   
-  $('.alt').each(function() {
-    $(this).append('<div><img src = "/images/about/dots.jpg"/></div>')
+  $('.alt').each(function () {
+    $(this).append('<div><img src = "/images/about/dots.jpg"/></div>');
   });
   
-  $('.small-thumb').each(function() {
-    $(this).append('<div class = "grey-overlay"><img src = "/images/portfolio/grey_overlay.png"/></div>')
+  $('.small-thumb').each(function () {
+    $(this).append('<div class = "grey-overlay"><img src = "/images/portfolio/grey_overlay.png"/></div>');
   });
   
   $(".small-thumb").hover(
@@ -29,7 +28,7 @@ $(function(){
       });
     }, 
     function () {
-      $(this).find('.grey-overlay').fadeOut(200, function() {
+      $(this).find('.grey-overlay').fadeOut(200, function () {
         $(this).hide();
       });
     }
@@ -37,7 +36,7 @@ $(function(){
   
   $('#slides').slides({
 		preload: true,
-		preloadImage: '/images/about/btns/loading.gif',
+		preloadImage: '../images/about/btns/loading.gif',
 		play: 3000,
 		pause: 100,
 		hoverPause: true,
@@ -47,9 +46,9 @@ $(function(){
 		fadeSpeed: 500
 	});
   
-  $('.category').each(function() {
+  $('.category').each(function () {
     var cat = $(this);
-    cat.find("span").click(function() {
+    cat.find("span").click(function () {
       cat.find('.category-container').slideToggle("slow");
     });
   });
@@ -60,9 +59,9 @@ $(function(){
     $.getJSON(
       'http://api.twitter.com/1/statuses/user_timeline.json?callback=?',
       { screen_name: 'anaenders', count: 15 },
-      function(data) {
+      function (data) {
         $('.twitter-feed').html('');
-        _(data).each(function(tweet) {
+        _(data).each(function (tweet) {
           $('.twitter-feed').append(tweetTemplate({
             text: linkify(tweet.text),
             time: Date.create(tweet.created_at).relative(),
@@ -74,37 +73,37 @@ $(function(){
   }
   
   $('figure div').hover(
-    function() {
+    function () {
       $(this).siblings('label').addClass('on');
     },
-    function() {
+    function () {
       $(this).siblings('label').removeClass('on');
     }
   );
   
   $('figure label').hover(
-    function() {
+    function () {
       $(this).siblings('div').addClass('on');
     },
-    function() {
+    function () {
       $(this).siblings('div').removeClass('on');
     }
   );
   
-  $('#next').click(function() {
+  $('#next').click(function () {
     $('.slide_tiles_container').animate({
       left: '-=208',
-    }, 500, function() {
+    }, 500, function () {
       $('.next_container').fadeOut("300");
       $('.prev_container').fadeIn("300");
     });
     return false;
   });
   
-  $('#previous').click(function() {
+  $('#previous').click(function () {
     $('.slide_tiles_container').animate({
       left: '+=208',
-    }, 500, function() {
+    }, 500, function () {
       $('.prev_container').fadeOut("300");
       $('.next_container').fadeIn("300");
     });
