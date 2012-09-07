@@ -177,7 +177,6 @@ img { border: 0px }
       color: #f65f5f; 
       float: left;
       letter-spacing: -2px;
-      z-index: 9000;
     }
     .dots { 
       position: absolute; 
@@ -186,7 +185,7 @@ img { border: 0px }
       width: 1283px; 
       height: 110px; 
       z-index: 1;
-      img { z-index: 1; }
+      background: url('/images/header.png') no-repeat 0px 0px; 
     }
   }
   nav {
