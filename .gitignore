@@ -3,3 +3,4 @@
 .rvmrc
 .sass-cache/*
 static/*
+s3.yml

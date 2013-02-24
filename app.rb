@@ -1,12 +1,4 @@
-require 'sinatra'
-require 'haml'
-require 'sass'
 require 'yaml'
-require 'builder'
-
-require 'rack/test'
-require "sinatra/advanced_routes"
-require 'sinatra_static'
 
 class AnaEnders < Sinatra::Base  
   register Sinatra::AdvancedRoutes
@@ -50,12 +42,3 @@ class AnaEnders < Sinatra::Base
     haml :blog
   end
 end
-
-static_dir = File.join(File.dirname(__FILE__), 'static')
-
-FileUtils.rm_rf(static_dir)
-FileUtils.mkdir_p(static_dir)
-SinatraStatic.new(AnaEnders).build!(static_dir)
-FileUtils.cp_r(Dir.glob(File.join(File.dirname(__FILE__), 'public') + '/*'), static_dir)
-
-AnaEnders.run!
