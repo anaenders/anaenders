@@ -1,6 +1,7 @@
 source 'https://rubygems.org'
 
 gem 'sinatra', :require => 'sinatra/base'
+gem 'coffee-script'
 
 gem 'rack-test', :require => 'rack/test'
 gem 'sinatra-advanced-routes', :require => 'sinatra/advanced_routes'

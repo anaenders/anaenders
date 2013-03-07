@@ -6,6 +6,14 @@ class AnaEnders < Sinatra::Base
   BLOGS = YAML.load(File.open('config/blogs.yml'))
   LAST_BLOG = BLOGS.last
 
+  get '/javascripts/application.js' do
+    coffee :'javascripts/application'
+  end
+  
+  get '/javascripts/dialog.js' do
+    coffee :'javascripts/dialog'
+  end
+
   get '/' do
     haml :index
   end
@@ -14,8 +22,8 @@ class AnaEnders < Sinatra::Base
     scss :'stylesheets/app'
   end
 
-  get '/about' do
-    haml :about
+  get '/portfolio' do
+    haml :portfolio
   end
 
   get '/blog' do
