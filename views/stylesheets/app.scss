@@ -160,6 +160,7 @@ body {
   font-family: Helvetica, "Helvetica Neue","Sans-serif";
   color: 000;
   font-size: 12px;
+  min-width: 1203px;
 }
 
 .generic { float: left; width: 100% }
@@ -188,17 +189,17 @@ img { border: 0px }
   height: 0px; 
 }
 
-.wrapper { float: left; width: 1203px; margin-left: 80px; }
+.wrapper { float: left; width: 1203px; margin: 0px; }
 
 .content {
-  width: 1283px;
+  width: 1203px;
   margin: 0px auto;
   padding: 0px;
   header {
     @extend .generic; 
     z-index: 600;
     position: fixed;
-    width: 1283px;
+    width: 1203px;
     height: 110px;
     margin: 0 0 17px 0;
     background-color: rgba(255, 255, 255, 0.8);
@@ -206,7 +207,7 @@ img { border: 0px }
       font-family: Georgia; 
       font-size: 72px; 
       font-style: italic; 
-      margin: 20px 0 0 86px; 
+      margin: 20px 0 0 163px; 
       text-decoration: none; 
       color: #f65f5f; 
       float: left;
@@ -216,7 +217,7 @@ img { border: 0px }
       position: absolute; 
       top: 0px; 
       left: 0px; 
-      width: 1283px; 
+      width: 1203px; 
       height: 110px; 
       z-index: 1;
       background: url('/images/header.png') no-repeat 0px 0px; 
@@ -237,7 +238,7 @@ img { border: 0px }
    .on {
       img {
        position: absolute;
-       left: 10px;
+       left: 0px;
        top: 0px;
       }
     }
@@ -705,7 +706,7 @@ img { border: 0px }
       text-align: center;
       h4 { 
         text-transform: capitalize;
-        font-family: "Archer-Medium", Georgia, Serif;
+        font-family: "Archer-Book", Georgia, Serif;
         margin: 0px;
         font-size: 20px;
         padding: 30px 150px; 

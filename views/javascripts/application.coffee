@@ -5,9 +5,9 @@ linkify = (text) ->
 $ -> 
   $(".off").hover(
     -> 
-      $(this).find('.btn').animate "left": "-=100px", 300
+      $(this).find('.btn').animate "left": "-=110px", 300
     , -> 
-      $(this).find('.btn').animate "left": "+=100px", 200
+      $(this).find('.btn').animate "left": "+=110px", 200
   )
   
   
