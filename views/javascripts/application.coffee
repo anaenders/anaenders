@@ -16,8 +16,8 @@ $ ->
   $('.small-thumb').each -> $(this).append '<div class = "grey-overlay"><img src = "/images/portfolio/grey_overlay.png"/></div>'
   
   $(".small-thumb").hover(
-    (-> $(this).find('.grey-overlay').fadeIn 200, -> $(this).show()),
-    (-> $(this).find('.grey-overlay').fadeOut 200, -> $(this).hide())
+    (-> $(this).find('.grey-overlay').fadeIn 100, -> $(this).show()),
+    (-> $(this).find('.grey-overlay').fadeOut 100, -> $(this).hide())
   )
   
   $('#slides').slides(

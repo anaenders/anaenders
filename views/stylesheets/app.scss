@@ -418,7 +418,7 @@ img { border: 0px }
     width: 500px;
     font-size: 13px;
     float: left;
-    padding: 0 10px 10px 0;
+    padding: 0 20px 10px 0;
     p {
       span {
         float: left;
@@ -436,10 +436,10 @@ img { border: 0px }
   }
   .twitter-feed {
     @include bring_to_front;
-    width: 530px;
-    height: 368px;
+    width: 520px;
+    height: 373px;
     float: left;  
-    overflow-y: scroll;
+    overflow-y: none;
     .tweet {
       margin: 0px;
       padding: 15px 0 15px 40px;
