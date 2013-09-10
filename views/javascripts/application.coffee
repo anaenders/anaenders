@@ -24,8 +24,7 @@ $ ->
     preload: true
     preloadImage: '../images/about/btns/loading.gif'
     play: 3000
-    pause: 100
-    hoverPause: true
+    hoverPause: false
     effect: 'fade'
     crossfade: true
     slideSpeed: 350
@@ -35,23 +34,7 @@ $ ->
   $('.category').each ->
     cat = $(this)
     cat.find("span").click -> cat.find('.category-container').slideToggle "slow"
-  
-  
-  if $('.twitter-feed').size() > 0
-    tweetTemplate = _.template $('#tweet-template').html()
-    $('.twitter-feed').html ''
-    $.getJSON 'http://api.twitter.com/1/statuses/user_timeline.json?callback=?',
-      { screen_name: 'anaenders', count: 15 },
-      (data) ->
-        $('.twitter-feed').html ''
-        _(data).each (tweet) ->
-          $('.twitter-feed').append tweetTemplate(
-            text: linkify(tweet.text)
-            time: Date.create(tweet.created_at).relative()
-            from: tweet.source
-          )
-  
-  
+    
   $('figure div').hover(
     -> $(this).siblings('label').addClass 'on',
     -> $(this).siblings('label').removeClass 'on'
