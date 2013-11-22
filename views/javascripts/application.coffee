@@ -23,12 +23,12 @@ $ ->
   $('#slides').slides(
     preload: true
     preloadImage: '../images/about/btns/loading.gif'
-    play: 3000
+    play: 5000
     hoverPause: false
     effect: 'fade'
     crossfade: true
-    slideSpeed: 350
-    fadeSpeed: 500
+    slideSpeed: 900
+    fadeSpeed: 1000
   )
   
   $('.category').each ->

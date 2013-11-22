@@ -211,7 +211,7 @@ img { border: 0px }
       text-decoration: none; 
       color: #f65f5f; 
       float: left;
-      letter-spacing: -2px;
+      letter-spacing: -4px;
     }
     .dots { 
       position: absolute; 
@@ -328,30 +328,30 @@ img { border: 0px }
     }
     img { float: left }
     .project-description {
-      background-color: #fff;
-      margin: 0 0 15px 0;
+      padding: 0 0 15px 0;
+      background-color: #f1f1f1;
+      font-family: 'ProximaLight';
       float: left;
       width: 100%;
-      font-family: 'ProximaLight';
       opacity: 0.8;
       filter: alpha(opacity=80); /* For IE8 and earlier */
       span { 
-        color: #fff; 
+        color: #fff;
+        font-family: "Trade-Gothic", Helvetica; 
+        background-color: #000;
         text-transform: capitalize;
-        background: #000; 
         font-size: 17px; 
-        float: left;
+        display: block;
         font-weight: normal;
-        padding: 10px 35px;
-        font-family: "Trade-Gothic", Helvetica;
+        padding: 12px 15px 10px 15px;
+        margin-bottom: 15px;
       }
       p { 
-        font-size: 14px; 
+        font-size: 15px; 
         clear: both; 
         display: block;
-        margin: 15px 0 0 0; 
+        padding: 15px; 
         float: left; 
-        padding: 0px;
         color: #000;
         line-height: 1.6em;
         // @include columns(2, 10px);
@@ -364,6 +364,23 @@ img { border: 0px }
     }
   }
 }
+
+body {
+  .ui-dialog {
+    &.ui-corner-all {
+      border-radius: 0px !important;
+    }
+  }
+  .ui-widget-content {
+    border: 0px !important;
+    .dialog-content {
+      &.ui-dialog-content {
+        padding: 0px !important;
+      }
+    }
+  }
+}
+
 
 /***********************about***********************/
 .about {
