@@ -252,6 +252,26 @@ img { border: 0px }
   }
 }
 
+.scroll {
+  position: fixed;
+  right: 40px;
+  bottom: 100px;
+  z-index: 1000;
+  background-color: rgba(0,0,0,.80);
+  font-family: Georgia;
+  font-weight: bold;
+  font-style: italic;
+  color: #fff;
+  font-size: 11px;
+  padding: 8px 10px 10px 10px;
+  cursor: pointer;
+  line-height: 1.2em;
+  width: 60px;
+  text-align: center;
+  display: none;
+  &:hover { color: #ddd; }
+}
+
 /***********************portfolio***********************/
 .portfolio {
   @include main_container;

@@ -10,7 +10,6 @@ $ ->
       $(this).find('.btn').animate "left": "+=110px", 200
   )
   
-  
   $('.alt').each -> $(this).append '<div><img src = "/images/about/dots.jpg"/></div>'
   
   $('.small-thumb').each -> $(this).append '<div class = "grey-overlay"><img src = "/images/portfolio/grey_overlay.png"/></div>'
@@ -46,16 +45,35 @@ $ ->
     -> $(this).siblings('div').removeClass 'on'
   )
   
-  
   $('#next').click ->
-      $('.slide_tiles_container').animate { left: '-=208', }, 500, -> 
-        $('.next_container').fadeOut "300"
-        $('.prev_container').fadeIn "300"
-      false
-  
+    $('.slide_tiles_container').animate { left: '-=208', }, 500, -> 
+      $('.next_container').fadeOut "300"
+      $('.prev_container').fadeIn "300"
+    false
   
   $('#previous').click -> 
-      $('.slide_tiles_container').animate { left: '+=208' }, 500, -> 
-        $('.prev_container').fadeOut "300"
-        $('.next_container').fadeIn "300"
-      false
+    $('.slide_tiles_container').animate { left: '+=208' }, 500, -> 
+      $('.prev_container').fadeOut "300"
+      $('.next_container').fadeIn "300"
+    false
+
+  # Scroll button
+
+  triggerHeight = 100
+  win = $(window).height()
+
+  $(window).on("scroll resize", () ->
+    top = $(window).scrollTop()
+    resized = $(window).height()
+    diff = 0
+
+    if top > triggerHeight            
+      $(".scroll").fadeIn("slow")
+    else
+      $(".scroll").hide()
+  )
+
+  $(".scroll").on("click", () ->
+    $(document).find("html,body").animate({ "scrollTop" : "0" }, "slow")
+  )
+    

@@ -5,45 +5,37 @@ GEM
       builder
       mime-types
       xml-simple
-    backports (2.8.2)
-    builder (3.0.0)
+    builder (3.2.2)
     coffee-script (2.2.0)
       coffee-script-source
       execjs
-    coffee-script-source (1.5.0)
-    execjs (1.4.0)
-      multi_json (~> 1.0)
-    haml (4.0.0)
+    coffee-script-source (1.6.3)
+    execjs (2.0.2)
+    haml (4.0.4)
       tilt
-    mime-types (1.21)
-    monkey-lib (0.5.4)
-      backports
-    multi_json (1.6.1)
+    mime-types (2.0)
     rack (1.5.2)
-    rack-protection (1.3.2)
+    rack-protection (1.5.1)
       rack
     rack-test (0.6.2)
       rack (>= 1.0)
-    sass (3.2.6)
-    sinatra (1.3.4)
+    sass (3.2.12)
+    sinatra (1.4.4)
       rack (~> 1.4)
-      rack-protection (~> 1.3)
-      tilt (~> 1.3, >= 1.3.3)
-    sinatra-advanced-routes (0.5.2)
-      monkey-lib (~> 0.5.0)
+      rack-protection (~> 1.4)
+      tilt (~> 1.3, >= 1.3.4)
+    sinatra-advanced-routes (0.5.3)
       sinatra (~> 1.0)
-      sinatra-sugar (~> 0.5.0)
     sinatra-static (0.1.1)
       rack
       rack-test
       sinatra
       sinatra-advanced-routes
       term-ansicolor
-    sinatra-sugar (0.5.1)
-      monkey-lib (~> 0.5.0)
-      sinatra (~> 1.0)
-    term-ansicolor (1.0.7)
-    tilt (1.3.3)
+    term-ansicolor (1.2.2)
+      tins (~> 0.8)
+    tilt (1.4.1)
+    tins (0.13.1)
     xml-simple (1.1.2)
 
 PLATFORMS
