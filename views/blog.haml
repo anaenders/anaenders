@@ -8,17 +8,6 @@
     fjs.parentNode.insertBefore(js, fjs);
   }(document, 'script', 'facebook-jssdk'));
 
-%nav
-  .off
-    %a(href="/")
-      %img.btn(src="/images/navigation/about.jpg" alt="about")/
-  .off
-    %a(href="/portfolio")
-      %img.btn(src="/images/navigation/portfolio.jpg" alt="portfolio")/
-  .on
-    %a(href="/blog")
-      %img.btn(src="/images/navigation/blog.jpg" alt="blog")/
-
 .blog
   .post
     .title-date= @blog['date']

@@ -18,11 +18,11 @@ $aqua: #59edd3;
 }
 
 @mixin main_container {
-  float: left;
   width: 1040px;
-  margin: 127px 0 30px 163px;
+  margin: 0 auto;
   z-index: 400;
-  background-color: #fff
+  background-color: #fff;
+  padding: 80px 0 30px 0;
 }
 
 @mixin bring_to_front {
@@ -160,7 +160,7 @@ body {
   font-family: Helvetica, "Helvetica Neue","Sans-serif";
   color: 000;
   font-size: 12px;
-  min-width: 1203px;
+  min-width: 320px;
 }
 
 .generic { float: left; width: 100% }
@@ -189,64 +189,69 @@ img { border: 0px }
   height: 0px; 
 }
 
-.wrapper { float: left; width: 1203px; margin: 0px; }
+.full-width { 
+  width: 100%; 
+}
 
 .content {
-  width: 1203px;
-  margin: 0px auto;
+  width: 100%;
   padding: 0px;
   header {
     @extend .generic; 
     z-index: 600;
     position: fixed;
-    width: 1203px;
-    height: 110px;
-    margin: 0 0 17px 0;
+    width: 100%px;
+    height: 80px;
+    margin: 0;
     background-color: rgba(255, 255, 255, 0.8);
     a { 
       font-family: Georgia; 
-      font-size: 72px; 
+      font-size: 60px; 
       font-style: italic; 
-      margin: 20px 0 0 163px; 
       text-decoration: none; 
       color: #f65f5f; 
       float: left;
       letter-spacing: -4px;
     }
+    .logo {
+      position: absolute;
+      top: 10px;
+      left: 10px;
+    }
     .dots { 
-      position: absolute; 
+      position: relative; 
       top: 0px; 
       left: 0px; 
-      width: 1203px; 
-      height: 110px; 
+      width: 1040px; 
+      height: 80px; 
       z-index: 1;
-      background: url('/images/header.png') no-repeat 0px 0px; 
-    }
-  }
-  nav {
-    z-index: 0;
-    float: left;
-    position: fixed;
-    margin-top: 127px;
-    width: 163px;
-    overflow: hidden;
-    div {
-      @extend .generic; 
-      height: 34px;
-      position: relative;
-    }
-   .on {
-      img {
-       position: absolute;
-       left: 0px;
-       top: 0px;
-      }
-    }
-    .off { 
-      img {
+      margin: 0 auto;
+      background: url('/images/header-new.png') no-repeat 0px 0px; 
+      nav {
+        z-index: 2;
         position: absolute;
-        left: 110px;
-        top: 0px; 
+        width: 600px;
+        height: 80px;
+        overflow: hidden;
+        bottom: 8px;
+        right: 0px;
+        a {
+          @extend .generic; 
+          height: 80px;
+          position: relative;
+          float: right; 
+          width: 75px;
+          img {
+            position: absolute;
+            left: 0px;
+          }
+          &.on {
+            img { bottom: -8px; }
+          }
+          &.off { 
+            img { bottom: -32px; }
+          }
+        }
       }
     }
   }
@@ -401,56 +406,42 @@ body {
   }
 }
 
-
 /***********************about***********************/
+
+.slideshow {
+  @include bring_to_front;
+  position: relative;
+  z-index: 0;
+  width: 100%;
+  padding: 80px 0 0 0;
+  margin-bottom: 30px;
+  max-height: 351px;
+  overflow: hidden;
+  text-align: center;
+  img {
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    height: 100%;
+    width: 100%;
+    z-index: 0;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    background-repeat: no-repeat;
+  }
+
+  .slidesjs-navigation {
+    display: inline-block;
+    text-align: center;
+    margin: 20px 10px;
+  }
+}
+
 .about {
   @include main_container;
-  .slideshow {
-    @include bring_to_front;
-    @extend .generic; 
-    position: relative;
-    z-index: 0;
-    height: 420px;
-
-    #slides {
-      position: absolute;
-      top: 0px;
-      left: 0px;
-      z-index: 100;
-      .slides_container {
-        display: none;
-        overflow: hidden;
-        position: relative;
-        width: 1040px;
-        div {
-        	width:1040px;
-        	height:351px;
-        	display:block;
-        	img { display:block; }
-        }
-      }
-      .pagination {
-      	margin:20px auto 0;
-      	width:290px;
-      	li {
-        	float:left;
-        	margin:0 1px;
-        	list-style:none;
-        	&.current a { background-position:0 -12px; }
-        	a {
-          	display:block;
-          	width:12px;
-          	height:0;
-          	padding-top:12px;
-          	background-image:url('/images/about/btns/pagination.png');
-          	background-position:0 0;
-          	float:left;
-          	overflow:hidden;
-          }
-        }
-      }
-    }
-  }
+  padding-top: 0px;
   .casual-intro {
     @include bring_to_front;
     width: 620px;

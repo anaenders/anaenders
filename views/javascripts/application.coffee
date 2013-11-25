@@ -5,9 +5,9 @@ linkify = (text) ->
 $ -> 
   $(".off").hover(
     -> 
-      $(this).find('.btn').animate "left": "-=110px", 300
+      $(this).find('.btn').animate "bottom": "+=32px", 300
     , -> 
-      $(this).find('.btn').animate "left": "+=110px", 200
+      $(this).find('.btn').animate "bottom": "-=32px", 200
   )
   
   $('.alt').each -> $(this).append '<div><img src = "/images/about/dots.jpg"/></div>'
@@ -18,16 +18,21 @@ $ ->
     (-> $(this).find('.grey-overlay').fadeIn 100, -> $(this).show()),
     (-> $(this).find('.grey-overlay').fadeOut 100, -> $(this).hide())
   )
+
+  # Home page slideshow
   
-  $('#slides').slides(
-    preload: true
-    preloadImage: '../images/about/btns/loading.gif'
-    play: 5000
-    hoverPause: false
-    effect: 'fade'
-    crossfade: true
-    slideSpeed: 900
-    fadeSpeed: 1000
+  $('.slideshow').slidesjs(
+    height: 351
+    width: 1040
+    pagination: false
+    play: {
+      active: true
+      effect: "fade"
+      interval: 7000
+      auto: true
+      swap: true
+      pauseOnHover: false
+    }
   )
   
   $('.category').each ->

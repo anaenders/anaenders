@@ -16,7 +16,7 @@
     %script(src="/javascripts/sugar-1.2.4.min.js" type="text/javascript")
     %script(src="/javascripts/application.js" type="text/javascript")
     %script(src="/javascripts/dialog.js" type="text/javascript")
-    %script(src="/javascripts/slides.min.jquery.js" type="text/javascript")
+    %script(src="/javascripts/jquery.slides.min.js" type="text/javascript")
     
     / [if lt IE 9]
       %script(src="/javascripts/html5shiv.js" type="text/javascript")/
@@ -42,11 +42,20 @@
     
   %body
     .content
-      %header           
+      %header  
+        .logo 
+          %img(src="/images/logo.png")/   
         .dots
+          %nav
+            %a.on(href="/")
+              %img.btn(src="/images/navigation/about.jpg" alt="about")/
+            %a.off(href="/portfolio")
+              %img.btn(src="/images/navigation/portfolio.jpg" alt="portfolio")/
+            %a.off(href="/blog")
+              %img.btn(src="/images/navigation/blog.jpg" alt="blog")/  
           %a(href="/")
             ana enders
-      .wrapper
+      .full-width
         = yield
         .scroll
           &#94;
