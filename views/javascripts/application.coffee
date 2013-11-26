@@ -21,20 +21,6 @@ $ ->
 
   # Home page slideshow
   
-  $('.slideshow').slidesjs(
-    height: 351
-    width: 1040
-    pagination: false
-    play: {
-      active: true
-      effect: "fade"
-      interval: 7000
-      auto: true
-      swap: true
-      pauseOnHover: false
-    }
-  )
-  
   $('.category').each ->
     cat = $(this)
     cat.find("span").click -> cat.find('.category-container').slideToggle "slow"

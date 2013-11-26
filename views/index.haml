@@ -1,23 +1,94 @@
+:javascript
+  $(function() {
+    $(document).ready(function() {
+      
+      setTimeout(function(){mySlideshow ()}, 3000);
+
+      function mySlideshow () {
+        $(".slide19").fadeOut(3000);
+        $(".slide1").fadeIn(3000, function() {
+          $(".slide2").fadeIn(3000, function() {
+            $(".slide1").hide();
+            $(".slide3").fadeIn(3000, function() {
+              $(".slide2").hide();
+              $(".slide4").fadeIn(3000, function() {
+                $(".slide3").hide();
+                $(".slide5").fadeIn(3000, function() {
+                  $(".slide4").hide();
+                  $(".slide6").fadeIn(3000, function() {
+                    $(".slide5").hide();
+                    $(".slide7").fadeIn(3000, function() {
+                      $(".slide6").hide();
+                      $(".slide8").fadeIn(3000, function() {
+                        $(".slide7").hide();
+                        $(".slide9").fadeIn(3000, function() {
+                          $(".slide8").hide();
+                          $(".slide10").fadeIn(3000, function() {
+                            $(".slide9").hide();
+                            $(".slide11").fadeIn(3000, function() {
+                              $(".slide10").hide();
+                              $(".slide12").fadeIn(3000, function() {
+                                $(".slide11").hide();
+                                $(".slide13").fadeIn(3000, function() {
+                                  $(".slide12").hide();
+                                  $(".slide14").fadeIn(3000, function() {
+                                    $(".slide13").hide();
+                                    $(".slide15").fadeIn(3000, function() {
+                                      $(".slide14").hide();
+                                      $(".slide16").fadeIn(3000, function() {
+                                        $(".slide15").hide();
+                                        $(".slide17").fadeIn(3000, function() {
+                                          $(".slide16").hide();
+                                          $(".slide18").fadeIn(3000, function() {
+                                            $(".slide17").hide();
+                                            $(".slide19").fadeIn(3000, function() {
+                                              $(".slide18").hide();
+                                              setTimeout(function(){mySlideshow ()}, 0);
+                                            }); 
+                                          });  
+                                        });
+                                      });
+                                    });
+                                  });
+                                });
+                              });
+                            });
+                          });
+                        });
+                      });  
+                    });
+                  });
+                });
+              });
+            });
+          });
+        });        
+      } 
+
+    });
+  });
+
 .slideshow
-  %img(src="/images/about/slide1.jpg")/
-  %img(src="/images/about/slide2.jpg")/
-  %img(src="/images/about/slide3.jpg")/
-  %img(src="/images/about/slide4.jpg")/
-  %img(src="/images/about/slide5.jpg")/
-  %img(src="/images/about/slide6.jpg")/
-  %img(src="/images/about/slide7.jpg")/
-  %img(src="/images/about/slide8.jpg")/
-  %img(src="/images/about/slide9.jpg")/
-  %img(src="/images/about/slide10.jpg")/
-  %img(src="/images/about/slide11.jpg")/
-  %img(src="/images/about/slide12.jpg")/
-  %img(src="/images/about/slide13.jpg")/
-  %img(src="/images/about/slide14.jpg")/
-  %img(src="/images/about/slide15.jpg")/
-  %img(src="/images/about/slide16.jpg")/
-  %img(src="/images/about/slide17.jpg")/
-  %img(src="/images/about/slide18.jpg")/
-  %img(src="/images/about/slide19.jpg")/
+  %ul
+    %li.slide1
+    %li.slide2
+    %li.slide3
+    %li.slide4
+    %li.slide5
+    %li.slide6
+    %li.slide7
+    %li.slide8
+    %li.slide9
+    %li.slide10
+    %li.slide11
+    %li.slide12
+    %li.slide13
+    %li.slide14
+    %li.slide15
+    %li.slide16
+    %li.slide17
+    %li.slide18
+    %li.slide19
 
 .about
   .casual-intro

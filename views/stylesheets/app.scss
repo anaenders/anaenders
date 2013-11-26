@@ -409,33 +409,50 @@ body {
 /***********************about***********************/
 
 .slideshow {
-  @include bring_to_front;
   position: relative;
   z-index: 0;
   width: 100%;
+  height: 351px;
   padding: 80px 0 0 0;
   margin-bottom: 30px;
-  max-height: 351px;
-  overflow: hidden;
-  text-align: center;
-  img {
-    position: absolute;
-    top: 0px;
-    left: 0px;
-    height: 100%;
+  ul {
+    overflow: hidden;
     width: 100%;
-    z-index: 0;
-    -webkit-background-size: cover;
-    -moz-background-size: cover;
-    -o-background-size: cover;
-    background-size: cover;
-    background-repeat: no-repeat;
-  }
-
-  .slidesjs-navigation {
-    display: inline-block;
-    text-align: center;
-    margin: 20px 10px;
+    height: 351px;
+    list-style-type: none;
+    margin: 0px;
+    padding: 0px;
+    li {
+      display: none;
+      -webkit-background-size: cover;
+      -moz-background-size: cover;
+      -o-background-size: cover;
+      background-size: cover;
+      height: 100%;
+      width: 100%;
+      height: 351px;
+      position: absolute;
+      background-repeat: no-repeat;
+      &.slide1 { background-image: url("/images/about/slide1.jpg"); }
+      &.slide2 { background-image: url("/images/about/slide2.jpg"); }
+      &.slide3 { background-image: url("/images/about/slide3.jpg"); }
+      &.slide4 { background-image: url("/images/about/slide4.jpg"); }
+      &.slide5 { background-image: url("/images/about/slide5.jpg"); }
+      &.slide6 { background-image: url("/images/about/slide6.jpg"); }
+      &.slide7 { background-image: url("/images/about/slide7.jpg"); }
+      &.slide8 { background-image: url("/images/about/slide8.jpg"); }
+      &.slide9 { background-image: url("/images/about/slide9.jpg"); }
+      &.slide10 { background-image: url("/images/about/slide10.jpg"); }
+      &.slide11 { background-image: url("/images/about/slide11.jpg"); }
+      &.slide12 { background-image: url("/images/about/slide12.jpg"); }
+      &.slide13 { background-image: url("/images/about/slide13.jpg"); }
+      &.slide14 { background-image: url("/images/about/slide14.jpg"); }
+      &.slide15 { background-image: url("/images/about/slide15.jpg"); }
+      &.slide16 { background-image: url("/images/about/slide16.jpg"); }
+      &.slide17 { background-image: url("/images/about/slide17.jpg"); }
+      &.slide18 { background-image: url("/images/about/slide18.jpg"); }
+      &.slide19 { background-image: url("/images/about/slide19.jpg"); }
+    }
   }
 }
 
