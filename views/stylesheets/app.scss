@@ -1,4 +1,5 @@
 /***********************variables***********************/
+
 $grey: #d7d7d7;
 $dark-grey: #4c4c4c;
 $almost-black: #454343;
@@ -8,6 +9,7 @@ $neon-green: #dcf74a;
 $aqua: #59edd3;
 
 /***********************mixins***********************/
+
 @mixin button($image) {
 	height: 58px;
 	width: 58px; 
@@ -153,6 +155,7 @@ $aqua: #59edd3;
 ::-moz-selection { background-color:#fce7e7; }
 
 /***********************anaenders***********************/
+
 body {
   margin: 0px;
   padding: 0px;
@@ -278,11 +281,15 @@ img { border: 0px }
 }
 
 /***********************portfolio***********************/
+
 .portfolio {
   @include main_container;
   @include bring_to_front;
   .web {
     .small-thumb { @include thumb-container(340px, 100px); }
+    &.professional {
+      margin-top: -8px;
+    }
     &.professional, &.personal { 
       @include frame($almost-black); 
       .section_label { 
@@ -725,6 +732,7 @@ body {
 }
 
 /***********************blog***********************/
+
 .blog {
   @include main_container;
   @include bring_to_front;
@@ -776,8 +784,16 @@ body {
   .pagination {
     @extend .generic; 
     margin: 0 0 20px 0;
-    .prev { width: 50%; float: left; text-align: left }
-    .next { width: 50%; float: right; text-align: right }
+    .prev { 
+      width: 50%; 
+      float: left; 
+      text-align: left;
+    }
+    .next { 
+      width: 50%; 
+      float: right; 
+      text-align: right;
+    }
   }
 } 
 
@@ -801,6 +817,21 @@ body {
         font-style: italic; 
         display: block; 
         padding-top: 6px 
+      }
+    }
+  }
+}
+
+/***********************responsive***********************/
+
+body {
+  // Medium devices i.e. Small Desktop (< 1200px)
+  @media (max-width: 1199px) {
+    .content {
+      header {
+        .logo {
+          display: none;
+        }
       }
     }
   }
