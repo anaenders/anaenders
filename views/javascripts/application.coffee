@@ -2,12 +2,20 @@ linkify = (text) ->
   exp = /(\b(https?|ftp|file):\/\/[-A-Z0-9+&@#\/%?=~_|!:,.;]*[-A-Z0-9+&@#\/%=~_|])/gi
   text.replace(exp,"<a href='$1' target='_blank'>$1</a>")
 
-$ -> 
+$ ->
+  $('nav a').each ->
+    if window.location.href.match $(@).attr('href') + "$"
+      $(@).addClass 'on'
+    else
+      $(@).addClass 'off'
+
+
+
   $(".off").hover(
     -> 
-      $(this).find('.btn').animate "bottom": "+=32px", 300
+      $(this).find('.btn').animate "bottom": "+=24px", 300
     , -> 
-      $(this).find('.btn').animate "bottom": "-=32px", 200
+      $(this).find('.btn').animate "bottom": "-=24px", 200
   )
   
   $('.alt').each -> $(this).append '<div><img src = "/images/about/dots.jpg"/></div>'
@@ -20,6 +28,24 @@ $ ->
   )
 
   # Home page slideshow
+  mySlideshow = (currentSlide) ->
+
+    prevSlide = currentSlide - 1
+    nextSlide = currentSlide + 1
+      
+    if prevSlide == 0
+      prevSlide = 19
+
+    if nextSlide == 20
+      nextSlide = 1
+
+    $(".slide" + currentSlide).fadeIn(3000)
+    $(".slide" + prevSlide).fadeOut(3000)
+
+    setTimeout((-> mySlideshow(nextSlide)), 3000)
+
+  mySlideshow(1)
+
   
   $('.category').each ->
     cat = $(this)
