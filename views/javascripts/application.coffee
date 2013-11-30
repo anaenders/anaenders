@@ -8,23 +8,14 @@ $ ->
       $(@).addClass 'on'
     else
       $(@).addClass 'off'
-
-
-
-  $(".off").hover(
-    -> 
-      $(this).find('.nav-btn').animate "bottom": "+=24px", 300
-    , -> 
-      $(this).find('.nav-btn').animate "bottom": "-=24px", 200
-  )
   
   $('.alt').each -> $(this).append '<div><img src = "/images/about/dots.jpg"/></div>'
   
-  $('.small-thumb').each -> $(this).append '<div class = "grey-overlay"><img src = "/images/portfolio/grey_overlay.png"/></div>'
+  $('.small-thumb').each -> $(this).append '<div class = "grey-overlay"></div>'
   
   $(".small-thumb").hover(
     (-> $(this).find('.grey-overlay').fadeIn 100, -> $(this).show()),
-    (-> $(this).find('.grey-overlay').fadeOut 100, -> $(this).hide())
+    (-> $(this).find('.grey-overlay').fadeOut 'fast', -> $(this).hide())
   )
 
   # Home page slideshow

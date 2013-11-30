@@ -44,19 +44,20 @@
   %body
     .content
       %header  
-        .logo 
-          %img(src="/images/logo.png")/  
         .container 
+          %a.logo(href="/")
+            ana enders
           .dots
             %nav
-              %a{:href => '/'}
-                %img.nav-btn(src="/images/navigation/about.jpg" alt="about")/
-              %a{:href => '/portfolio'}
-                %img.nav-btn(src="/images/navigation/portfolio.jpg" alt="portfolio")/
-              %a{:href => '/blog'}
-                %img.nav-btn(src="/images/navigation/blog.jpg" alt="blog")/  
-            %a(href="/")
-              ana enders
+              .nav-btn
+                %a.nav-about{:href => '/'}
+                  About
+              .nav-btn
+                %a.nav-portfolio{:href => '/portfolio'}
+                  Portfolio
+              .nav-btn
+                %a.nav-blog{:href => '/blog'} 
+                  Blog
       .full-width
         = yield
         .scroll
