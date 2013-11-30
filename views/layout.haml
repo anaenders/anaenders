@@ -5,10 +5,11 @@
     %meta{:name => "google-site-verification", :content => "BJ-AxCSPNC8koVmBDKh5DbCcxjXmAU56jBf3Hsxqbuw"}/
     %meta{:name => "author", :content => "Ana Enders"}/
     %meta{:name => "keywords", :content => "Web developer, Web designer"}/
+    %meta{:name => "viewport", :content => "width=device-width, initial-scale=1.0, user-scalable=no"}
     %meta{:name => "description", :content => "Ana Enders"}/
     %link(href="/feed.rss" rel="alternate" type="application/rss+xml" title="Ana Enders Blog RSS")/
-    
     %link(href="/stylesheets/jquery-ui.css" media="screen" rel="stylesheet" type="text/css")/
+    %link(href="/stylesheets/bootstrap.min.css" media="screen" rel ="stylesheet" type="text/css")/
     %link(href="/stylesheets/app.css" media="screen" rel ="stylesheet" type="text/css")/
     %link(href="/images/favicon.ico" rel ="icon" type="image/x-icon")/    
     %script(src="/javascripts/jquery-1.7.2.min.js" type="text/javascript")
@@ -16,6 +17,7 @@
     %script(src="/javascripts/sugar-1.2.4.min.js" type="text/javascript")
     %script(src="/javascripts/application.js" type="text/javascript")
     %script(src="/javascripts/dialog.js" type="text/javascript")
+    %script(src="/javascripts/bootstrap.min.js" type="text/javascript")
     
     / [if lt IE 9]
       %script(src="/javascripts/html5shiv.js" type="text/javascript")/
@@ -30,7 +32,7 @@
         var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
       })();
     
-    /[if IE]
+    / [if IE]
       :css
         .content header, .prev_container, .next_container {
           background:transparent;
@@ -43,17 +45,18 @@
     .content
       %header  
         .logo 
-          %img(src="/images/logo.png")/   
-        .dots
-          %nav
-            %a{:href => '/'}
-              %img.btn(src="/images/navigation/about.jpg" alt="about")/
-            %a{:href => '/portfolio'}
-              %img.btn(src="/images/navigation/portfolio.jpg" alt="portfolio")/
-            %a{:href => '/blog'}
-              %img.btn(src="/images/navigation/blog.jpg" alt="blog")/  
-          %a(href="/")
-            ana enders
+          %img(src="/images/logo.png")/  
+        .container 
+          .dots
+            %nav
+              %a{:href => '/'}
+                %img.nav-btn(src="/images/navigation/about.jpg" alt="about")/
+              %a{:href => '/portfolio'}
+                %img.nav-btn(src="/images/navigation/portfolio.jpg" alt="portfolio")/
+              %a{:href => '/blog'}
+                %img.nav-btn(src="/images/navigation/blog.jpg" alt="blog")/  
+            %a(href="/")
+              ana enders
       .full-width
         = yield
         .scroll

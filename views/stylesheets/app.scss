@@ -44,37 +44,42 @@ $aqua: #59edd3;
 	background: url('/images/about/graph_sprite.png') $x-coordinate 0px no-repeat;
 	&:hover, &.on { background-position: $x-coordinate - 9px 0px; font-weight: bold; }
 	&.alt {
-	  padding: 0 0 17px 0;
-	  div {  position: absolute; bottom: 0px; left: 3px }
+	  height: 115px;
+	  div {  
+      position: absolute; 
+      bottom: 0px; 
+      left: 3px;
+    }
 	}
 }
 
 @mixin thumb-container($width, $height) {
-  float: left;
+  display: inline-block;
   cursor: pointer;
   position: relative;
-  width: $width;
-  height: $height;
-  margin: 1px 1px 0 0;
-  img { float: left; height: $height; width: $width }
+  max-width: $width;
+  max-height: $height;
+  margin: 5px;
+  vertical-align: top;
+  img { width: 100%; }
   .grey-overlay {
     display: none;
     z-index: 20;
     position: absolute;
     top: 0px;
     left: 0px;
-    width: $width;
-    height: $height;
+    img {
+      width: $width;
+      height: $height;
+    }
   }  
 }
 
 @mixin frame($color) {
-  border: 8px solid ($color);
+  border-top: 8px solid ($color);
   position: relative;
-  margin-bottom: 8px;
-  float: left;
+  display: inline-block;
   padding: 0 0 1px 1px;
-  width: 1023px;
 }
 
 @mixin label($x-coordinate) {
@@ -98,7 +103,7 @@ $aqua: #59edd3;
 @mixin black_box {
   color: #fff; 
   background-color: #000; 
-  letter-spacing: 3.5px; 
+  letter-spacing: 2px; 
   padding: 8px 20px;
   font-size: 11px;
   z-index: 100;
@@ -164,18 +169,18 @@ body {
   color: 000;
   font-size: 12px;
   min-width: 320px;
+  a {
+    font-weight: bold;
+    text-decoration: none;
+    color: #000;
+    &:hover {
+      color: #000;
+      text-decoration: underline;
+    }
+  }
 }
 
 .generic { float: left; width: 100% }
-
-a {
-  font-weight: bold;
-  text-decoration: none;
-  color: #000;
-  &:hover {
-    text-decoration: underline;
-  }
-}
 
 p { 
   padding-bottom: 10px; 
@@ -206,6 +211,7 @@ img { border: 0px }
     width: 100%px;
     height: 80px;
     margin: 0;
+    border-bottom: 8px solid #454343;
     background-color: rgba(255, 255, 255, 0.8);
     a { 
       font-family: Georgia; 
@@ -222,10 +228,8 @@ img { border: 0px }
       left: 10px;
     }
     .dots { 
-      position: relative; 
-      top: 0px; 
-      left: 0px; 
-      width: 1040px; 
+      position: relative;  
+      width: 100%; 
       height: 80px; 
       z-index: 1;
       margin: 0 auto;
@@ -233,7 +237,7 @@ img { border: 0px }
       nav {
         z-index: 2;
         position: absolute;
-        width: 600px;
+        width: auto;
         height: 80px;
         overflow: hidden;
         bottom: 8px;
@@ -274,7 +278,7 @@ img { border: 0px }
   padding: 8px 10px 10px 10px;
   cursor: pointer;
   line-height: 1.2em;
-  width: 60px;
+  width: 80px;
   text-align: center;
   display: none;
   &:hover { color: #ddd; }
@@ -283,39 +287,72 @@ img { border: 0px }
 /***********************portfolio***********************/
 
 .portfolio {
-  @include main_container;
   @include bring_to_front;
-  .web {
-    .small-thumb { @include thumb-container(340px, 100px); }
-    &.professional {
-      margin-top: -8px;
-    }
-    &.professional, &.personal { 
-      @include frame($almost-black); 
-      .section_label { 
-        @include black_box;
-        position: absolute;
-        top: -8px;
-        right: -8px;
+  width: 100%;
+  padding: 80px 0;
+  .full-width {
+    background-color: #f1f1f1;
+    margin-bottom: 10px;
+    padding: 20px 0 20px 0;
+    -moz-box-shadow: inset 0 0 10px 2px #ccc;
+    -webkit-box-shadow: inset 0 0 10px 2px #ccc;
+    box-shadow: inset 0 0 10px 2px #ccc;
+    .section_label {
+      margin: 0px auto;
+      max-width: 650px;
+      font-family: "Helvetica Neue", Helvetica, Sans-serif;
+      span {
+        font-size: 20px;
+        font-weight: 200;
+        font-family: "Archer-Book", Georgia, Serif;
+        margin-bottom: 10px;
+        display: block;
+      }
+      p {
+        
+        font-size: 13px;
+        font-weight: 200;
+        padding: 0 0 15px 0;
+        line-height: 1.4em;
+        a { font-weight: normal; }
       }
     }
   }
+  .web, .print, .woodwork { 
+    display: inline-block;
+    margin-bottom: 10px;
+    text-align: center;
+    &.personal {
+      @include frame($almost-black);
+    }
+    .section_label { 
+      width: 100%;
+      clear: both;
+      span {
+        font-family: "Archer-Book", Georgia, Serif;
+        font-size: 35px;
+        display: block;
+        margin: 10px 0;
+        text-transform: capitalize;
+      }
+    }
+  }
+  .web {
+    .small-thumb { @include thumb-container(340px, 100px); }
+  }
   .print {
     @include frame($neon-pink);
-    .section_label { 
-      @include black_box;
-      position: absolute;
-      top: -8px;
-      right: -8px;
-    }
     .small-thumb { @include thumb-container(480px, 341px); }
     .group-float { 
-      .small-thumb { @include thumb-container(541px, 170px); }
-      float: left; 
-      width: 542px;
+      display: inline-block;
+      max-width: 551px;
+      .small-thumb { 
+        @include thumb-container(541px, 170px);
+      }
     }
     .short-row {
-      float: left;
+      display: inline-block;
+      text-align: center;
       &.abstract { 
         .small-thumb { @include thumb-container(447px, 98px); }
       }
@@ -326,12 +363,6 @@ img { border: 0px }
   }
   .woodwork {
     @include frame($neon-green);
-    .section_label { 
-      @include black_box;
-      position: absolute;
-      top: -8px;
-      right: -8px;
-    }
     .small-thumb.one { @include thumb-container(235px, 160px); }
     .small-thumb.two { @include thumb-container(224px, 160px); }
     .small-thumb.three { @include thumb-container(216px, 160px); }
@@ -340,23 +371,31 @@ img { border: 0px }
 }
 
 .detail-container {
+  &.long-content {
+    .inner-container {
+      .project-description {
+        float: left;
+        width: 223px;
+        p { padding: 15px 15px 21px 15px; }
+      }
+    }
+  }
   .inner-container {
     width: 100%;
     float: left;
     position: relative;
     .close { 
-      background: url('/images/btns/close.png') no-repeat 5px 5px; 
       position: absolute;
-      top: 10px;
-      right: 10px;
-      width: 31px;
-      height: 22px;
+      top: 20px;
+      right: 20px;
+      font-size: 23px;
       z-index: 5000;
       outline: 0px;
-      background-color: #fff;
-      border-radius:5px;
-      -moz-border-radius:5px; /* Firefox 3.6 and earlier */
-      padding: 5px;
+      opacity: 1;
+      font-weight: 200;
+      text-shadow: none;
+      &.white { color: #fff; }
+      &.black { color: #000; }
     }
     img { float: left }
     .project-description {
@@ -419,7 +458,7 @@ body {
   position: relative;
   z-index: 0;
   width: 100%;
-  height: 351px;
+  height: 431px;
   padding: 80px 0 0 0;
   margin-bottom: 30px;
   ul {
@@ -593,18 +632,37 @@ body {
           height: 150px;
           float: left;
           margin-top: 25px;
-          padding-right: 15px;
-          &.frontend { width: 315px; td { width: 14% } }
-          &.programming { width: 270px; td { width: 25% }}
-          &.design { width: 193px; td { width: 33% } }
-          &.additional { width: 162px; td { width: 50% } }
+          margin-right: 15px;
+          font-size: 12px;
+          &.frontend { 
+            width: 300px; 
+            td { width: 14% } 
+          }
+          &.programming { 
+            width: 255px; 
+            td { width: 25% }
+          }
+          &.design { 
+            width: 178px; 
+            td { width: 33% } 
+          }
+          &.additional { 
+            width: 147px; 
+            td { width: 50% } 
+          }
           td {
             padding: 0px;
             font-style: italic;
             font-size: 11px;
             text-align: center;
             width: auto;
-            label:hover, label.on { color: $grey; cursor: pointer }
+            label {
+              font-weight: normal;
+              &:hover, &.on { 
+                color: $grey; 
+                cursor: pointer;
+              }
+            }
           }
           .beginner { @include graph(-75px) }
           .intermediate { @include graph(-50px) }
@@ -625,7 +683,7 @@ body {
           .next_container {
             z-index: 200;
             width: 100px;
-            height: 310px;
+            height: 332px;
             background-color: rgba(255, 255, 255, 0.8);
             position: absolute;
             top: 0px;
@@ -749,7 +807,6 @@ body {
       clear: both;
       color: $green;
       font-weight: bold;
-      height: 14px;
       padding: 10px 30px;
       background: url('/images/blog/title_bg.png') repeat 0px 0px;
     }
@@ -825,8 +882,8 @@ body {
 /***********************responsive***********************/
 
 body {
-  // Medium devices i.e. Small Desktop (< 1200px)
-  @media (max-width: 1199px) {
+  // Medium devices i.e. Small Desktop (< 1300px)
+  @media (max-width: 1299px) {
     .content {
       header {
         .logo {

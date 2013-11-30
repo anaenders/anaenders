@@ -13,9 +13,9 @@ $ ->
 
   $(".off").hover(
     -> 
-      $(this).find('.btn').animate "bottom": "+=24px", 300
+      $(this).find('.nav-btn').animate "bottom": "+=24px", 300
     , -> 
-      $(this).find('.btn').animate "bottom": "-=24px", 200
+      $(this).find('.nav-btn').animate "bottom": "-=24px", 200
   )
   
   $('.alt').each -> $(this).append '<div><img src = "/images/about/dots.jpg"/></div>'
