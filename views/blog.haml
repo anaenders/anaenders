@@ -8,33 +8,34 @@
     fjs.parentNode.insertBefore(js, fjs);
   }(document, 'script', 'facebook-jssdk'));
 
-.blog
-  .post
-    .title-date= @blog['date']
-    .clear
-    .blog_post
+.container
+  .blog
+    .post
+      .title-date= @blog['date']
       .clear
-      %h4= @blog['title']
-      .clear
-      = File.open("blogs/#{@blog['url']}.html").read
-      .fb-comment-wrapper
-        .fb-comments{'data-href' => "http://www.anaenders.com/blog/#{@blog['url']}", 'data-num-posts' => 5, 'data-width' => 506}
+      .blog_post
+        .clear
+        %h4= @blog['title']
+        .clear
+        = File.open("blogs/#{@blog['url']}.html").read
+        .fb-comment-wrapper
+          .fb-comments{'data-href' => "http://www.anaenders.com/blog/#{@blog['url']}", 'data-num-posts' => 5, 'data-width' => 320}
 
-  .pagination
-    - if @prev
-      .prev
-        %a(href="/blog/#{@prev['url']}")
-          %img(src="/images/blog/previous.jpg" alt="previous")/
-    - if @next
-      .next
-        %a(href="/blog/#{@next['url']}")
-          %img(src="/images/blog/next.jpg" alt="next")/
-       
-  .archives
-    %ul
-      - @blogs.reverse.each do |b|
-        %li 
-          %a(href="/blog/#{b['url']}")= b['title']
-          %br/
-          %span= b['date']
+    .pagination
+      - if @prev
+        .prev
+          %a(href="/blog/#{@prev['url']}")
+            %img(src="/images/blog/previous.jpg" alt="previous")/
+      - if @next
+        .next
+          %a(href="/blog/#{@next['url']}")
+            %img(src="/images/blog/next.jpg" alt="next")/
+         
+    .archives
+      %ul
+        - @blogs.reverse.each do |b|
+          %li 
+            %a(href="/blog/#{b['url']}")= b['title']
+            %br/
+            %span= b['date']
 .clear

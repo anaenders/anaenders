@@ -20,7 +20,7 @@ $aqua: #59edd3;
 }
 
 @mixin main_container {
-  width: 1040px;
+  max-width: 1040px;
   margin: 0 auto;
   z-index: 400;
   background-color: #fff;
@@ -84,7 +84,6 @@ $aqua: #59edd3;
   border-top: 8px solid ($color);
   position: relative;
   display: inline-block;
-  padding: 0 0 1px 1px;
 }
 
 @mixin label($x-coordinate) {
@@ -348,6 +347,7 @@ img { border: 0px }
     display: inline-block;
     margin-bottom: 10px;
     text-align: center;
+    width: 100%;
     &.personal {
       @include frame($almost-black);
     }
@@ -424,7 +424,7 @@ img { border: 0px }
       &.white { color: #fff; }
       &.black { color: #000; }
     }
-    img { float: left }
+    img { float: left; }
     .project-description {
       padding: 0 0 15px 0;
       background-color: #f1f1f1;
@@ -839,7 +839,7 @@ body {
     }
     .blog_post {
       margin: 0 auto;
-      width: 560px;
+      width: 100%;
       clear: both;
       text-align: center;
       h4 { 
@@ -855,14 +855,28 @@ body {
       .blog_content { 
         padding: 0px 30px;
         // @include columns(2, 10px);
+        &.narrow { 
+          max-width: 560px; 
+          margin: 0 auto 20px auto;
+        }
       }
       .fb-comment-wrapper {
-        width: 506px;
+        max-width: 320px;
         margin: 0 auto;
       }
       p { line-height: 1.3em; padding-bottom: 12px; font-size: 12px; text-align: left }
       a { font-weight: normal; color: $dark-grey; font-style: italic }
-      .image { text-align: center; margin: 20px 0 }
+      .image, img { 
+        text-align: center; 
+        margin: 20px 0;
+        width: 100%; 
+      }
+      .image {
+        &.narrow { 
+          max-width: 500px; 
+          margin: 0 auto 20px auto;
+        }
+      }
     }
   }  
   .pagination {
@@ -917,6 +931,11 @@ body {
           font-size: 50px; 
           padding-top: 7px;
         }
+      }
+    }
+    .blog {
+      .post {
+        .title-date { margin-left: 84px; }
       }
     }
   }
@@ -986,6 +1005,16 @@ body {
           font-size: 28px;
         }
         .dots { width: 50%; }
+      }
+    }
+    .blog {
+      .post {
+        .blog_post {
+          h4 {
+            background-image: none;
+            padding: 20px 0;
+          }
+        }
       }
     }
   }
