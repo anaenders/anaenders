@@ -4,10 +4,12 @@ linkify = (text) ->
 
 $ ->
   $('nav a').each ->
-    if window.location.href.match $(@).attr('href') + "$"
-      $(@).addClass 'on'
-    else
-      $(@).addClass 'off'
+    match = false
+    if window.location.pathname is $(@).attr('href')
+      match = true
+    else if $(@).attr('href') != '/'
+      match = window.location.pathname.match $(@).attr('href')
+    $(@).addClass(if match then 'on' else 'off')
   
   $('.alt').each -> $(this).append '<div><img src = "/images/about/dots.jpg"/></div>'
   
