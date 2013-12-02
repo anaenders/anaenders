@@ -364,14 +364,14 @@ img { border: 0px }
     }
   }
   .web {
-    .small-thumb { @include thumb-container(340px, 100px); }
+    .small-thumb { @include thumb-container(310px, 100px); }
   }
   .print {
     @include frame($neon-pink);
-    .small-thumb { @include thumb-container(480px, 341px); }
+    .small-thumb { @include thumb-container(450px, 341px); }
     .group-float { 
       display: inline-block;
-      max-width: 551px;
+      max-width: 502px;
       .small-thumb { 
         @include thumb-container(541px, 170px);
       }
@@ -380,19 +380,19 @@ img { border: 0px }
       display: inline-block;
       text-align: center;
       &.abstract { 
-        .small-thumb { @include thumb-container(447px, 98px); }
+        .small-thumb { @include thumb-container(410px, 98px); }
       }
       &.signage {
-        .small-thumb { @include thumb-container(574px, 98px); }
+        .small-thumb { @include thumb-container(528px, 98px); }
       }
     }
   }
   .woodwork {
     @include frame($neon-green);
-    .small-thumb.one { @include thumb-container(235px, 160px); }
-    .small-thumb.two { @include thumb-container(224px, 160px); }
-    .small-thumb.three { @include thumb-container(216px, 160px); }
-    .small-thumb.four { @include thumb-container(344px, 160px); }
+    .small-thumb.one { @include thumb-container(214px, 160px); }
+    .small-thumb.two { @include thumb-container(203px, 160px); }
+    .small-thumb.three { @include thumb-container(195px, 160px); }
+    .small-thumb.four { @include thumb-container(309px, 160px); }
   }
 }
 
