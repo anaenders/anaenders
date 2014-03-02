@@ -3,6 +3,7 @@ linkify = (text) ->
   text.replace(exp,"<a href='$1' target='_blank'>$1</a>")
 
 $ ->
+  # Main navigation
   $('nav a').each ->
     match = false
     if window.location.pathname is $(@).attr('href')
@@ -11,8 +12,10 @@ $ ->
       match = window.location.pathname.match $(@).attr('href')
     $(@).addClass(if match then 'on' else 'off')
   
+  # Dots divider for skills titles
   $('.alt').each -> $(this).append '<div><img src = "/images/about/dots.jpg"/></div>'
   
+  # Hover for portfolio thumbnails
   $('.small-thumb').each -> $(this).append '<div class = "grey-overlay"></div>'
   
   $(".small-thumb").hover(
@@ -32,29 +35,30 @@ $ ->
     if nextSlide == 20
       nextSlide = 1
 
-    $(".slide" + currentSlide).fadeIn(3000)
-    $(".slide" + prevSlide).fadeOut(3000)
+    $(".slide" + currentSlide).fadeIn(500)
+    $(".slide" + prevSlide).fadeOut(500)
 
-    setTimeout((-> mySlideshow(nextSlide)), 3000)
+    setTimeout((-> mySlideshow(nextSlide)), 6000)
 
   mySlideshow(1)
 
-  
+  # Vertical toggle for category sections in resume  
   $('.category').each ->
     cat = $(this)
     cat.find("span").click -> cat.find('.category-container').slideToggle "slow"
     
+  # Skills chart on off hover animation  
   $('figure div').hover(
     -> $(this).siblings('label').addClass 'on',
     -> $(this).siblings('label').removeClass 'on'
   )
-  
   
   $('figure label').hover(
     -> $(this).siblings('div').addClass 'on',
     -> $(this).siblings('div').removeClass 'on'
   )
   
+  # Slide animation for work experience tiles
   $('#next').click ->
     $('.slide_tiles_container').animate { left: '-=208', }, 500, -> 
       $('.next_container').fadeOut "300"
@@ -68,7 +72,6 @@ $ ->
     false
 
   # Scroll button
-
   triggerHeight = 100
   win = $(window).height()
 
