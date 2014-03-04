@@ -827,7 +827,6 @@ body {
     color: $dark-grey;
     margin-bottom: 20px;
     text-align: left;
-    border-bottom: 1px solid $grey;
     padding: 0 0 20px 0;
     .title-date {
       font-size: 12px;
@@ -864,7 +863,7 @@ body {
       }
       .fb-comment-wrapper {
         max-width: 320px;
-        margin: 30px auto 0 auto;
+        margin: 30px auto;
       }
       p { 
         line-height: 1.3em; 
@@ -881,17 +880,31 @@ body {
     }
   }  
   .pagination {
-    @extend .generic; 
-    margin: 0 0 20px 0;
+    max-width: 600px;
+    width: 100%;
+    margin: 0px auto;
+    display: table;
+    .prev, .next {
+      display: table-cell;
+      width: 50%;
+      a {
+        font-size: 25px;
+        font-family: Georgia;
+        font-style: italic;
+        font-weight: bold;
+        padding-top: 20px;
+        width: 100%;
+        display: block;
+        background: url('/images/about/border_bg.jpg') #fff repeat-x top left;
+      }
+    }
     .prev { 
-      width: 50%; 
-      float: right; 
-      text-align: right;
+      text-align: left; 
+      padding-right: 10px;
     }
     .next { 
-      width: 50%; 
-      float: left; 
-      text-align: left;
+      text-align: right; 
+      padding-left: 10px;
     }
   }
 } 
@@ -899,6 +912,7 @@ body {
 .archives {
   float: left;
   width: 100%; 
+  margin-top: 30px;
   ul {
     padding: 0px;
     margin: 0px;
@@ -937,6 +951,19 @@ body {
     .blog {
       .post {
         .title-date { margin-left: 84px; }
+        .blog_post {
+          .block {
+            h4 { font-size: 19px; }
+          }
+        }
+        .blog-content {
+          p { font-size: 13px; }
+        }
+      }
+      .pagination {
+        .prev, .next {
+          a { font-size: 16px; }
+        }
       }
     }
   }
@@ -993,6 +1020,37 @@ body {
           span {
             font-size: 18px;
           }
+        }
+      }
+    }
+    .blog {
+      .post {
+        .title-date { margin-left: 84px; }
+        .blog_post {
+          .block {
+            h4 { 
+              font-size: 19px; 
+              background: none; 
+              padding: 30px 10px;
+            }
+          }
+        }
+        .blog-content {
+          p { padding: 0 10px; }
+        }
+      }
+      .pagination {
+        padding: 0 10px;
+        .prev, .next {
+          a { font-size: 14px; }
+        }
+      }
+    }
+    .archives {
+      ul {
+        li {
+          float: none;
+          text-align: left;
         }
       }
     }
