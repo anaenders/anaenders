@@ -20,8 +20,8 @@
     %li.slide18
     %li.slide19
 
-.about
-  .casual-intro
+.about.container
+  .casual-intro.col-lg-7.col-md-7.col-sm-7.col-xs-12
     %p
       %span
         Hello
@@ -35,10 +35,10 @@
       %a(href="mailto:ana.enders@gmail.com") what you think!
     %p.thanks
       &#45; Thank You!!
-      
-  .twitter-feed
-    %a.twitter-timeline(href="https://twitter.com/anaenders" data-widget-id="361647706579550210")Tweets by @anaenders
-    <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+"://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
+  .col-lg-5.col-md-5.col-sm-5.col-xs-12
+    .twitter-feed
+      %a.twitter-timeline(href="https://twitter.com/anaenders" data-widget-id="361647706579550210")Tweets by @anaenders
+      <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+"://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
 
   .resume
     %h1 Frontend Developer
@@ -50,109 +50,181 @@
       <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="//platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
       
     %a.dload(href="/ana_enders.pdf" target="_blank")
-    .clear
     
     .category
       %span education
-      .clear
-      .category-container
-        %table{:cellspacing => "0", :cellpadding => "0"}
-          %tr
-            %th University of Waterloo
-            %th University of Waterloo
-            %th Parsons School of Design
-            %th Carnegie Mellon University
-            %th Centre International D&#39;Etudes Fran&#231;ais
+      .category-container.hidden-xs
+        .parent-table
+          .table-row
+            .table-header University of Waterloo
+            .table-header University of Waterloo
+            .table-header Parsons School of Design
+            .table-header Carnegie Mellon University
+            .table-header Centre International D&#39;Etudes Fran&#231;ais
           
-          %tr
-            %td.date March &#45; May 2011
-            %td.date Jan &#45; March 2011
-            %td.date 2007 &#45; 2008
-            %td.date 2001 &#45; 2005
-            %td.date Summer 2004
+          .table-row
+            .table-data.date March &#45; May 2011
+            .table-data.date Jan &#45; March 2011
+            .table-data.date 2007 &#45; 2008
+            .table-data.date 2001 &#45; 2005
+            .table-data.date Summer 2004
           
-          %tr
-            %td Certificate of Completion for Intermediate Java Programming 
-            %td Certificate of Completion for Introduction to Java Programming
-            %td MFA Design + Technology	
-            %td{:rowspan => "2"} BFA Music Performance, European Studies	
-            %td{:rowspan => "2"} Certificate in Intensive Language Studies in French	
-          %tr 
-            %td Online Course for Professional Development
-            %td Online Course for Professional Development
-            %td Completed one year of a two year program
+          .table-row
+            .table-data Certificate of Completion for Intermediate Java Programming 
+            .table-data Certificate of Completion for Introduction to Java Programming
+            .table-data MFA Design + Technology	
+            .table-data BFA Music Performance, European Studies	
+            .table-data Certificate in Intensive Language Studies in French	
+          .table-row
+            .table-data Online Course for Professional Development
+            .table-data Online Course for Professional Development
+            .table-data Completed one year of a two year program
+
+      .category-container.visible-xs
+        .parent-table
+          .table-row
+            .table-header University of Waterloo
+            .table-data.date March &#45; May 2011
+            .table-data Certificate of Completion for Intermediate Java Programming 
+            .table-data Online Course for Professional Development
+          .table-row
+            .table-header University of Waterloo
+            .table-data Certificate of Completion for Introduction to Java Programming
+            .table-data Online Course for Professional Development
+            .table-data.date Jan &#45; March 2011
+          .table-row
+            .table-header Parsons School of Design
+            .table-data.date 2007 &#45; 2008
+            .table-data Completed one year of a two year program
+            .table-data MFA Design + Technology 
+          .table-row
+            .table-header Carnegie Mellon University
+            .table-data.date 2001 &#45; 2005
+            .table-data BFA Music Performance, European Studies 
+          .table-row
+            .table-header Centre International D&#39;Etudes Fran&#231;ais
+            .table-data.date Summer 2004
+            .table-data Certificate in Intensive Language Studies in French
+            
     .category
       %span skills
       .clear
       .category-container
-        .skill-list
+        .skill-list.col-lg-2.col-md-2.col-sm-2.hidden-xs
           %ul
             %li expert
             %li advanced
             %li intermediate
             %li beginner
-        %figure
-          %table.frontend{:cellspacing => "0", :cellpadding => "0"}
-            %tr
-              %td
-                .expert
-                %label CSS
-              %td
-                .intermediate.alt
-                %label Javascript
-              %td
-                .expert
-                %label HAML
-              %td
-                .intermediate.alt
-                %label JQuery &#38; JQuery-UI
-              %td
-                .expert
-                %label HTML
-              %td 
-                .intermediate.alt
-                %label CoffeeScript
-              %td 
-                .expert
-                %label SASS  
-          %table.programming{:cellspacing => "0", :cellpadding => "0"}
-            %tr
-              %td 
-                .intermediate.alt
-                %label Java
-              %td 
-                .beginner
-                %label PHP/MySQL
-              %td
-                .beginner.alt
-                %label Python
-              %td 
-                .beginner
-                %label Ruby on Rails
-              
-          %table.design{:cellspacing => "0", :cellpadding => "0"}
-            %tr
-              %td 
-                .intermediate.alt
-                %label Illustrator
-              %td 
-                .expert
-                %label Photoshop
-              %td 
-                .expert.alt
-                %label Print/Web Design
-          %table.additional{:cellspacing => "0", :cellpadding => "0"}
-            %tr
-              %td 
-                .expert
-                %label Detail Oriented
-              %td 
-                .expert.alt
-                %label Fluent Spanish
+        %figure.col-lg-10.col-md-10.col-sm-10
+          .skill-list.visible-xs
+            %ul
+              %li expert
+              %li advanced
+              %li intermediate
+              %li beginner
+          .frontend
+            %p 
+              Frontend Web
+            .data
+              .expert
+              .graph-header
+              %label CSS
+            .data
+              .intermediate.alt
+              .graph-header
+              %label Javascript
+            .data
+              .expert
+              .graph-header
+              %label HAML
+            .data
+              .intermediate.alt
+              .graph-header
+              %label JQuery &#38; JQuery-UI
+            .data
+              .expert
+              .graph-header
+              %label HTML
+            .data
+              .intermediate.alt
+              .graph-header
+              %label CoffeeScript
+            .data
+              .expert
+              .graph-header.dark
+              %label SASS 
+          .clear.visible-xs
+          .skill-list.visible-xs
+            %ul
+              %li expert
+              %li advanced
+              %li intermediate
+              %li beginner 
+          .programming
+            %p 
+              Programming
+            .data 
+              .intermediate.alt
+              .graph-header 
+              %label Java
+            .data
+              .beginner
+              .graph-header 
+              %label PHP/MySQL
+            .data
+              .beginner.alt
+              .graph-header 
+              %label Python
+            .data
+              .beginner
+              .graph-header.dark 
+              %label Ruby on Rails
+          .clear.visible-xs
+          .skill-list.visible-xs
+            %ul
+              %li expert
+              %li advanced
+              %li intermediate
+              %li beginner
+          .design
+            %p
+              Graphic Design
+            .data
+              .beginner.alt
+              .graph-header 
+              %label Illustrator
+            .data
+              .advanced
+              .graph-header 
+              %label Photoshop
+            .data 
+              .advanced.alt
+              .graph-header.dark
+              %label Print/Web Design
+          .clear.visible-xs
+          .skill-list.visible-xs
+            %ul
+              %li expert
+              %li advanced
+              %li intermediate
+              %li beginner
+          .additional
+            %p
+              Additional Skills
+            .data 
+              .expert
+              .graph-header 
+              %label Detail Oriented
+            .data
+              .expert.alt
+              .graph-header.dark
+              %label Fluent Spanish
+
     .category
       %span experience
-      .clear
-      .category-container
+      .clear 
+      .category-container.hidden-xs
         .slide_window
           .slide_tiles
             .next_container
@@ -163,109 +235,185 @@
                 %a(id = "previous" href = "#")
             .slide_tiles_container
               .slide_inner
-                %table{:cellspacing => "0", :cellpadding => "0"}
-                  %tr
-                    %th
-                      Senior Frontend Engineer
-                    %th 
-                      Freelance Frontend Developer
-                    %th 
-                      Frontend Developer
-                    %th 
-                      Design Intern
-                    %th 
-                      Freelance Web Designer and Developer
-                    %th 
-                      Junior Woodworker and Website Manager
+                .parent-table
+                  .table-row
+                    .table-header Senior Frontend Engineer
+                    .table-header Freelance Frontend Developer
+                    .table-header Frontend Developer
+                    .table-header Design Intern
+                    .table-header Freelance Web Designer and Developer
+                    .table-header Junior Woodworker and Website Manager
   
-                  %tr
-                    %td.date 
+                  .table-row
+                    .table-data.date 
                       New York, NY
                       .job
                         %a(href="http://www.themuse.com/" target="_blank")
                           The Muse
                         
-                    %td.date 
+                    .table-data.date 
                       San Francisco, CA
                       .job
                         %a(href="/")
                           Self Employed
-                    %td.date 
+                    .table-data.date 
                       New York, NY
                       .job
                         %a(href="http://intersectnyc.com" target="_blank")
                           Intersect NYC
-                    %td.date 
+                    .table-data.date 
                       Brooklyn, NY
                       .job
                         %a(href="http://creativelabny.com/" target="_blank")
                           Creative Lab
-                    %td.date 
+                    .table-data.date 
                       New York, NY
                       .job
                         %a(href="/")
                           Self Employed
-                    %td.date 
+                    .table-data.date 
                       Brooklyn, NY
                       .job
                         %a(href="http://cityjoinery.com/" target="_blank")
                           City Joinery
       
-                  %tr
-                    %td 
+                  .table-row
+                    .table-data 
                       July 2012 &#45; Present 
-                    %td 
+                    .table-data
                       September 2011 &#45; July 2012 
                       %br/
                       (9 months)
-                    %td 
+                    .table-data
                       September 2008 &#45; September 2011 
                       %br/
                       (3 years 1 month)
-                    %td 
+                    .table-data
                       June 2008 &#45; September 2008 
                       %br/
                       (4 months)	
-                    %td 
+                    .table-data
                       August 2008 &#45; August 2008 
                       %br/
                       (1 month)	
-                    %td 
+                    .table-data 
                       February 2006 &#45; February 2007 
                       %br/
                       (1 year 1 month)	
-                  %tr 
-                    %td As the Senior Frontend Engineer, I deliver Backbone HTML, SASS, and JavaScript via JQuery and CoffeeScript for our Python &#38; Tornado based app. I also provide designs from concept to implementation.
-                    %td Freelancing for old clients in need of frontend adjustments to their existing sites.
-                    %td As a member of the development team, I worked closely with the designers, backend programmers, and software engineers in producing custom sites and content management software.
-                    %td In addition to being a photo shoot and set design assistant, I worked on image post-production editing, logo design, graphic design, web design and web development using Photoshop, HTML, CSS and Flash.
-                    %td Designed and developed a housing site using HTML, CSS, Javascript, PHP and MySql. Created design templates and programmed both client and server sides.
-                    %td Responsible for managing content and editing product images through Photoshop for the company website. Office tasks included proofreading and editing written content for web and printed brochure. Assisted in the production of custom wood furniture making.
-        
+
+                  .table-row
+                    .table-data 
+                      As the Senior Frontend Engineer, I deliver Backbone HTML, SASS, and JavaScript via JQuery and CoffeeScript for our Python &#38; Tornado based app. I also provide designs from concept to implementation.
+                    .table-data 
+                      Freelancing for old clients in need of frontend adjustments to their existing sites.
+                    .table-data 
+                      As a member of the development team, I worked closely with the designers, backend programmers, and software engineers in producing custom sites and content management software.
+                    .table-data 
+                      In addition to being a photo shoot and set design assistant, I worked on image post-production editing, logo design, graphic design, web design and web development using Photoshop, HTML, CSS and Flash.
+                    .table-data 
+                      Designed and developed a housing site using HTML, CSS, Javascript, PHP and MySql. Created design templates and programmed both client and server sides.
+                    .table-data 
+                      Responsible for managing content and editing product images through Photoshop for the company website. Office tasks included proofreading and editing written content for web and printed brochure. Assisted in the production of custom wood furniture making.
+
+      .category-container.visible-xs
+        .parent-table
+          .table-row
+            .table-header Senior Frontend Engineer
+            .table-data.date 
+              New York, NY
+              .job
+                %a(href="http://www.themuse.com/" target="_blank")
+                  The Muse               
+            .table-data.date July 2012 - Present
+            .table-data As the Senior Frontend Engineer, I deliver Backbone HTML, SASS, and JavaScript via JQuery and CoffeeScript for our Python & Tornado based app. I also provide designs from concept to implementation.
+          
+          .table-row
+            .table-header Freelance Frontend Developer
+            .table-data.date
+              San Francisco, CA
+              .job
+                %a(href="/")
+                  Self Employed
+            .table-data.date 
+              September 2011 &#45; July 2012 
+              %br/
+              (9 months)
+            .table-data Freelancing for old clients in need of frontend adjustments to their existing sites.
+          
+          .table-row
+            .table-header Frontend Developer
+            .table-data.date 
+              New York, NY
+              .job
+                %a(href="http://intersectnyc.com" target="_blank")
+                  Intersect NYC             
+            .table-data.date 
+              September 2008 &#45; September 2011 
+              %br/
+              (3 years 1 month)
+            .table-data As a member of the engineering team, I worked closely with the designers, backend programmers, and software engineers in producing custom sites and content management software.
+
+          .table-row
+            .table-header Design Intern
+            .table-data.date 
+              Brooklyn, NY
+              .job
+                %a(href="http://creativelabny.com/" target="_blank")
+                  Creative Lab
+            .table-data.date 
+              June 2008 &#45; September 2008 
+              %br/
+              (4 months)  
+            .table-data In addition to being a photo shoot and set design assistant, I worked on image post-production editing, logo design, graphic design, web design and web development using Photoshop, HTML, CSS and Flash.
+
+          .table-row
+            .table-header Freelance Web Designer and Developer
+            .table-data.date 
+              New York, NY
+              .job
+                %a(href="/")
+                  Self Employed             
+            .table-data.date
+              August 2008 &#45; August 2008 
+              %br/
+              (1 month) 
+            .table-data Designed and developed a housing site using HTML, CSS, Javascript, PHP and MySql. Created design templates and programmed both client and server sides.
+
+          .table-row
+            .table-header Junior Woodworker and Website Manager
+            .table-data.date 
+              Brooklyn, NY
+              .job
+                %a(href="http://cityjoinery.com/" target="_blank")
+                  City Joinery
+            .table-data.date
+              February 2006 &#45; February 2007 
+              %br/
+              (1 year 1 month)
+            .table-data Responsible for managing content and editing product images through Photoshop for the company website. Office tasks included proofreading and editing written content for web and printed brochure. Assisted in the production of custom wood furniture making.
+
     .category
       %span additional information
       .clear
       .category-container
-        %table.contact-icons
-          %td
+        .parent-table.contact-icons
+          .table-data
             %img.btn(src="/images/about/btns/cmu.jpg" alt="cmu")/
-          %td
+          .table-data
             %a.email{:target => 'blank'}(href="mailto:ana.enders@gmail.com")
-          %td
+          .table-data
             %a.google{:target => 'blank'}(href="https://plus.google.com/101992801915803767157/posts")
-          %td
+          .table-data
             %a.rss(href="/feed.rss")
-          %td
+          .table-data
             %a.linkedIn{:target => 'blank'}(href="http://www.linkedin.com/in/anaenders")
-          %td
+          .table-data
             %a.pinterest{:target => 'blank'}(href="http://pinterest.com/anamonster/")
-          %td
+          .table-data
             %a.facebook{:target => 'blank'}(href="https://www.facebook.com/anamonster")
-          %td
+          .table-data
             %a.twitter{:target => 'blank'}(href="https://twitter.com/#!/anaenders")
-          %td
+          .table-data
             %a.github{:target => 'blank'}(href="https://github.com/anaenders")
-          %td
+          .table-data
             %a.instagram{:target => 'blank'}(href="http://instagram.com/anaenders")
-            
-  .clear

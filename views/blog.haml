@@ -17,24 +17,25 @@
         .block
           %h4= @blog['title']
         = File.open("blogs/#{@blog['url']}.html").read
-        .fb-comment-wrapper
-          .fb-comments{'data-href' => "http://www.anaenders.com/blog/#{@blog['url']}", 'data-num-posts' => 5, 'data-width' => 320}
-        .pagination
-          - if @prev
-            .prev
-              %a(href="/blog/#{@prev['url']}")
-                &lsaquo; Previous
+%img.img-responsive{:src => @blog['img']} 
+.container
+  .post
+    .pagination
+      - if @prev
+        .prev
+          %a(href="/blog/#{@prev['url']}")
+            &lsaquo; Previous
 
-          - if @next
-            .next
-              %a(href="/blog/#{@next['url']}")
-                Next &rsaquo;
-             
-      .archives
-        %ul
-          - @blogs.reverse.each do |b|
-            %li 
-              %a(href="/blog/#{b['url']}")= b['title']
-              %br/
-              %span= b['date']
+      - if @next
+        .next
+          %a(href="/blog/#{@next['url']}")
+            Next &rsaquo;
+               
+    .archives
+      %ul
+        - @blogs.reverse.each do |b|
+          %li 
+            %a(href="/blog/#{b['url']}")= b['title']
+            %br/
+            %span= b['date']
 .clear

@@ -23,6 +23,10 @@ class AnaEnders < Sinatra::Base
   end
 
   get '/portfolio' do
+    @section1 = YAML.load(File.open('config/portfolio.yml'))
+    @section2 = YAML.load(File.open('config/personal.yml'))
+    @section3 = YAML.load(File.open('config/print.yml'))
+    @section4 = YAML.load(File.open('config/woodwork.yml'))
     haml :portfolio
   end
 

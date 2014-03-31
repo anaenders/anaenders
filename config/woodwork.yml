@@ -1,0 +1,32 @@
+- id: sycamore
+  alt: wood
+  thumbnail: /images/portfolio/woodwork/wood1.jpg
+  img: /images/portfolio/woodwork/sycamore.jpg
+  class: one
+  title: Sycamore Box
+  description: >
+    <p>This multi-purpose box was an exercise on miter joints coupled with accented splines for structural support. The piece was inspired by the striking contrast of this particular board of sycamore. Its linear accents are complimented by ebony corners. I crafted this piece after-hours during my days as a junior woodworker. In addition to the woodwork, I provided the graphic composition seen here.</p>
+- id: walnut
+  alt: wood
+  thumbnail: /images/portfolio/woodwork/wood2.jpg
+  img: /images/portfolio/woodwork/walnut.jpg
+  class: two
+  title: Walnut Coffee Table
+  description: >
+    <p>I had the honor of working with a talented fellow woodworker in designing and producing this amazing coffee table. His design was inspired by the butterfly joint and the contrast between heart and sap wood in American Black Walnut. It is a simple and modern piece with contrasting grain pattern and symmetrical joints which gives this piece character and makes it unique. In addition to my contribution in producing this piece, I provided the graphic composition seen here.</p>
+- id: walnut_shelves
+  alt: wood
+  thumbnail: /images/portfolio/woodwork/wood3.jpg
+  img: /images/portfolio/woodwork/walnut_shelves.jpg
+  class: three
+  title: Walnut Shelves
+  description: >
+    <p>I had the honor of working with a talented fellow woodworker in designing and producing these shelves. They were inspired by the cantilever which gives it a free floating quality. The subtle taper and its single bridal joint are the central components for its functionality and character. They work well on their own but work best when paired along side each other. In addition to my contribution in producing these pieces, I provided the graphic composition seen here.</p>
+- id: cherry
+  alt: wood
+  thumbnail: /images/portfolio/woodwork/wood4.jpg
+  img: /images/portfolio/woodwork/cherry.jpg
+  class: four
+  title: Cherry Cabinets
+  description: >
+    <p>Similar to the sycamore box, these file cabinets were an exercise on miter joints coupled with accented splines for structural support, but on a larger scale. Designed to hold hanging legal sized folders, they are small enough to place underneath a desk or to stack on top of each other. In addition to the woodwork, I provided the graphic composition seen here.</p>

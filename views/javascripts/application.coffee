@@ -19,8 +19,8 @@ $ ->
   $('.small-thumb').each -> $(this).append '<div class = "grey-overlay"></div>'
   
   $(".small-thumb").hover(
-    (-> $(this).find('.grey-overlay').fadeIn 100, -> $(this).show()),
-    (-> $(this).find('.grey-overlay').fadeOut 'fast', -> $(this).hide())
+    (-> $(this).find('.grey-overlay').fadeIn 50, -> $(this).show()),
+    (-> $(this).find('.grey-overlay').fadeOut 50, -> $(this).hide())
   )
 
   # Home page slideshow

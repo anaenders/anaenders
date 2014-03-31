@@ -5,6 +5,7 @@
 - url: interior-design-inspiration
   title: interior design ideas
   date: July 04 2011
+  img: /images/blog/blog_pic5.jpg
 - url: september-wedding
   title: my september wedding
   date: November 27 2011
@@ -14,6 +15,7 @@
 - url: november-december-january
   title: november, december, january
   date: January 31 2012
+  img: /images/blog/blog_pic1.jpg
 - url: my-new-website
   title: welcome to my new website
   date: April 29 2012
@@ -23,6 +25,11 @@
 - url: how-to-not-be-an-awesome-landlord
   title: how to not be an awesome landlord
   date: August 31 2012
+  img: /images/blog/blog_pic7.jpg
 - url: valentines
   title: Ian's Secret Skills
   date: February 14 2012
+  img: /images/blog/blog_pic8.jpg
+- url: long-time
+  title: Long Time
+  date: March 30 2014

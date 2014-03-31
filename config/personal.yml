@@ -1,0 +1,22 @@
+---
+- id: orsella
+  alt: Orsella's Site
+  thumbnail: /images/portfolio/web/orsella.png
+  img: /images/portfolio/web/orsella.jpg
+  title: Design&nbsp;&#38;&nbsp;Development&nbsp;&nbsp;&#47;&#47;&nbsp;&nbsp;Orsella
+  description: >
+    <p>This is a super simple site for my long time friend. It's a snazzy, modern site with a fullscreen slideshow rotating through some of her favorite images. The social networking icons link visitors to her online worlds, such as Facebook, Twitter, etc. I designed and wrote the UI in HTML5, CSS3, and plugged in a JavaScript Slideshow. Server configuration and deployment were handled by <a href="http://ianenders.com/" target="_blank">Ian</a>.</p><a href="http://orsella.com/" target="_blank">http://orsella.com/</a><br /><br />
+- id: ana_ian
+  alt: Ana & Ian
+  thumbnail: /images/portfolio/web/ana_ian.png
+  img: /images/portfolio/web/ana_ian.jpg
+  title: Design&nbsp;&#38;&nbsp;Development&nbsp;&nbsp;&#47;&#47;&nbsp;&nbsp;Ana&nbsp;&#38;&nbsp;Ian&rsquo;s&nbsp;Wedding
+  description: >
+    <p>For our wedding,<a href="http://ianenders.com/" target="_blank">Ian</a> and I put together this super simple site, which listed our wedding details and allowed our guests to RSVP, pick their meals, and leave comments regarding food considerations. Ian wired up the backend, while I designed and implemented the UI.
+- id: kayandy
+  alt: Kayleigh & Andy
+  thumbnail: /images/portfolio/web/kayandy.png
+  img: /images/portfolio/web/kayandy.jpg
+  title: Design&nbsp;&nbsp;&#47;&#47;&nbsp;&nbsp;Kayleigh&nbsp;&#38;&nbsp;Andy&rsquo;s&nbsp;Wedding
+  description: >
+    <p>Designed and implemented the UI for my sister-in-law and her husband's wedding. It allowed guests to RSVP, read information about the wedding itinerary, read about the couple, their honeymoon plans, and how to access their wedding registry.</p>
