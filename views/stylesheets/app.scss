@@ -1223,6 +1223,21 @@ body {
         }
       }
     }
+    .close {
+      display: inline-block;
+      width: 20px;
+      height: 20px;
+      border-radius: 10px;
+      color: #fff;
+      line-height: 1.3em;
+      text-align: center;
+      background-color: rgba(0, 0, 0, 0.5);
+      margin: 0px;
+      top: -10px;
+      right: -10px;
+      font-size: 1.2em;
+      &:hover { color: #fff; }
+    }
   }
   // Extra small devices i.e. Mobile (< 632px)
   @media (max-width: 631px) {
@@ -1279,21 +1294,6 @@ body {
           }
         }
       }
-    }
-    .close {
-      display: inline-block;
-      width: 20px;
-      height: 20px;
-      border-radius: 10px;
-      color: #fff;
-      line-height: 1.3em;
-      text-align: center;
-      background-color: rgba(0, 0, 0, 0.5);
-      margin: 0px;
-      top: -10px;
-      right: -10px;
-      font-size: 1.2em;
-      &:hover { color: #fff; }
     }
     .content {
       header {
