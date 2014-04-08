@@ -41,11 +41,6 @@ $ ->
     setTimeout((-> mySlideshow(nextSlide)), 6000)
 
   mySlideshow(1)
-
-  # Vertical toggle for category sections in resume  
-  $('.category').each ->
-    cat = $(this)
-    cat.find("span").click -> cat.find('.category-container').slideToggle "slow"
     
   # Skills chart on off hover animation  
   $('figure div').hover(
