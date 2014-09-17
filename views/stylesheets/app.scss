@@ -179,9 +179,10 @@ body {
   margin: 0px;
   padding: 0px;
   background-color: #fff;
-  font-family: Helvetica, "Helvetica Neue","Sans-serif";
+  font-family: "Helvetica Neue", Helvetica,"Sans-serif";
   color: 000;
-  font-size: 12px;
+  font-size: 13px;
+  line-height: 1.5em;
   min-width: 320px;
   a {
     font-weight: bold;
@@ -200,7 +201,7 @@ body {
 
 p { 
   padding-bottom: 10px; 
-  line-height: 1.4em; 
+  line-height: 1.5em;
   margin: 0px;
   word-wrap: break-word;
 }
@@ -235,6 +236,7 @@ img { border: 0px }
       font-size: 58px; 
       height: 108px;
       width: 35%;
+      line-height: 1.4em;
       font-style: italic; 
       text-decoration: none; 
       color: #f65f5f; 
@@ -334,20 +336,20 @@ img { border: 0px }
       display: block;
     }
     p {
-      font-size: 1.4em;
+      font-size: 15px;
       font-weight: 200;
       padding-bottom: 15px;
-      line-height: 1.4em;
+      line-height: 1.5em;
       a { font-weight: normal; }
     }
   }
   .full-width {
-    background-color: #f1f1f1;
+    background-color: #f9f9f9;
     margin-bottom: 10px;
     padding: 20px 0 20px 0;
-    -moz-box-shadow: inset 0 0 10px 2px #ccc;
-    -webkit-box-shadow: inset 0 0 10px 2px #ccc;
-    box-shadow: inset 0 0 10px 2px #ccc;
+    // -moz-box-shadow: inset 0 0 10px 2px #ccc;
+    // -webkit-box-shadow: inset 0 0 10px 2px #ccc;
+    // box-shadow: inset 0 0 10px 2px #ccc;
     .section {
       margin: 0px 0 0 50px;
       max-width: 700px;
@@ -368,7 +370,7 @@ img { border: 0px }
         font-family: "Archer-Book", Georgia, Serif;
         font-weight: 200;
         display: block;
-        margin: 10px 0;
+        margin: 20px 0;
         text-transform: capitalize;
       }
     }
@@ -535,7 +537,6 @@ body {
   @include main_container;
   padding-top: 0px;
   .casual-intro {
-    max-width: 620px;
     font-size: 14px;
     float: left;
     padding: 0 20px 10px 0;
@@ -549,7 +550,7 @@ body {
       }
       &.thanks {
         font-family: "Archer-LightItalic";
-        font-size: 15px;
+        font-size: 18px;
       }
     }
   }
@@ -610,11 +611,11 @@ body {
     }
     summary {
       text-align: justify;
-      margin: 10px auto;
+      margin: 20px auto;
       width: 65%;
       display: block;
       font-weight: normal;
-      line-height: 1.4em;
+      line-height: 1.5em;
       font-size: 14px;
     }
     .category { 
@@ -640,6 +641,7 @@ body {
           margin: 20px 0 0 0;
           li {
             list-style-type: none;
+            text-align: right;
             height: 17px;
             margin: 0 10px 0 0;
             padding-right: 6px;
@@ -829,12 +831,12 @@ body {
         .table-row { display: table-row; }
         .table-header { 
           font-family: "Archer-Book", Georgia, Serif; 
-          font-size: 15px; 
+          font-size: 16px; 
           font-weight: normal 
         }
         .table-header, .table-data { 
           display: table-cell;
-          line-height: 1.3em; 
+          line-height: 1.5em; 
           text-align: left; 
           width: 20%; 
           vertical-align: top; 
@@ -844,7 +846,8 @@ body {
             clear: both; 
             font-weight: normal;
             margin-top: 5px;
-            font-size: 13px;
+            font-size: 15px;
+            color: #777;
             .job { font-style: italic; color: #6f6f6f; a { font-weight: normal; color: #6f6f6f; font-size: 13px } }
           }
         }
@@ -926,9 +929,9 @@ body {
         margin: 15px auto;
       }
       p { 
-        line-height: 1.3em; 
+        line-height: 1.5em; 
         margin-bottom: 15px; 
-        font-size: 15px; 
+        font-size: 14px; 
         text-align: left;
         font-family: "Helvetica Neue"
       }
@@ -969,16 +972,19 @@ body {
     padding: 0px;
     margin: 0px;
     list-style-type: none;
-    font-size: 11px;
+    font-size: 13px;
     li {
       padding-left: 22px;
-      background: url('/images/blog/bullet.jpg') no-repeat 0px 0px;
+      background: url('/images/blog/bullet.jpg') no-repeat 0px 5px;
       margin: 0 10px 15px 10px;
       text-align: center;
       float: left;
-      a { font-weight: normal }
+      a { 
+        font-weight: normal;
+        color: #777;
+      }
       span { 
-        color: #6e6e6e; 
+        color: #c1c1c1; 
         font-style: italic; 
         display: block; 
         padding-top: 6px 
@@ -1173,6 +1179,7 @@ body {
               display: block; 
               width: 100%; 
               padding: 10px;
+              font-size: 13px;
             } 
             &.contact-icons {
               .table-data {
