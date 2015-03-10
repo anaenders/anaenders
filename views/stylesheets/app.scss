@@ -200,7 +200,7 @@ body {
 .generic { float: left; width: 100% }
 
 p { 
-  padding-bottom: 10px; 
+  padding-bottom: 20px; 
   line-height: 1.5em;
   margin: 0px;
   word-wrap: break-word;
@@ -766,7 +766,7 @@ body {
           overflow: hidden;
           position: relative;
           max-width: 1040px;
-          height: 400px;
+          height: 480px;
           .next_container {
             z-index: 200;
             width: 100px;
@@ -840,7 +840,7 @@ body {
           text-align: left; 
           width: 20%; 
           vertical-align: top; 
-          padding: 15px 15px 15px 0;
+          padding: 15px 15px 10px 0;
           &.date { 
             font-family: "Archer-Book", Georgia, Serif;
             clear: both; 

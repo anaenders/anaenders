@@ -6,21 +6,21 @@ GEM
       mime-types
       xml-simple
     builder (3.2.2)
-    coffee-script (2.2.0)
+    coffee-script (2.3.0)
       coffee-script-source
       execjs
-    coffee-script-source (1.6.3)
-    execjs (2.0.2)
-    haml (4.0.4)
+    coffee-script-source (1.9.1)
+    execjs (2.4.0)
+    haml (4.0.6)
       tilt
-    mime-types (2.0)
-    rack (1.5.2)
-    rack-protection (1.5.1)
+    mime-types (2.4.3)
+    rack (1.6.0)
+    rack-protection (1.5.3)
       rack
-    rack-test (0.6.2)
+    rack-test (0.6.3)
       rack (>= 1.0)
-    sass (3.2.12)
-    sinatra (1.4.4)
+    sass (3.4.13)
+    sinatra (1.4.5)
       rack (~> 1.4)
       rack-protection (~> 1.4)
       tilt (~> 1.3, >= 1.3.4)
@@ -32,11 +32,11 @@ GEM
       sinatra
       sinatra-advanced-routes
       term-ansicolor
-    term-ansicolor (1.2.2)
-      tins (~> 0.8)
+    term-ansicolor (1.3.0)
+      tins (~> 1.0)
     tilt (1.4.1)
-    tins (0.13.1)
-    xml-simple (1.1.2)
+    tins (1.3.5)
+    xml-simple (1.1.5)
 
 PLATFORMS
   ruby
