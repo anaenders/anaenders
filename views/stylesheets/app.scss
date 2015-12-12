@@ -22,7 +22,7 @@ $aqua: #59edd3;
 
 @mixin button($image) {
 	height: 58px;
-	width: 58px; 
+	width: 58px;
 	text-indent: -9999px;
 	border: 0px;
 	background: url($image) 0px 0px;
@@ -45,7 +45,7 @@ $aqua: #59edd3;
 
 @mixin graph($x-coordinate) {
 	height: 98px;
-	width: 8px; 
+	width: 8px;
 	margin: 0 auto;
   cursor: pointer;
 	border: 0px;
@@ -55,9 +55,9 @@ $aqua: #59edd3;
 	&:hover, &.on { background-position: $x-coordinate - 9px 0px; font-weight: bold; }
 	&.alt {
 	  height: 115px;
-	  div {  
-      position: absolute; 
-      bottom: 0px; 
+	  div {
+      position: absolute;
+      bottom: 0px;
       left: 3px;
     }
 	}
@@ -87,7 +87,7 @@ $aqua: #59edd3;
     -webkit-box-shadow: inset 0 0 80px 3px #000;
     box-shadow: inset 0 0 80px 3px #000;
 
-  }  
+  }
 }
 
 @mixin frame($color) {
@@ -108,16 +108,16 @@ $aqua: #59edd3;
 @mixin columns($col_count, $col_gap) {
   -moz-column-count:$col_count; /* Firefox */
   -webkit-column-count:$col_count; /* Safari and Chrome */
-  column-count:$col_count; 
+  column-count:$col_count;
   -moz-column-gap:$col_gap; /* Firefox */
   -webkit-column-gap:$col_gap; /* Safari and Chrome */
   column-gap:$col_gap;
 }
 
 @mixin black_box {
-  color: #fff; 
-  background-color: #000; 
-  letter-spacing: 2px; 
+  color: #fff;
+  background-color: #000;
+  letter-spacing: 2px;
   padding: 8px 20px;
   font-size: 11px;
   z-index: 100;
@@ -199,8 +199,8 @@ body {
 
 .generic { float: left; width: 100% }
 
-p { 
-  padding-bottom: 20px; 
+p {
+  padding-bottom: 20px;
   line-height: 1.5em;
   margin: 0px;
   word-wrap: break-word;
@@ -211,18 +211,18 @@ img { border: 0px }
 .clear {
   clear: both;
   line-height: 0px;
-  height: 0px; 
+  height: 0px;
 }
 
-.full-width { 
-  width: 100%; 
+.full-width {
+  width: 100%;
 }
 
 .content {
   width: 100%;
   padding: 0px;
   header {
-    @extend .generic; 
+    @extend .generic;
     z-index: 600;
     position: fixed;
     width: 100%;
@@ -231,15 +231,15 @@ img { border: 0px }
     border-bottom: 8px solid #454343;
     background-color: rgba(255, 255, 255, 0.8);
     .container { position: relative; }
-    .logo { 
-      font-family: Georgia; 
-      font-size: 58px; 
+    .logo {
+      font-family: Georgia;
+      font-size: 58px;
       height: 108px;
       width: 35%;
       line-height: 1.4em;
-      font-style: italic; 
-      text-decoration: none; 
-      color: #f65f5f; 
+      font-style: italic;
+      text-decoration: none;
+      color: #f65f5f;
       letter-spacing: -4px;
       position: absolute;
       bottom: -27px;
@@ -248,14 +248,14 @@ img { border: 0px }
       background: url('/images/logo.png') no-repeat 0px 0px;
       display: inline-block;
     }
-    .dots { 
-      position: relative; 
-      height: 80px; 
+    .dots {
+      position: relative;
+      height: 80px;
       z-index: 1;
       width: 65%;
       float: right;
       margin: 0 auto;
-      background: url('/images/header.png') repeat 0px 0px; 
+      background: url('/images/header.png') repeat 0px 0px;
       nav {
         z-index: 2;
         position: absolute;
@@ -277,7 +277,7 @@ img { border: 0px }
           font-size: 14px;
           &.nav-about {
             background-color: $neon-green;
-            bottom: 0px; 
+            bottom: 0px;
             color: $almost-black;
           }
           &.nav-portfolio {
@@ -304,8 +304,8 @@ img { border: 0px }
 
 .scroll {
   position: fixed;
-  right: 10px;
-  bottom: 10px;
+  right: 50px;
+  bottom: 50px;
   z-index: 1000;
   background-color: rgba(0,0,0,.80);
   font-family: Georgia;
@@ -357,13 +357,13 @@ img { border: 0px }
       font-family: "Helvetica Neue", Helvetica, Sans-serif;
     }
   }
-  .web, .print, .woodwork { 
+  .web, .print, .woodwork {
     display: inline-block;
     margin-bottom: 30px;
     text-align: center;
     width: 100%;
     &.personal { @include frame($almost-black); }
-    .section { 
+    .section {
       width: 100%;
       clear: both;
       h1 {
@@ -381,17 +381,17 @@ img { border: 0px }
   .print {
     @include frame($neon-pink);
     .small-thumb { @include thumb-container(484px, 342px); }
-    .group-float { 
+    .group-float {
       display: inline-block;
       max-width: 543px;
-      .small-thumb { 
+      .small-thumb {
         @include thumb-container(541px, 170px);
       }
     }
-    .small-thumb { 
+    .small-thumb {
         &.abstract { @include thumb-container(447px, 98px); }
     }
-    .small-thumb { 
+    .small-thumb {
       &.signage { @include thumb-container(574px, 98px); }
     }
   }
@@ -404,7 +404,7 @@ img { border: 0px }
   }
 }
 
-.close { 
+.close {
   position: absolute;
   top: -20px;
   right: -20px;
@@ -415,7 +415,7 @@ img { border: 0px }
   filter: alpha(opacity=100); /* For IE8 and earlier */
   font-weight: 200;
   text-shadow: none;
-  color: #fff; 
+  color: #fff;
 }
 
 .modal-body { padding: 0px !important; }
@@ -434,28 +434,28 @@ img { border: 0px }
       width: 100%;
       opacity: 0.8;
       filter: alpha(opacity=80); /* For IE8 and earlier */
-      span { 
+      span {
         color: #fff;
-        font-family: "Trade-Gothic", Helvetica; 
+        font-family: "Trade-Gothic", Helvetica;
         background-color: #000;
         text-transform: capitalize;
-        font-size: 17px; 
+        font-size: 17px;
         display: block;
         font-weight: normal;
         padding: 12px 15px 10px 15px;
         margin-bottom: 15px;
       }
-      p { 
+      p {
         text-align: left;
-        font-size: 15px; 
-        clear: both; 
+        font-size: 15px;
+        clear: both;
         display: block;
-        padding: 15px; 
-        float: left; 
+        padding: 15px;
+        float: left;
         color: #000;
         line-height: 1.6em;
         // @include columns(2, 10px);
-        a { 
+        a {
           color: #F65F5F;
           font-weight: normal;
           &:hover { text-decoration: none; color: #bc3b3b }
@@ -537,10 +537,16 @@ body {
   @include main_container;
   padding-top: 0px;
   .casual-intro {
-    font-size: 14px;
-    float: left;
-    padding: 0 20px 10px 0;
+    font-size: 15px;
+    margin: 40px auto 0 auto;
+    max-width: 700px;
     p {
+      line-height: 1.5em;
+      margin: 0 0 15px 0;
+      a {
+        font-family: Georgia;
+        font-style: italic;
+      }
       span {
         float: left;
         margin: 26px 20px 20px 0;
@@ -554,50 +560,13 @@ body {
       }
     }
   }
-  .twitter-feed {
-    @include bring_to_front;
-    width: 100%;
-    float: left;  
-    overflow-y: none;
-    .tweet {
-      margin: 0px;
-      padding: 15px 0 15px 40px;
-      border-bottom: 1px solid $grey;
-      font-family: Georgia;
-      font-size: 11px;
-      background: url('/images/about/twitter_bird.png') no-repeat 0% 50%;
-      font-weight: bold;
-      span { 
-        font-size: 10px; 
-        font-weight: normal; 
-        display: block;
-        margin-top: 10px;
-      }
-    }
-  }
   .resume {
-    @extend .generic; 
+    @extend .generic;
+    line-height: 1.5em;
     position: relative;
     background: url('/images/about/border_bg.jpg') #fff repeat-x top left;
-    border-top: 45px solid #fff;
+    border-top: 40px solid #fff;
     margin: 0;
-    .follow {
-      position: absolute;
-      top: 93px;
-      left: 0px;
-      height: 20px;
-      -webkit-box-reflect: below 0px -webkit-gradient( linear, left top, left bottom, color-stop(0.0, rgba(255, 255, 255, 0.0)), color-stop(0.6, rgba(255,255,255,0.3)), color-stop(0.9, rgba(255, 255, 255, 0.7)));
-    }
-    .dload {
-      position: absolute;
-      top: 85px;
-      right: 0px;
-      width: 135px;
-      height: 27px;
-      background: url('/images/about/btns/dload_resume.jpg') repeat  0px 0px;
-      -webkit-box-reflect: below 0px -webkit-gradient( linear, left top, left bottom, color-stop(0.0, rgba(255, 255, 255, 0.0)), color-stop(0.6, rgba(255,255,255,0.3)), color-stop(0.9, rgba(255, 255, 255, 0.7)));
-      &:hover { background: url('/images/about/btns/dload_resume.jpg') repeat 0px 27px; font-weight: bold }
-    }
     h1 {
       background-color: #fff;
       margin: -10px auto 0 auto;
@@ -611,32 +580,40 @@ body {
     }
     summary {
       text-align: justify;
-      margin: 20px auto;
+      margin: 50px auto;
       width: 65%;
       display: block;
       font-weight: normal;
       line-height: 1.5em;
-      font-size: 14px;
+      font-size: 15px;
     }
-    .category { 
+    .category {
       border-top: 1px dotted $grey;
       margin: 10px 0 20px 0;
-      @extend .generic; 
+      @extend .generic;
       .category-container {
         display: block;
         > div, > figure { padding: 0px !important; }
       }
-      span { 
+      span {
         @include black_box;
         cursor: pointer;
         float: left;
         margin-top: -1px;
+        &.alt {
+          float: right;
+        }
+      }
+      &.right {
+        span {
+          float: right;
+        }
       }
       .skill-list {
         float: left;
         text-align: left;
         ul {
-          @extend .generic; 
+          @extend .generic;
           padding: 0px;
           margin: 20px 0 0 0;
           li {
@@ -644,7 +621,7 @@ body {
             text-align: right;
             height: 17px;
             margin: 0 10px 0 0;
-            padding-right: 6px;
+            padding-right: 10px;
             font-style: italic;
             font-family: Georgia;
             font-weight: bold;
@@ -663,8 +640,8 @@ body {
           left: 0px;
           width: 100%;
           text-align: center;
-          font-family: "Archer-Book", Georgia, Serif; 
-          font-size: 15px; 
+          font-family: "Archer-Book", Georgia, Serif;
+          font-size: 15px;
           color: #000;
           font-size: 10px;
           z-index: 200;
@@ -677,7 +654,7 @@ body {
           font-size: 11px;
           text-align: center;
           width: auto;
-          .graph-header { 
+          .graph-header {
             position: absolute;
             top: 73px;
             height: 18px;
@@ -686,8 +663,8 @@ body {
           }
           label {
             font-weight: normal;
-            &:hover, &.on { 
-              color: $grey; 
+            &:hover, &.on {
+              color: $grey;
               cursor: pointer;
             }
           }
@@ -699,65 +676,65 @@ body {
           margin-top: 25px;
           font-size: 12px;
           position: relative;
-          &.frontend { 
+          &.frontend {
             width: 35%;
             display: table;
-            .data { 
-              width: 14%; 
-              .graph-header { 
-                background-color: #f77c7f; 
-                &.dark { 
-                  border-right: 15px solid #ff3f18; 
+            .data {
+              width: 14%;
+              .graph-header {
+                background-color: #f77c7f;
+                &.dark {
+                  border-right: 15px solid #ff3f18;
                 }
               }
             }
           }
-          &.programming { 
+          &.programming {
             width: 24%;
             display: table;
-            .data { 
-              width: 25%; 
-              .graph-header { 
-                background-color: #fd835e; 
-                &.dark { 
-                  border-right: 15px solid #ffb317; 
+            .data {
+              width: 25%;
+              .graph-header {
+                background-color: #fd835e;
+                &.dark {
+                  border-right: 15px solid #ffb317;
                 }
               }
             }
           }
-          &.design { 
+          &.design {
             display: table;
             width: 26%;
-            .data { 
+            .data {
               width: 25%;
-              .graph-header { 
-                background-color: #ffdd4d; 
-                &.dark { 
-                  border-right: 15px solid #c1e31a; 
+              .graph-header {
+                background-color: #ffdd4d;
+                &.dark {
+                  border-right: 15px solid #c1e31a;
                 }
               }
-            } 
+            }
           }
-          &.additional { 
+          &.additional {
             display: table;
-            // max-width: 147px; 
+            // max-width: 147px;
             width: 15%;
-            .data{ 
+            .data{
               width: 50%;
-              .graph-header { 
-                background-color: #26c6d6; 
-                &.dark { 
-                  border-right: 15px solid #4fabec; 
+              .graph-header {
+                background-color: #26c6d6;
+                &.dark {
+                  border-right: 15px solid #4fabec;
                 }
               }
-            } 
+            }
           }
           .beginner { @include graph(-75px) }
           .intermediate { @include graph(-50px) }
           .advanced { @include graph(-25px) }
           .expert { @include graph(0px); }
         }
-      } 
+      }
       .slide_window {
         background-color: #FFFFFF;
         position: relative;
@@ -781,7 +758,7 @@ body {
               float: right;
               height: 23px;
               width: 30px;
-              a { 
+              a {
                 width: 30px;
                 height: 23px;
                 text-indent: -9999;
@@ -799,7 +776,7 @@ body {
             background-color: rgba(255, 255, 255, 0.8);
             display: none;
             left: 0px;
-            .previous { 
+            .previous {
               @extend .next;
               padding: 228px 0px 0 20px;
               float: left;
@@ -815,8 +792,8 @@ body {
             z-index: 100;
             .slide_inner {
               width: 1200px;
-              .table-row { 
-                width: auto; 
+              .table-row {
+                width: auto;
                 .table-header, .table-data { width: 16%; }
               }
             }
@@ -829,21 +806,21 @@ body {
         margin-top: 35px;
         width: 100%;
         .table-row { display: table-row; }
-        .table-header { 
-          font-family: "Archer-Book", Georgia, Serif; 
-          font-size: 16px; 
-          font-weight: normal 
+        .table-header {
+          font-family: "Archer-Book", Georgia, Serif;
+          font-size: 16px;
+          font-weight: normal
         }
-        .table-header, .table-data { 
+        .table-header, .table-data {
           display: table-cell;
-          line-height: 1.5em; 
-          text-align: left; 
-          width: 20%; 
-          vertical-align: top; 
+          line-height: 1.5em;
+          text-align: left;
+          width: 20%;
+          vertical-align: top;
           padding: 15px 15px 10px 0;
-          &.date { 
+          &.date {
             font-family: "Archer-Book", Georgia, Serif;
-            clear: both; 
+            clear: both;
             font-weight: normal;
             margin-top: 5px;
             font-size: 15px;
@@ -853,19 +830,19 @@ body {
         }
         &.contact-icons {
           margin: 30px 0 50px 0;
-          .table-data { 
-            text-align: center; 
-            padding: 0px; 
+          .table-data {
+            text-align: center;
+            padding: 0px;
             width: auto;
             a {
               width: 58px;
               height: 58px;
               float: left;
-              -webkit-box-reflect: below 0px -webkit-gradient( linear, 
-                left top, 
-                left bottom, 
-                color-stop(0.0, rgba(255, 255, 255, 0.0)), 
-                color-stop(0.6, rgba(255,255,255,0.3)), 
+              -webkit-box-reflect: below 0px -webkit-gradient( linear,
+                left top,
+                left bottom,
+                color-stop(0.0, rgba(255, 255, 255, 0.0)),
+                color-stop(0.6, rgba(255,255,255,0.3)),
                 color-stop(0.9, rgba(255, 255, 255, 0.7)));
               &.email { @include button('/images/about/btns/email.jpg') }
               &.google { @include button('/images/about/btns/google.jpg') }
@@ -890,7 +867,7 @@ body {
   @include main_container;
   @include bring_to_front;
   .post {
-    @extend .generic; 
+    @extend .generic;
     color: $dark-grey;
     margin-bottom: 0px;
     text-align: left;
@@ -911,27 +888,27 @@ body {
       text-align: center;
       .block {
         margin: 40px 0;
-        h4 { 
+        h4 {
           text-transform: capitalize;
           font-family: "Archer-Book", Georgia, Serif;
           font-size: 30px;
-          display: inline; 
+          display: inline;
           margin: 0px;
-          padding: 30px 160px; 
-          font-weight: normal; 
+          padding: 30px 160px;
+          font-weight: normal;
           text-align: center;
           background:url('/images/ornament_left.png') no-repeat top left,url('/images/ornament_right.png') no-repeat top right;
           clear: both;
         }
       }
-      .blog-content { 
-        max-width: 600px; 
+      .blog-content {
+        max-width: 600px;
         margin: 15px auto;
       }
-      p { 
-        line-height: 1.5em; 
-        margin-bottom: 15px; 
-        font-size: 14px; 
+      p {
+        line-height: 1.5em;
+        margin-bottom: 15px;
+        font-size: 14px;
         text-align: left;
         font-family: "Helvetica Neue"
       }
@@ -942,8 +919,8 @@ body {
         margin: 15px auto;
       }
     }
-  }  
-} 
+  }
+}
 
 .pagination {
   max-width: 600px;
@@ -966,7 +943,7 @@ body {
 }
 .archives {
   float: left;
-  width: 100%; 
+  width: 100%;
   margin-top: 30px;
   ul {
     padding: 0px;
@@ -979,15 +956,15 @@ body {
       margin: 0 10px 15px 10px;
       text-align: center;
       float: left;
-      a { 
+      a {
         font-weight: normal;
         color: #777;
       }
-      span { 
-        color: #c1c1c1; 
-        font-style: italic; 
-        display: block; 
-        padding-top: 6px 
+      span {
+        color: #c1c1c1;
+        font-style: italic;
+        display: block;
+        padding-top: 6px
       }
     }
   }
@@ -1007,24 +984,24 @@ body {
       }
       .print {
         .small-thumb { @include thumb-container(46.5%, 341px); }
-        .group-float { 
+        .group-float {
           max-width: 52%;
-          .small-thumb { 
+          .small-thumb {
             @include thumb-container(100%, 170px);
           }
         }
-        .small-thumb { 
+        .small-thumb {
           &.abstract { @include thumb-container(43%, 98px); }
         }
-        .small-thumb { 
+        .small-thumb {
           &.signage { @include thumb-container(55%, 98px); }
         }
       }
     }
     .content {
       header {
-        .logo { 
-          font-size: 50px; 
+        .logo {
+          font-size: 50px;
           padding-top: 7px;
         }
       }
@@ -1052,13 +1029,13 @@ body {
   @media (max-width: 991px) {
     .content {
       header {
-        .logo { 
-          font-size: 35px; 
+        .logo {
+          font-size: 35px;
           padding-top: 20px;
         }
       }
     }
-    .portfolio {      
+    .portfolio {
       .section {
         h1 {
           font-size: 24px;
@@ -1096,12 +1073,12 @@ body {
   // Extra small devices i.e. Mobile (< 768px)
   @media (max-width: 767px) {
     .content {
-      .container { 
+      .container {
         &.header { padding: 0px; }
       }
       header {
-        .logo { 
-          font-size: 30px; 
+        .logo {
+          font-size: 30px;
           padding-top: 27px;
         }
         .dots {
@@ -1133,9 +1110,9 @@ body {
         .title-date { margin-left: 84px; }
         .blog_post {
           .block {
-            h4 { 
-              font-size: 30px; 
-              background: none; 
+            h4 {
+              font-size: 30px;
+              background: none;
               padding: 30px 10px;
             }
           }
@@ -1175,46 +1152,46 @@ body {
         .category {
           .parent-table {
             padding: 10px 10px 0 10px;
-            .table-row, .table-header, .table-data { 
-              display: block; 
-              width: 100%; 
+            .table-row, .table-header, .table-data {
+              display: block;
+              width: 100%;
               padding: 10px;
               font-size: 13px;
-            } 
+            }
             &.contact-icons {
               .table-data {
                 display: inline-block;
                 padding: 10px;
               }
             }
-            .table-row { 
-              border-bottom: 1px dotted #d7d7d7; 
+            .table-row {
+              border-bottom: 1px dotted #d7d7d7;
               &:last-child { border-bottom: none; }
             }
           }
           figure {
             height: auto;
             margin-top: 25px;
-            > div { 
+            > div {
               float: none;
-              padding: 0px !important; 
+              padding: 0px !important;
               &.frontend, &.programming, &.design, &.additional {
-                width: 76%; 
+                width: 76%;
                 height: auto;
                 margin-top: 0px;
               }
             }
-            .clear { 
-              height: 1px; 
+            .clear {
+              height: 1px;
               margin: 0px;
             }
             .skill-list {
               margin-top: 0px;
               ul {
-                margin: 0px; 
+                margin: 0px;
                 padding-left: 5px;
-                li { 
-                  font-size: 9px; 
+                li {
+                  font-size: 9px;
                   margin: 0px;
                   padding: 0px 10px 0 0;
                 }
@@ -1247,8 +1224,8 @@ body {
   @media (max-width: 631px) {
     .content {
       header {
-        .logo { 
-          width: 50%; 
+        .logo {
+          width: 50%;
           font-size: 28px;
         }
         .dots { width: 50%; }
@@ -1269,8 +1246,8 @@ body {
     .pagination { padding: 0 10px; }
     .about {
       .resume {
-        summary { 
-          width: 100%; 
+        summary {
+          width: 100%;
           padding: 70px 10px 30px 10px;
         }
         .follow, .dload { top: 35px; }
@@ -1281,19 +1258,19 @@ body {
   @media (max-width: 441px) {
     .portfolio {
       .web {
-        .small-thumb { 
-          @include thumb-container(320px, 100px); 
+        .small-thumb {
+          @include thumb-container(320px, 100px);
         }
       }
       .print {
-        .small-thumb { 
-          @include thumb-container(320px, 341px); 
+        .small-thumb {
+          @include thumb-container(320px, 341px);
           &.signage { @include thumb-container(320px, 98px); }
           &.abstract { @include thumb-container(320px, 98px); }
         }
-        .group-float { 
+        .group-float {
           max-width: 322px;
-          .small-thumb { 
+          .small-thumb {
             @include thumb-container(320px, 170px);
           }
         }
@@ -1311,7 +1288,7 @@ body {
     .about {
       .table-row {
         padding-bottom: 10px;
-        margin-bottom: 15px; 
+        margin-bottom: 15px;
       }
     }
   }
