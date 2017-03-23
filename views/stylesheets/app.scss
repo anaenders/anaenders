@@ -7,6 +7,7 @@ $green: #74fae2;
 $neon-pink: #f65f5f;
 $neon-green: #dcf74a;
 $aqua: #59edd3;
+$highlighter: #fce7e7;
 
 /***********************mixins***********************/
 
@@ -170,8 +171,18 @@ $aqua: #59edd3;
     text-rendering:  optimizeLegibility;
 }
 
-::selection { background-color:#fce7e7; }
-::-moz-selection { background-color:#fce7e7; }
+::selection {
+  background-color: $highlighter;
+}
+
+::-moz-selection {
+  background-color: $highlighter;
+}
+
+/*********************** Google Fonts ***********************/
+
+// font-family: 'Arapey';
+@import url(https://fonts.googleapis.com/css?family=Arapey:400italic,400);
 
 /***********************anaenders***********************/
 
@@ -188,6 +199,7 @@ body {
     font-weight: bold;
     text-decoration: none;
     color: #000;
+    background-color: $highlighter;
     &:hover {
       color: #000;
       text-decoration: underline;
@@ -301,6 +313,14 @@ img { border: 0px }
     }
   }
 }
+
+// .emphasis {
+//   padding: 0px 30px 35px 30px;
+//   font-family: 'Arapey';
+//   font-size: 18px;
+//   font-style: italic;
+//   line-height: 1.5em;
+// }
 
 .scroll {
   position: fixed;
@@ -538,11 +558,11 @@ body {
   padding-top: 0px;
   .casual-intro {
     font-size: 15px;
-    margin: 40px auto 0 auto;
+    margin: 20px auto 0 auto;
     max-width: 700px;
     p {
       line-height: 1.5em;
-      margin: 0 0 15px 0;
+      margin: 0 0 8px 0;
       a {
         font-family: Georgia;
         font-style: italic;
@@ -552,9 +572,8 @@ body {
         margin: 26px 20px 20px 0;
         font-size: 66px;
         font-family: "Archer-LightItalic";
-        text-shadow: -2px 0px 5px #b5b5b5;
       }
-      &.thanks {
+      &.emphasis {
         font-family: "Archer-LightItalic";
         font-size: 18px;
       }
@@ -565,12 +584,12 @@ body {
     line-height: 1.5em;
     position: relative;
     background: url('/images/about/border_bg.jpg') #fff repeat-x top left;
-    border-top: 40px solid #fff;
+    border-top: 30px solid #fff;
     margin: 0;
     h1 {
       background-color: #fff;
       margin: -10px auto 0 auto;
-      width: 230px;
+      width: 250px;
       z-index: 5;
       line-height: 1.3em;
       font-size: 24px;
@@ -580,7 +599,7 @@ body {
     }
     summary {
       text-align: justify;
-      margin: 50px auto;
+      margin: 40px auto;
       width: 65%;
       display: block;
       font-weight: normal;
@@ -677,7 +696,7 @@ body {
           font-size: 12px;
           position: relative;
           &.frontend {
-            width: 35%;
+            width: 34%;
             display: table;
             .data {
               width: 14%;
@@ -690,7 +709,7 @@ body {
             }
           }
           &.programming {
-            width: 24%;
+            width: 22%;
             display: table;
             .data {
               width: 25%;
@@ -717,8 +736,7 @@ body {
           }
           &.additional {
             display: table;
-            // max-width: 147px;
-            width: 15%;
+            width: 18%;
             .data{
               width: 50%;
               .graph-header {
@@ -803,7 +821,7 @@ body {
       .parent-table {
         display: table;
         font-family: Georgia;
-        margin-top: 35px;
+        margin-top: 45px;
         width: 100%;
         .table-row { display: table-row; }
         .table-header {
@@ -811,13 +829,14 @@ body {
           font-size: 16px;
           font-weight: normal
         }
-        .table-header, .table-data {
+        .table-header,
+        .table-data {
           display: table-cell;
           line-height: 1.5em;
           text-align: left;
           width: 20%;
           vertical-align: top;
-          padding: 15px 15px 10px 0;
+          padding: 10px 10px 10px 0;
           &.date {
             font-family: "Archer-Book", Georgia, Serif;
             clear: both;
@@ -825,7 +844,15 @@ body {
             margin-top: 5px;
             font-size: 15px;
             color: #777;
-            .job { font-style: italic; color: #6f6f6f; a { font-weight: normal; color: #6f6f6f; font-size: 13px } }
+            .job {
+              font-style: italic;
+              font-size: 13px;
+              color: #6f6f6f;
+              a {
+                font-weight: normal;
+                color: #6f6f6f;
+              }
+            }
           }
         }
         &.contact-icons {
@@ -1139,9 +1166,14 @@ body {
     }
     .about {
       .casual-intro {
-        padding: 0px 10px;
+        padding: 10px;
+        margin: 0px;
         max-width: 100%;
         width: 100%;
+        span {
+          font-size: 30px;
+          margin: 10px;
+        }
       }
       .twitter-feed {
         float: none;
@@ -1175,7 +1207,10 @@ body {
             > div {
               float: none;
               padding: 0px !important;
-              &.frontend, &.programming, &.design, &.additional {
+              &.frontend,
+              &.programming,
+              &.design,
+              &.additional {
                 width: 76%;
                 height: auto;
                 margin-top: 0px;

@@ -29,7 +29,7 @@
         ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
         var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
       })();
-    
+
     / [if IE]
       :css
         .content header, .prev_container, .next_container {
@@ -38,24 +38,24 @@
           zoom: 1;
         }
       </style>
-    
+
   %body
     .content
-      %header  
-        .container 
+      %header
+        .container
           %a.logo(href="/")
             ana enders
           .dots
             %nav
-              .nav-btn
-                %a.nav-about{:href => '/'}
-                  About
-              .nav-btn
-                %a.nav-portfolio{:href => '/portfolio'}
-                  Portfolio
-              .nav-btn
-                %a.nav-blog{:href => '/blog'} 
-                  Blog
+              / .nav-btn
+              /   %a.nav-about{:href => '/'}
+              /     About
+              / .nav-btn
+              /   %a.nav-portfolio{:href => '/portfolio'}
+              /     Portfolio
+              / .nav-btn
+              /   %a.nav-blog{:href => '/blog'}
+              /     Blog
       .full-width
         = yield
         .scroll
