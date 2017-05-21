@@ -3,25 +3,8 @@ linkify = (text) ->
   text.replace(exp,"<a href='$1' target='_blank'>$1</a>")
 
 $ ->
-  # Main navigation
-  $('nav a').each ->
-    match = false
-    if window.location.pathname is $(@).attr('href')
-      match = true
-    else if $(@).attr('href') != '/'
-      match = window.location.pathname.match $(@).attr('href')
-    $(@).addClass(if match then 'on' else 'off')
-
   # Dots divider for skills titles
   $('.alt').each -> $(this).append '<div><img src = "/images/about/dots.jpg"/></div>'
-
-  # Hover for portfolio thumbnails
-  $('.small-thumb').each -> $(this).append '<div class = "grey-overlay"></div>'
-
-  $(".small-thumb").hover(
-    (-> $(this).find('.grey-overlay').fadeIn 50, -> $(this).show()),
-    (-> $(this).find('.grey-overlay').fadeOut 50, -> $(this).hide())
-  )
 
   # Home page slideshow
   mySlideshow = (currentSlide) ->
@@ -42,26 +25,15 @@ $ ->
 
   mySlideshow(1)
 
-  # Skills chart on off hover animation
-  $('figure div').hover(
-    -> $(this).siblings('label').addClass 'on',
-    -> $(this).siblings('label').removeClass 'on'
-  )
-
-  $('figure label').hover(
-    -> $(this).siblings('div').addClass 'on',
-    -> $(this).siblings('div').removeClass 'on'
-  )
-
   # Slide animation for work experience tiles
   $('#next').click ->
-    $('.slide_tiles_container').animate { left: '-=208', }, 500, ->
+    $('.resume-jobs-container').animate { left: '-=208', }, 500, ->
       $('.next_container').fadeOut "300"
       $('.prev_container').fadeIn "300"
     false
 
   $('#previous').click ->
-    $('.slide_tiles_container').animate { left: '+=208' }, 500, ->
+    $('.resume-jobs-container').animate { left: '+=208' }, 500, ->
       $('.prev_container').fadeOut "300"
       $('.next_container').fadeIn "300"
     false
@@ -84,4 +56,3 @@ $ ->
   $(".scroll").on("click", () ->
     $(document).find("html,body").animate({ "scrollTop" : "0" }, "slow")
   )
-

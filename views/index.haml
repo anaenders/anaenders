@@ -18,385 +18,342 @@
     %li.slide16
     %li.slide17
 
-.about.container
-  .casual-intro
-    %p
-      %span
-        Work.
-      For some time now, I've been working closely with engineers, first as a Front-end Engineer and Designer, and more recently as a Tech Lead and Engineering Manager. I've spent the past 5 years working at a startup, where I joined as employee #3 (they've since raised several rounds and are at 135+ employees).
-    %p
-      When I'm coding, my goal is to implement user interfaces and to hand off compliant and pixel-perfect templates for engineers to flesh out with backend functionality. When I'm designing, my tools of choice are Photoshop and Invision. When recruiting, I spend time vetting engineers, conducting initial phone screens and in-house interviews&mdash;I then manage many of these new hires, including interns. As a tech lead, I focus on delivering features for our consumer facing web application, working closely with product managers and various stakeholders across the company.
-    %p
-      %span
-        Play.
-      I enjoy interior design, Bea Arthur ice cream cones from Big Gay Ice Cream Shop, home-made waffles, and cuddling with my clingy cat Toby and my hyperactive dog Butters while binge watching TV shows with
-      %a(href="http://www.ianenders.com" target="_blank")
-        Ian.
-      I dislike the entire winter and summer seasons, waking up early, and IPAs.
-    %p
-      I studied music performance at Carnegie Mellon University, then took up wood working, began a Masters in Design + Technology at Parsons, and now I lead and manage full-stack engineers. I keep busy and I get things done. Check out
-      %a(href="/Ana_Enders_Resume.pdf" target="_blank") my resume
-      to learn more about what I do.
+.about
+  .intro
+    .intro-description
+      %p
+        %span
+          Work.
+        For some time now, I've been working closely with engineers, first as a Front-end Engineer and Designer, then as a Tech Lead and now as an Engineering Manager. I've spent the last 5 years at a startup where I joined as employee #3 (they've since raised several rounds and are at 135+ employees).
+      %p
+        When coding, my goal is to implement and hand off compliant and pixel-perfect templates for engineers to flesh out with backend functionality. When designing, my tools of choice are Photoshop and Invision. When recruiting, I spend time vetting engineers, conducting initial phone screens and in-house interviews&mdash;I then manage many of these new hires. As a tech lead, I focused on delivering features for our consumer facing web application, working closely with product managers and various stakeholders across the company. Now, I focus primarily on managing a team of fullstack engineers.
+    .intro-description
+      %p
+        %span
+          Fun.
+        I enjoy interior design, and am obsessed with figuring out how to make small spaces beautiful and functional. I have perfected the art of home-made waffles and I'm a big fan of Bea Arthur ice cream cone from Big Gay Ice Cream Shop. But my favorite way to spend time is to relax and cuddle with my clingy cat Toby and my hyperactive dog Butters while binge watching TV shows with
+        %a(href="http://www.ianenders.com" target="_blank")
+          Ian.
+        I've tried my hand at gardening but I'm not quite there yet&mdash;my ferns have seen better days. I dislike the entire winter and summer seasons, waking up early, and IPAs.
+      %p
+        I studied music performance at Carnegie Mellon University, then took up wood working, began a Masters in Design + Technology at Parsons, and now I lead and manage full-stack engineers. I keep busy and I get things done. Check out
+        %a(href="/Ana_Enders_Resume.pdf" target="_blank") my resume
+        to learn more about what I do.
 
   .resume
     %h1 Engineering Manager
-    .clear
-    %summary
-      I consider myself a generalist&mdash;shifting focus to whatever the business' needs are, while being able to perform various critical roles in a fast paced environment. I split my day between managing ten people and being a team lead to our full-stack engineers. I establish code standards, perform code reviews, and I make sure the engineering team is a happy, highly functional, well-oiled machine.
+    .resume-summary
+      I consider myself a generalist&mdash;shifting focus to whatever the business' needs are. I split my time between managing ten people and collaborating with the VP of Engineering and the CTO on behind-the-scences opperational fun. Having established our code standards for all our SASS, I review pull requests and work on features whenever I have bandwidth. When I'm not an individual contributor, or doing operational work, I dedicate my time to my direct reports, making sure they are happy, engaged, learning, and have what they need to be highly functional contributors.
 
-    .category
-      %span education
-      .category-container.hidden-xs
-        .parent-table
-          .table-row
-            .table-header University of Waterloo
-            .table-header University of Waterloo
-            .table-header Parsons School of Design
-            .table-header Carnegie Mellon University
-            .table-header Centre International D&#39;Etudes Fran&#231;ais
+    // Education desktop
+    .resume-block
+      .section-label--left education
+      .resume-education--desktop
+        .section-item
+          .section-item-header University of Waterloo
+          .section-item-header University of Waterloo
+          .section-item-header Parsons School of Design
+          .section-item-header Carnegie Mellon University
+          .section-item-header Centre International D&#39;Etudes Fran&#231;ais
+        .section-item
+          .section-item-grey March &#45; May 2011
+          .section-item-grey Jan &#45; March 2011
+          .section-item-grey 2007 &#45; 2008
+          .section-item-grey 2001 &#45; 2005
+          .section-item-grey Summer 2004
+        .section-item
+          .section-item-copy Certificate of Completion for Intermediate Java Programming
+          .section-item-copy Certificate of Completion for Introduction to Java Programming
+          .section-item-copy MFA Design + Technology
+          .section-item-copy BFA Music Performance, European Studies
+          .section-item-copy Certificate in Intensive Language Studies in French
+        .section-item
+          .section-item-copy Online Course for Professional Development
+          .section-item-copy Online Course for Professional Development
+          .section-item-copy Completed one year of a two year program
+          .section-item-copy &nbsp;
+          .section-item-copy &nbsp;
 
-          .table-row
-            .table-data.date March &#45; May 2011
-            .table-data.date Jan &#45; March 2011
-            .table-data.date 2007 &#45; 2008
-            .table-data.date 2001 &#45; 2005
-            .table-data.date Summer 2004
+      // Education mobile
+      .resume-education--mobile
+        .section-item
+          .section-item-header University of Waterloo
+          .section-item-grey March &#45; May 2011
+          .section-item-copy Certificate of Completion for Intermediate Java Programming
+          .section-item-copy Online Course for Professional Development
+        .section-item
+          .section-item-header University of Waterloo
+          .section-item-grey Certificate of Completion for Introduction to Java Programming
+          .section-item-copy Online Course for Professional Development
+        .section-item
+          .section-item-header Parsons School of Design
+          .section-item-grey 2007 &#45; 2008
+          .section-item-copy MFA Design + Technology
+          .section-item-copy Completed one year of a two year program
+        .section-item
+          .section-item-header Carnegie Mellon University
+          .section-item-grey 2001 &#45; 2005
+          .section-item-copy BFA Music Performance, European Studies
+        .section-item
+          .section-item-header Centre International D&#39;Etudes Fran&#231;ais
+          .section-item-grey Summer 2004
+          .section-item-copy Certificate in Intensive Language Studies in French
 
-          .table-row
-            .table-data Certificate of Completion for Intermediate Java Programming
-            .table-data Certificate of Completion for Introduction to Java Programming
-            .table-data MFA Design + Technology
-            .table-data BFA Music Performance, European Studies
-            .table-data Certificate in Intensive Language Studies in French
-          .table-row
-            .table-data Online Course for Professional Development
-            .table-data Online Course for Professional Development
-            .table-data Completed one year of a two year program
-
-      .category-container.visible-xs
-        .parent-table
-          .table-row
-            .table-header University of Waterloo
-            .table-data.date March &#45; May 2011
-            .table-data Certificate of Completion for Intermediate Java Programming
-            .table-data Online Course for Professional Development
-          .table-row
-            .table-header University of Waterloo
-            .table-data Certificate of Completion for Introduction to Java Programming
-            .table-data Online Course for Professional Development
-            .table-data.date Jan &#45; March 2011
-          .table-row
-            .table-header Parsons School of Design
-            .table-data.date 2007 &#45; 2008
-            .table-data Completed one year of a two year program
-            .table-data MFA Design + Technology
-          .table-row
-            .table-header Carnegie Mellon University
-            .table-data.date 2001 &#45; 2005
-            .table-data BFA Music Performance, European Studies
-          .table-row
-            .table-header Centre International D&#39;Etudes Fran&#231;ais
-            .table-data.date Summer 2004
-            .table-data Certificate in Intensive Language Studies in French
-
-    .category.right
-      %span skills
-      .clear
-      .category-container
-        .skill-list.col-lg-2.col-md-2.col-sm-2.hidden-xs
+    // Skills desktop
+    .resume-block
+      .section-label--right skills
+      .resume-skills--desktop
+        .resume-skills
           %ul
             %li expert
             %li advanced
             %li intermediate
             %li beginner
-        %figure.col-lg-10.col-md-10.col-sm-10
-          .skill-list.visible-xs
-            %ul
-              %li expert
-              %li advanced
-              %li intermediate
-              %li beginner
+        %figure
           .frontend
             %p
               Front-end Technologies
-            .data
+            .bar
               .expert
               .graph-header
               %label CSS
-            .data
+            .bar
               .intermediate.alt
               .graph-header
               %label JavaScript
-            .data
+            .bar
               .expert
               .graph-header
               %label HAML
-            .data
+            .bar
               .expert.alt
               .graph-header
               %label HTML
-            .data
+            .bar
               .intermediate
               .graph-header
               %label CoffeeScript
-            .data
+            .bar
               .expert.alt
               .graph-header.dark
               %label SASS
-          .clear.visible-xs
-          .skill-list.visible-xs
-            %ul
-              %li expert
-              %li advanced
-              %li intermediate
-              %li beginner
           .programming
             %p
               Programming
-            .data
+            .bar
               .intermediate.alt
               .graph-header
               %label Java
-            .data
+            .bar
               .beginner
               .graph-header
               %label MySQL
-            .data
+            .bar
               .beginner.alt
               .graph-header
               %label Python
-            .data
+            .bar
               .beginner
               .graph-header.dark
               %label Ruby on Rails
-          .clear.visible-xs
-          .skill-list.visible-xs
-            %ul
-              %li expert
-              %li advanced
-              %li intermediate
-              %li beginner
           .design
             %p
               Design
-            .data
+            .bar
               .beginner.alt
               .graph-header
               %label Illustrator
-            .data
+            .bar
               .expert
               .graph-header
               %label Photoshop
-            .data
+            .bar
               .advanced.alt
               .graph-header.dark
               %label Graphic Design
-            .data
+            .bar
               .advanced
               .graph-header.dark
               %label UX &#38; UI Design
-          .clear.visible-xs
-          .skill-list.visible-xs
-            %ul
-              %li expert
-              %li advanced
-              %li intermediate
-              %li beginner
           .additional
             %p
               Management
-            .data
+            .bar
               .expert.alt
               .graph-header
               %label Project Management
-            .data
+            .bar
               .expert
               .graph-header.dark
               %label People Management
 
-    .category
-      %span experience
-      .clear
-      .category-container.hidden-xs
-        .slide_window
-          .slide_tiles
+      // Job history desktop
+    .resume-block
+      .section-label--left experience
+      .resume-jobs--desktop
+        .resume-jobs-window
+          .resume-jobs-wrapper
             .next_container
               .next
-                %a(id = "next" href = "#")
+                %span(id = "next" href = "#")
+                  %i.fa.fa-chevron-right
             .prev_container
               .previous
-                %a(id = "previous" href = "#")
-            .slide_tiles_container
-              .slide_inner
-                .parent-table
-                  .table-row
-                    .table-header Engineering Manager
-                    .table-header Freelance Frontend Developer
-                    .table-header Front-end Developer
-                    .table-header Design Intern
-                    .table-header Freelance Web Designer and Developer
-                    .table-header Junior Woodworker and Website Manager
+                %span(id = "previous" href = "#")
+                  %i.fa.fa-chevron-left
+            .resume-jobs-container
+              .resume-jobs-slide
+                .section-item
+                  .section-item-header Engineering Manager
+                  .section-item-header Freelance Frontend Developer
+                  .section-item-header Front-end Developer
+                  .section-item-header Design Intern
+                  .section-item-header Freelance Web Designer and Developer
+                  .section-item-header Junior Woodworker and Website Manager
+                .section-item
+                  .section-item-grey
+                    New York, NY
+                    .job
+                      %a(href="http://www.themuse.com/" target="_blank")
+                        The Muse
+                  .section-item-grey
+                    San Francisco, CA
+                    .job
+                      Self-Employed
+                  .section-item-grey
+                    New York, NY
+                    .job
+                      %a(href="https://www.razorfish.com/" target="_blank")
+                        Intersect NYC (a.k.a. Crown Partners a.k.a. Razorfish)
+                  .section-item-grey
+                    Brooklyn, NY
+                    .job
+                      %a(href="http://creativelabny.com/" target="_blank")
+                        Creative Lab
+                  .section-item-grey
+                    New York, NY
+                    .job
+                      Self-Employed
+                  .section-item-grey
+                    Brooklyn, NY
+                    .job
+                      %a(href="http://cityjoinery.com/" target="_blank")
+                        City Joinery
+                .section-item
+                  .section-item-copy
+                    July 2012 &#45; Present
+                  .section-item-copy
+                    09/2011 &#45; 07/2012
+                    %br/
+                    (9 months)
+                  .section-item-copy
+                    09/2008 &#45; 09/2011
+                    %br/
+                    (3 years 1 month)
+                  .section-item-copy
+                    06/2008 &#45; 09/2008
+                    %br/
+                    (4 months)
+                  .section-item-copy
+                    08/2008 &#45; 08/2008
+                    %br/
+                    (1 month)
+                  .section-item-copy
+                    02/2006 &#45; 02/2007
+                    %br/
+                    (1 year 1 month)
+                .section-item
+                  .section-item-copy
+                    Currently a manager to full-stack engineers, establishing code standards, performing code reviews, coding, and doing behind-the-scenes operational work. As a hiring manager, I’ve helped to recruit many of the engineers on the team. My strengths are in managing projects and people, and making sure everyone is happy and productive.
+                  .section-item-copy
+                    Freelancing for old clients in need of front-end adjustments to their existing sites. Also worked on some logo and branding designs.
+                  .section-item-copy
+                    As a member of the development team, I worked closely with the designers, backend programmers, and software engineers in producing custom e-commerse sites and content management software.
+                  .section-item-copy
+                    In addition to being a photo shoot and set design assistant, I worked on image post-production editing, logo design, graphic design, web design and web development using Photoshop, HTML, CSS and Flash.
+                  .section-item-copy
+                    Designed and developed a housing site using HTML, CSS, Javascript, PHP and MySql. Created design templates and programmed both client and server sides.
+                  .section-item-copy
+                    Responsible for managing content and editing product images through Photoshop for the company website. Office tasks included proofreading and editing written content for web and printed brochure. Assisted in the production of custom wood furniture making.
 
-                  .table-row
-                    .table-data.date
-                      New York, NY
-                      .job
-                        %a(href="http://www.themuse.com/" target="_blank")
-                          The Muse
+      // Job history mobile
+      .resume-jobs--mobile
+        .section-item
+          .section-item-header Engineering Manager
+          .section-item-grey
+            New York, NY
+            .job
+              %a(href="http://www.themuse.com/" target="_blank")
+                The Muse
+          .section-item-copy July 2012 - Present
+          .section-item-copy Currently a manager to full-stack engineers, establishing code standards, performing code reviews, coding, and doing behind-the-scenes operational work. As a hiring manager, I’ve helped to recruit many of the engineers on the team. My strengths are in managing projects and people, and making sure everyone is happy and productive.
+        .section-item
+          .section-item-header Freelance Front-end Developer
+          .section-item-grey
+            San Francisco, CA
+            .job
+              %a(href="/")
+                Self Employed
+          .section-item-copy
+            September 2011 &#45; July 2012
+            %br/
+            (9 months)
+          .section-item-copy Freelancing for old clients in need of front-end adjustments to their existing sites.
+        .section-item
+          .section-item-header Front-end Developer
+          .section-item-grey
+            New York, NY
+            .job
+              %a(href="http://intersectnyc.com" target="_blank")
+                Intersect NYC
+          .section-item-copy
+            September 2008 &#45; September 2011
+            %br/
+            (3 years 1 month)
+          .section-item-copy As a member of the engineering team, I worked closely with the designers, backend programmers, and software engineers in producing custom sites and content management software.
+        .section-item
+          .section-item-header Design Intern
+          .section-item-grey
+            Brooklyn, NY
+            .job
+              %a(href="http://creativelabny.com/" target="_blank")
+                Creative Lab
+          .section-item-copy
+            June 2008 &#45; September 2008
+            %br/
+            (4 months)
+          .section-item-copy In addition to being a photo shoot and set design assistant, I worked on image post-production editing, logo design, graphic design, web design and web development using Photoshop, HTML, CSS and Flash.
+        .section-item
+          .section-item-header Freelance Web Designer and Developer
+          .section-item-grey
+            New York, NY
+            .job
+              %a(href="/")
+                Self Employed
+          .section-item-copy
+            August 2008 &#45; August 2008
+            %br/
+            (1 month)
+          .section-item-copy Designed and developed a housing site using HTML, CSS, Javascript, PHP and MySql. Created design templates and programmed both client and server sides.
+        .section-item
+          .section-item-header Junior Woodworker and Website Manager
+          .section-item-grey
+            Brooklyn, NY
+            .job
+              %a(href="http://cityjoinery.com/" target="_blank")
+                City Joinery
+          .section-item-copy
+            February 2006 &#45; February 2007
+            %br/
+            (1 year 1 month)
+          .section-item-copy Responsible for managing content and editing product images through Photoshop for the company website. Office tasks included proofreading and editing written content for web and printed brochure. Assisted in the production of custom wood furniture making.
 
-                    .table-data.date
-                      San Francisco, CA
-                      .job
-                        Self-Employed
-                    .table-data.date
-                      New York, NY
-                      .job
-                        %a(href="https://www.razorfish.com/" target="_blank")
-                          Intersect NYC (a.k.a. Crown Partners a.k.a. Razorfish)
-                    .table-data.date
-                      Brooklyn, NY
-                      .job
-                        %a(href="http://creativelabny.com/" target="_blank")
-                          Creative Lab
-                    .table-data.date
-                      New York, NY
-                      .job
-                        Self-Employed
-                    .table-data.date
-                      Brooklyn, NY
-                      .job
-                        %a(href="http://cityjoinery.com/" target="_blank")
-                          City Joinery
-
-                  .table-row
-                    .table-data
-                      July 2012 &#45; Present
-                    .table-data
-                      09/2011 &#45; 07/2012
-                      %br/
-                      (9 months)
-                    .table-data
-                      09/2008 &#45; 09/2011
-                      %br/
-                      (3 years 1 month)
-                    .table-data
-                      06/2008 &#45; 09/2008
-                      %br/
-                      (4 months)
-                    .table-data
-                      08/2008 &#45; 08/2008
-                      %br/
-                      (1 month)
-                    .table-data
-                      02/2006 &#45; 02/2007
-                      %br/
-                      (1 year 1 month)
-
-                  .table-row
-                    .table-data
-                      Currently a team lead to full-stack engineers, establishing code standards, performing code reviews, coding, and managing. As a hiring manager, I've helped to recruit many of the engineers on the team. My strengths are in managing projects and people, and making sure everyone is happy and productive.
-                    .table-data
-                      Freelancing for old clients in need of front-end adjustments to their existing sites. Also worked on some logo and branding designs.
-                    .table-data
-                      As a member of the development team, I worked closely with the designers, backend programmers, and software engineers in producing custom e-commerse sites and content management software.
-                    .table-data
-                      In addition to being a photo shoot and set design assistant, I worked on image post-production editing, logo design, graphic design, web design and web development using Photoshop, HTML, CSS and Flash.
-                    .table-data
-                      Designed and developed a housing site using HTML, CSS, Javascript, PHP and MySql. Created design templates and programmed both client and server sides.
-                    .table-data
-                      Responsible for managing content and editing product images through Photoshop for the company website. Office tasks included proofreading and editing written content for web and printed brochure. Assisted in the production of custom wood furniture making.
-
-      .category-container.visible-xs
-        .parent-table
-          .table-row
-            .table-header Engineering Manager
-            .table-data.date
-              New York, NY
-              .job
-                %a(href="http://www.themuse.com/" target="_blank")
-                  The Muse
-            .table-data.date July 2012 - Present
-            .table-data Currently a team lead to full-stack engineers, establishing code standards, performing code reviews, coding, and managing. As a hiring manager, I've helped to recruit many of the engineers on the team. My strengths are in managing projects and people, and making sure everyone is happy and productive.
-
-          .table-row
-            .table-header Freelance Front-end Developer
-            .table-data.date
-              San Francisco, CA
-              .job
-                %a(href="/")
-                  Self Employed
-            .table-data.date
-              September 2011 &#45; July 2012
-              %br/
-              (9 months)
-            .table-data Freelancing for old clients in need of front-end adjustments to their existing sites.
-
-          .table-row
-            .table-header Front-end Developer
-            .table-data.date
-              New York, NY
-              .job
-                %a(href="http://intersectnyc.com" target="_blank")
-                  Intersect NYC
-            .table-data.date
-              September 2008 &#45; September 2011
-              %br/
-              (3 years 1 month)
-            .table-data As a member of the engineering team, I worked closely with the designers, backend programmers, and software engineers in producing custom sites and content management software.
-
-          .table-row
-            .table-header Design Intern
-            .table-data.date
-              Brooklyn, NY
-              .job
-                %a(href="http://creativelabny.com/" target="_blank")
-                  Creative Lab
-            .table-data.date
-              June 2008 &#45; September 2008
-              %br/
-              (4 months)
-            .table-data In addition to being a photo shoot and set design assistant, I worked on image post-production editing, logo design, graphic design, web design and web development using Photoshop, HTML, CSS and Flash.
-
-          .table-row
-            .table-header Freelance Web Designer and Developer
-            .table-data.date
-              New York, NY
-              .job
-                %a(href="/")
-                  Self Employed
-            .table-data.date
-              August 2008 &#45; August 2008
-              %br/
-              (1 month)
-            .table-data Designed and developed a housing site using HTML, CSS, Javascript, PHP and MySql. Created design templates and programmed both client and server sides.
-
-          .table-row
-            .table-header Junior Woodworker and Website Manager
-            .table-data.date
-              Brooklyn, NY
-              .job
-                %a(href="http://cityjoinery.com/" target="_blank")
-                  City Joinery
-            .table-data.date
-              February 2006 &#45; February 2007
-              %br/
-              (1 year 1 month)
-            .table-data Responsible for managing content and editing product images through Photoshop for the company website. Office tasks included proofreading and editing written content for web and printed brochure. Assisted in the production of custom wood furniture making.
-
-    .category.right
-      .category-container
-        .parent-table.contact-icons
-          .table-data
-            %img.btn(src="/images/about/btns/cmu.jpg" alt="cmu")/
-          .table-data
-            %a.linkedIn{:target => 'blank'}(href="http://www.linkedin.com/in/anaenders")
-          .table-data
-            %a.pinterest{:target => 'blank'}(href="http://pinterest.com/anamonster/")
-          .table-data
-            %a.facebook{:target => 'blank'}(href="https://www.facebook.com/anamonster")
-          .table-data
-            %a.twitter{:target => 'blank'}(href="https://twitter.com/#!/anaenders")
-          .table-data
-            %a.github{:target => 'blank'}(href="https://github.com/anaenders")
-          .table-data
-            %a.instagram{:target => 'blank'}(href="http://instagram.com/anaenders")
+    // Social
+    .resume-block
+      .social
+        %a.social-item{:target => 'blank'}(href="http://www.linkedin.com/in/anaenders")
+          %i.fa.fa-linkedin
+        %a.social-item{:target => 'blank'}(href="https://twitter.com/#!/anaenders")
+          %i.fa.fa-twitter
+        %a.social-item{:target => 'blank'}(href="https://github.com/anaenders")
+          %i.fa.fa-github

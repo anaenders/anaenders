@@ -1,18 +1,19 @@
-/***********************variables***********************/
+/*********************** Variables ***********************/
 
 $grey: #d7d7d7;
-$dark-grey: #4c4c4c;
-$almost-black: #454343;
-$green: #74fae2;
-$neon-pink: #f65f5f;
-$neon-green: #dcf74a;
-$aqua: #59edd3;
 $highlighter: #fce7e7;
 
-/***********************mixins***********************/
+/*********************** Responsive widths ***********************/
+
+$max-width-md: 1199px;
+$max-width-sm: 991px;
+$max-width-xs: 767px;
+
+/*********************** Mixins ***********************/
 
 @mixin clearfix {
-    &:before, &:after {
+    &:before,
+    &:after {
         content: " ";
         display: table;
     }
@@ -21,39 +22,25 @@ $highlighter: #fce7e7;
     }
 }
 
-@mixin button($image) {
-	height: 58px;
-	width: 58px;
-	text-indent: -9999px;
-	border: 0px;
-	background: url($image) 0px 0px;
-	&:hover { background-position: 0px -58px; }
-}
-
-@mixin main_container {
+@mixin main-container {
   max-width: 1040px;
   margin: 0 auto;
   z-index: 400;
   background-color: #fff;
-  padding: 80px 0 30px 0;
-}
-
-@mixin bring_to_front {
-  background-color: #fff;
-  z-index: 400;
-  position: relative;
+  padding: 30px 0 30px 0;
+  @media (max-width: $max-width-xs) {
+    padding: 120px 10px 20px 10px;
+  }
 }
 
 @mixin graph($x-coordinate) {
 	height: 98px;
 	width: 8px;
 	margin: 0 auto;
-  cursor: pointer;
 	border: 0px;
 	text-align: center;
 	position: relative;
 	background: url('/images/about/graph_sprite.png') $x-coordinate 0px no-repeat;
-	&:hover, &.on { background-position: $x-coordinate - 9px 0px; font-weight: bold; }
 	&.alt {
 	  height: 115px;
 	  div {
@@ -64,77 +51,16 @@ $highlighter: #fce7e7;
 	}
 }
 
-@mixin thumb-container($width, $height) {
-  display: inline-block;
-  cursor: pointer;
-  position: relative;
-  width: $width;
-  max-height: $height;
-  margin: 2px 1px;
-  vertical-align: top;
-  img { width: 100%; }
-  .grey-overlay {
-    display: none;
-    z-index: 20;
-    position: absolute;
-    top: 0px;
-    left: 0px;
-    bottom: 0px;
-    right: 0px;
-    background-color: #ccc;
-    opacity: 0.2;
-    filter: alpha(opacity=40); /* For IE8 and earlier */
-    -moz-box-shadow: inset 0 0 80px 3px #000;
-    -webkit-box-shadow: inset 0 0 80px 3px #000;
-    box-shadow: inset 0 0 80px 3px #000;
-
-  }
-}
-
-@mixin frame($color) {
-  border-top: 8px solid ($color);
-  position: relative;
-  display: inline-block;
-}
-
-@mixin label($x-coordinate) {
-  position: absolute;
-  top: -8px;
-  left: $x-coordinate;
-  z-index: 100;
-  width: 83px;
-  height: 64px
-}
-
-@mixin columns($col_count, $col_gap) {
-  -moz-column-count:$col_count; /* Firefox */
-  -webkit-column-count:$col_count; /* Safari and Chrome */
-  column-count:$col_count;
-  -moz-column-gap:$col_gap; /* Firefox */
-  -webkit-column-gap:$col_gap; /* Safari and Chrome */
-  column-gap:$col_gap;
-}
-
-@mixin black_box {
+@mixin black-container {
   color: #fff;
   background-color: #000;
   letter-spacing: 2px;
   padding: 8px 20px;
   font-size: 11px;
   z-index: 100;
-  // -webkit-box-reflect: below 0px -webkit-gradient( linear, left top, left bottom, color-stop(0.0, rgba(255, 255, 255, 0.0)), color-stop(0.9, rgba(255,255,255,0.3)), color-stop(1.0, rgba(255, 255, 255, 0.7)));
 }
 
-@font-face {
-		font-family: 'Trade-Gothic';
-		src: url('/fonts/tradegothicltstdcn18.eot');
-		src: url('/fonts/tradegothicltstdcn18.eot?#iefix') format('embedded-opentype'),
-				 url('/fonts/tradegothicltstdcn18.woff') format('woff'),
-				 url('/fonts/tradegothicltstdcn18.ttf') format('truetype'),
-				 url('/fonts/tradegothicltstdcn18.svg#tradegothicltstdcn18') format('svg');
-		font-weight: normal;
-		font-style: normal;
-}
+/*********************** Fonts ***********************/
 
 @font-face {
 		font-family: 'Archer-LightItalic';
@@ -159,18 +85,6 @@ $highlighter: #fce7e7;
 		text-rendering:  optimizeLegibility;
 }
 
-@font-face {
-    font-family: 'ProximaLight';
-    src: url('/fonts/proximanova-light-webfont.eot');
-    src: url('/fonts/proximanova-light-webfont.eot?#iefix') format('embedded-opentype'),
-         url('/fonts/proximanova-light-webfont.woff') format('woff'),
-         url('/fonts/proximanova-light-webfont.ttf') format('truetype'),
-         url('/fonts/proximanova-light-webfont.svg#proxima_nova_ltregular') format('svg');
-    font-weight: normal;
-    font-style: normal;
-    text-rendering:  optimizeLegibility;
-}
-
 ::selection {
   background-color: $highlighter;
 }
@@ -184,17 +98,19 @@ $highlighter: #fce7e7;
 // font-family: 'Arapey';
 @import url(https://fonts.googleapis.com/css?family=Arapey:400italic,400);
 
-/***********************anaenders***********************/
+/*********************** anaenders ***********************/
 
 body {
   margin: 0px;
   padding: 0px;
   background-color: #fff;
-  font-family: "Helvetica Neue", Helvetica,"Sans-serif";
-  color: 000;
-  font-size: 13px;
+  font-family: Georgia, serif;
+  color: #000;
   line-height: 1.5em;
-  min-width: 320px;
+  font-size: 15px;
+  @media (max-width: $max-width-sm) {
+    font-size: 13px;
+  }
   a {
     font-weight: bold;
     text-decoration: none;
@@ -205,122 +121,75 @@ body {
       text-decoration: underline;
     }
   }
-  .container { padding: 0px; }
-  .img-responsive { margin: 0px auto; }
-}
-
-.generic { float: left; width: 100% }
-
-p {
-  padding-bottom: 20px;
-  line-height: 1.5em;
-  margin: 0px;
-  word-wrap: break-word;
-}
-
-img { border: 0px }
-
-.clear {
-  clear: both;
-  line-height: 0px;
-  height: 0px;
-}
-
-.full-width {
-  width: 100%;
+  p {
+    padding-bottom: 20px;
+    line-height: 1.5em;
+    margin: 0px;
+    word-wrap: break-word;
+  }
+  img {
+    border: 0px
+  }
+  .container {
+    padding: 0px;
+  }
+  .img-responsive {
+    margin: 0px auto;
+  }
 }
 
 .content {
   width: 100%;
   padding: 0px;
-  header {
-    @extend .generic;
+  .header-wrapper {
     z-index: 600;
     position: fixed;
     width: 100%;
-    height: 80px;
-    margin: 0;
-    border-bottom: 8px solid #454343;
     background-color: rgba(255, 255, 255, 0.8);
-    .container { position: relative; }
+    border-bottom: 8px solid #454343;
+  }
+  header {
+    max-width: 1200px;
+    margin: 0 auto;
+    z-index: 400;
+    height: 80px;
+    padding: 0px;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    align-content: center;
+    align-items: baseline;
     .logo {
       font-family: Georgia;
       font-size: 58px;
-      height: 108px;
-      width: 35%;
-      line-height: 1.4em;
+      height: 70px;
       font-style: italic;
       text-decoration: none;
       color: #f65f5f;
-      letter-spacing: -4px;
-      position: absolute;
-      bottom: -27px;
-      left: 0px;
-      padding-left: 85px;
-      background: url('/images/logo.png') no-repeat 0px 0px;
-      display: inline-block;
+      letter-spacing: -3px;
+      padding: 40px 20px 0px 90px;
+      display: block;
+      background: url('/images/logo.png') no-repeat 0px -4px;
+      flex-grow: 0;
+      align-self: stretch;
+      @media (max-width: $max-width-md) {
+        font-size: 50px;
+      }
+      @media (max-width: $max-width-sm) {
+        font-size: 30px;
+      }
     }
     .dots {
       position: relative;
-      height: 80px;
+      height: 70px;
       z-index: 1;
-      width: 65%;
-      float: right;
       margin: 0 auto;
-      background: url('/images/header.png') repeat 0px 0px;
-      nav {
-        z-index: 2;
-        position: absolute;
-        width: auto;
-        height: 80px;
-        overflow: hidden;
-        bottom: 8px;
-        right: 0px;
-        .nav-btn {
-          float: right;
-          height: 80px;
-          width: 75px;
-          position: relative;
-        }
-        a {
-          text-align: center;
-          display: block;
-          font-family: "Archer-Book", Georgia, Serif;
-          font-size: 14px;
-          &.nav-about {
-            background-color: $neon-green;
-            bottom: 0px;
-            color: $almost-black;
-          }
-          &.nav-portfolio {
-            background-color: $almost-black;
-            color: #fff;
-          }
-          &.nav-blog {
-            background-color: $aqua;
-            color: $almost-black;
-          }
-          &.nav-about, &.nav-portfolio, &.nav-blog {
-            position: absolute;
-            padding: 30px 10px 0 10px;
-            height: 80px;
-            width: 75px;
-            &.on { bottom: -8px; }
-            &.off { bottom: -32px; }
-          }
-        }
-      }
+      background: url('/images/header.png') repeat 0px -1px;
+      flex-grow: 10;
+      align-self: flex-end;
     }
   }
 }
-
-// .emphasis {
-//   padding: 0px 30px 35px 30px;
-//   font-family: 'Arapey';
-//   font-size: 18px;
-//   font-style: italic;
-//   line-height: 1.5em;
-// }
 
 .scroll {
   position: fixed;
@@ -336,185 +205,27 @@ img { border: 0px }
   padding: 8px 10px 10px 10px;
   cursor: pointer;
   line-height: 1.2em;
-  width: 80px;
   text-align: center;
   display: none;
-  &:hover { color: #ddd; }
-}
-
-/*********************** Portfolio ***********************/
-
-.portfolio {
-  width: 100%;
-  padding: 80px 0 50px 0;
-  .section {
-    h1 {
-      font-size: 30px;
-      font-weight: 200;
-      font-family: "Archer-Book", Georgia, Serif;
-      margin-bottom: 10px;
-      display: block;
-    }
-    p {
-      font-size: 15px;
-      font-weight: 200;
-      padding-bottom: 15px;
-      line-height: 1.5em;
-      a { font-weight: normal; }
-    }
+  &:hover {
+    color: $highlighter;
   }
-  .full-width {
-    background-color: #f9f9f9;
-    margin-bottom: 10px;
-    padding: 20px 0 20px 0;
-    // -moz-box-shadow: inset 0 0 10px 2px #ccc;
-    // -webkit-box-shadow: inset 0 0 10px 2px #ccc;
-    // box-shadow: inset 0 0 10px 2px #ccc;
-    .section {
-      margin: 0px 0 0 50px;
-      max-width: 700px;
-      padding: 0 20px;
-      font-family: "Helvetica Neue", Helvetica, Sans-serif;
-    }
-  }
-  .web, .print, .woodwork {
-    display: inline-block;
-    margin-bottom: 30px;
-    text-align: center;
-    width: 100%;
-    &.personal { @include frame($almost-black); }
-    .section {
-      width: 100%;
-      clear: both;
-      h1 {
-        font-family: "Archer-Book", Georgia, Serif;
-        font-weight: 200;
-        display: block;
-        margin: 20px 0;
-        text-transform: capitalize;
-      }
-    }
-  }
-  .web {
-    .small-thumb { @include thumb-container(340px, 100px); }
-  }
-  .print {
-    @include frame($neon-pink);
-    .small-thumb { @include thumb-container(484px, 342px); }
-    .group-float {
-      display: inline-block;
-      max-width: 543px;
-      .small-thumb {
-        @include thumb-container(541px, 170px);
-      }
-    }
-    .small-thumb {
-        &.abstract { @include thumb-container(447px, 98px); }
-    }
-    .small-thumb {
-      &.signage { @include thumb-container(574px, 98px); }
-    }
-  }
-  .woodwork {
-    @include frame($neon-green);
-    .small-thumb.one { @include thumb-container(213px, 160px); }
-    .small-thumb.two { @include thumb-container(203px, 160px); }
-    .small-thumb.three { @include thumb-container(195px, 160px); }
-    .small-thumb.four { @include thumb-container(309px, 160px); }
+  @media (max-width: $max-width-xs) {
+    right: 5px;
+    bottom: 5px;
   }
 }
-
-.close {
-  position: absolute;
-  top: -20px;
-  right: -20px;
-  font-size: 23px;
-  z-index: 5000;
-  outline: 0px;
-  opacity: 1;
-  filter: alpha(opacity=100); /* For IE8 and earlier */
-  font-weight: 200;
-  text-shadow: none;
-  color: #fff;
-}
-
-.modal-body { padding: 0px !important; }
-
-.detail-container {
-  @include clearfix;
-  .inner-container {
-    @include clearfix;
-    width: 100%;
-    position: relative;
-    .project-description {
-      padding: 0 0 15px 0;
-      background-color: #f1f1f1;
-      font-family: 'ProximaLight';
-      float: left;
-      width: 100%;
-      opacity: 0.8;
-      filter: alpha(opacity=80); /* For IE8 and earlier */
-      span {
-        color: #fff;
-        font-family: "Trade-Gothic", Helvetica;
-        background-color: #000;
-        text-transform: capitalize;
-        font-size: 17px;
-        display: block;
-        font-weight: normal;
-        padding: 12px 15px 10px 15px;
-        margin-bottom: 15px;
-      }
-      p {
-        text-align: left;
-        font-size: 15px;
-        clear: both;
-        display: block;
-        padding: 15px;
-        float: left;
-        color: #000;
-        line-height: 1.6em;
-        // @include columns(2, 10px);
-        a {
-          color: #F65F5F;
-          font-weight: normal;
-          &:hover { text-decoration: none; color: #bc3b3b }
-        }
-      }
-    }
-  }
-}
-
-body {
-  .ui-dialog {
-    &.ui-corner-all {
-      border-radius: 0px !important;
-    }
-  }
-  .ui-widget-content {
-    border: 0px !important;
-    .dialog-content {
-      &.ui-dialog-content {
-        padding: 0px !important;
-      }
-    }
-  }
-}
-
-/***********************about***********************/
 
 .slideshow {
   position: relative;
   z-index: 0;
   width: 100%;
-  height: 431px;
   padding: 80px 0 0 0;
-  margin-bottom: 30px;
   ul {
     overflow: hidden;
     background-color: #333;
     width: 100%;
-    height: 351px;
+    height: 400px;
     list-style-type: none;
     margin: 0px;
     padding: 0px;
@@ -526,7 +237,7 @@ body {
       background-size: cover;
       height: 100%;
       width: 100%;
-      height: 351px;
+      height: 400px;
       position: absolute;
       background-repeat: no-repeat;
       &.slide1 { background-image: url("/images/about/slide1.jpg"); }
@@ -546,785 +257,386 @@ body {
       &.slide15 { background-image: url("/images/about/slide15.jpg"); }
       &.slide16 { background-image: url("/images/about/slide16.jpg"); }
       &.slide17 { background-image: url("/images/about/slide17.jpg"); }
-      &.slide18 { background-image: url("/images/about/slide18.jpg"); }
-      &.slide19 { background-image: url("/images/about/slide19.jpg"); }
-      &.slide20 { background-image: url("/images/about/slide20.jpg"); }
-      &.slide21 { background-image: url("/images/about/slide21.jpg"); }
     }
   }
-}
-.about {
-  @include main_container;
-  padding-top: 0px;
-  .casual-intro {
-    font-size: 15px;
-    margin: 20px auto 0 auto;
-    max-width: 700px;
-    p {
-      line-height: 1.5em;
-      margin: 0 0 8px 0;
-      a {
-        font-family: Georgia;
-        font-style: italic;
-      }
-      span {
-        float: left;
-        margin: 26px 20px 20px 0;
-        font-size: 66px;
-        font-family: "Archer-LightItalic";
-      }
-      &.emphasis {
-        font-family: "Archer-LightItalic";
-        font-size: 18px;
-      }
-    }
-  }
-  .resume {
-    @extend .generic;
-    line-height: 1.5em;
-    position: relative;
-    background: url('/images/about/border_bg.jpg') #fff repeat-x top left;
-    border-top: 30px solid #fff;
-    margin: 0;
-    h1 {
-      background-color: #fff;
-      margin: -10px auto 0 auto;
-      width: 250px;
-      z-index: 5;
-      line-height: 1.3em;
-      font-size: 24px;
-      text-align: center;
-      font-weight: normal;
-      font-family: "Archer-Book", Georgia, Serif;
-    }
-    summary {
-      text-align: justify;
-      margin: 40px auto;
-      width: 65%;
-      display: block;
-      font-weight: normal;
-      line-height: 1.5em;
-      font-size: 15px;
-    }
-    .category {
-      border-top: 1px dotted $grey;
-      margin: 10px 0 20px 0;
-      @extend .generic;
-      .category-container {
-        display: block;
-        > div, > figure { padding: 0px !important; }
-      }
-      span {
-        @include black_box;
-        cursor: pointer;
-        float: left;
-        margin-top: -1px;
-        &.alt {
-          float: right;
-        }
-      }
-      &.right {
-        span {
-          float: right;
-        }
-      }
-      .skill-list {
-        float: left;
-        text-align: left;
-        ul {
-          @extend .generic;
-          padding: 0px;
-          margin: 20px 0 0 0;
-          li {
-            list-style-type: none;
-            text-align: right;
-            height: 17px;
-            margin: 0 10px 0 0;
-            padding-right: 10px;
-            font-style: italic;
-            font-family: Georgia;
-            font-weight: bold;
-            font-size: 11px;
-            background: url('/images/about/dash.jpg') no-repeat 100% 50%;
-          }
-        }
-      }
-      figure {
-        height: 170px;
-        text-align: center;
-        margin: 0px auto;
-        p {
-          position: absolute;
-          top: 75px;
-          left: 0px;
-          width: 100%;
-          text-align: center;
-          font-family: "Archer-Book", Georgia, Serif;
-          font-size: 15px;
-          color: #000;
-          font-size: 10px;
-          z-index: 200;
-        }
-        .data {
-          display: table-cell;
-          vertical-align: top;
-          padding: 0px;
-          font-style: italic;
-          font-size: 11px;
-          text-align: center;
-          width: auto;
-          .graph-header {
-            position: absolute;
-            top: 73px;
-            height: 18px;
-            left: 0px;
-            right: 0px;
-          }
-          label {
-            font-weight: normal;
-            &:hover, &.on {
-              color: $grey;
-              cursor: pointer;
-            }
-          }
-        }
-        > div {
-          font-family: Georgia;
-          height: 150px;
-          float: left;
-          margin-top: 25px;
-          font-size: 12px;
-          position: relative;
-          &.frontend {
-            width: 34%;
-            display: table;
-            .data {
-              width: 14%;
-              .graph-header {
-                background-color: #f77c7f;
-                &.dark {
-                  border-right: 15px solid #ff3f18;
-                }
-              }
-            }
-          }
-          &.programming {
-            width: 22%;
-            display: table;
-            .data {
-              width: 25%;
-              .graph-header {
-                background-color: #fd835e;
-                &.dark {
-                  border-right: 15px solid #ffb317;
-                }
-              }
-            }
-          }
-          &.design {
-            display: table;
-            width: 26%;
-            .data {
-              width: 25%;
-              .graph-header {
-                background-color: #ffdd4d;
-                &.dark {
-                  border-right: 15px solid #c1e31a;
-                }
-              }
-            }
-          }
-          &.additional {
-            display: table;
-            width: 18%;
-            .data{
-              width: 50%;
-              .graph-header {
-                background-color: #26c6d6;
-                &.dark {
-                  border-right: 15px solid #4fabec;
-                }
-              }
-            }
-          }
-          .beginner { @include graph(-75px) }
-          .intermediate { @include graph(-50px) }
-          .advanced { @include graph(-25px) }
-          .expert { @include graph(0px); }
-        }
-      }
-      .slide_window {
-        background-color: #FFFFFF;
-        position: relative;
-        z-index: 0;
-        .slide_tiles {
-          overflow: hidden;
-          position: relative;
-          max-width: 1040px;
-          height: 480px;
-          .next_container {
-            z-index: 200;
-            width: 100px;
-            height: 480px;
-            background-color: rgba(255, 255, 255, 0.8);
-            position: absolute;
-            top: 0px;
-            right: 0px;
-            .next {
-              z-index: 400;
-              padding: 228px 20px 0 0px;
-              float: right;
-              height: 23px;
-              width: 30px;
-              a {
-                width: 30px;
-                height: 23px;
-                text-indent: -9999;
-                border: 0px;
-                float: left;
-                background-image: url('/images/btns/next.png');
-                background-repeat: no-repeat;
-                background-position: 0px 0px;
-                &:hover { background-position: 0px -22px; }
-              }
-            }
-          }
-          .prev_container {
-            @extend .next_container;
-            background-color: rgba(255, 255, 255, 0.8);
-            display: none;
-            left: 0px;
-            .previous {
-              @extend .next;
-              padding: 228px 0px 0 20px;
-              float: left;
-              a {
-                background-image: url('/images/btns/previous.png');
-              }
-            }
-          }
-          .slide_tiles_container {
-            left: 0;
-            position: absolute;
-            top: 0;
-            z-index: 100;
-            .slide_inner {
-              width: 1200px;
-              .table-row {
-                width: auto;
-                .table-header, .table-data { width: 16%; }
-              }
-            }
-          }
-        }
-      }
-      .parent-table {
-        display: table;
-        font-family: Georgia;
-        margin-top: 45px;
-        width: 100%;
-        .table-row { display: table-row; }
-        .table-header {
-          font-family: "Archer-Book", Georgia, Serif;
-          font-size: 16px;
-          font-weight: normal
-        }
-        .table-header,
-        .table-data {
-          display: table-cell;
-          line-height: 1.5em;
-          text-align: left;
-          width: 20%;
-          vertical-align: top;
-          padding: 10px 10px 10px 0;
-          &.date {
-            font-family: "Archer-Book", Georgia, Serif;
-            clear: both;
-            font-weight: normal;
-            margin-top: 5px;
-            font-size: 15px;
-            color: #777;
-            .job {
-              font-style: italic;
-              font-size: 13px;
-              color: #6f6f6f;
-              a {
-                font-weight: normal;
-                color: #6f6f6f;
-              }
-            }
-          }
-        }
-        &.contact-icons {
-          margin: 30px 0 50px 0;
-          .table-data {
-            text-align: center;
-            padding: 0px;
-            width: auto;
-            a {
-              width: 58px;
-              height: 58px;
-              float: left;
-              -webkit-box-reflect: below 0px -webkit-gradient( linear,
-                left top,
-                left bottom,
-                color-stop(0.0, rgba(255, 255, 255, 0.0)),
-                color-stop(0.6, rgba(255,255,255,0.3)),
-                color-stop(0.9, rgba(255, 255, 255, 0.7)));
-              &.email { @include button('/images/about/btns/email.jpg') }
-              &.google { @include button('/images/about/btns/google.jpg') }
-              &.rss { @include button('/images/about/btns/rss.jpg') }
-              &.linkedIn { @include button('/images/about/btns/linkedIn.jpg') }
-              &.pinterest { @include button('/images/about/btns/pinterest.jpg') }
-              &.facebook { @include button('/images/about/btns/facebook.jpg') }
-              &.twitter { @include button('/images/about/btns/twitter.jpg') }
-              &.github { @include button('/images/about/btns/github.jpg') }
-              &.instagram { @include button('/images/about/btns/instagram.jpg') }
-            }
-          }
-        }
-      }
-    }
+  @media (max-width: $max-width-xs) {
+    display: none;
   }
 }
 
-/*********************** Blog ***********************/
-
-.blog {
-  @include main_container;
-  @include bring_to_front;
-  .post {
-    @extend .generic;
-    color: $dark-grey;
-    margin-bottom: 0px;
-    text-align: left;
-    padding: 0px;
-    .title-date {
-      font-size: 12px;
-      float: left;
-      clear: both;
-      color: $green;
-      font-weight: bold;
-      padding: 10px 30px;
-      background: url('/images/blog/title_bg.png') repeat 0px 0px;
-    }
-    .blog_post {
-      margin: 0px auto;
-      width: 100%;
-      clear: both;
-      text-align: center;
-      .block {
-        margin: 40px 0;
-        h4 {
-          text-transform: capitalize;
-          font-family: "Archer-Book", Georgia, Serif;
-          font-size: 30px;
-          display: inline;
-          margin: 0px;
-          padding: 30px 160px;
-          font-weight: normal;
-          text-align: center;
-          background:url('/images/ornament_left.png') no-repeat top left,url('/images/ornament_right.png') no-repeat top right;
-          clear: both;
-        }
-      }
-      .blog-content {
-        max-width: 600px;
-        margin: 15px auto;
-      }
-      p {
-        line-height: 1.5em;
-        margin-bottom: 15px;
-        font-size: 14px;
-        text-align: left;
-        font-family: "Helvetica Neue"
-      }
-      a { font-weight: normal; color: $dark-grey; font-style: italic }
-      .image {
-        width: 100%;
-        max-width: 600px;
-        margin: 15px auto;
-      }
-    }
-  }
-}
-
-.pagination {
-  max-width: 600px;
+// Shared flex design
+.section-item {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  flex-wrap: nowrap;
+  align-content: center;
+  align-items: flex-start;
   width: 100%;
-  margin: 0px auto;
-  display: table;
-  .prev, .next {
-    display: table-cell;
-    width: 50%;
-    a {
-      font-size: 20px;
-      font-weight: bold;
-      padding-top: 20px;
-      width: 100%;
-      display: block;
+  @media (max-width: $max-width-xs) {
+    flex-direction: column;
+    margin: 15px 0;
+    padding: 0 0 15px 0;
+    border-bottom: 1px dotted #d7d7d7;
+    &:last-child {
+      border-bottom: 0px;
+      margin: 15px 0 0 0;
+      padding: 15px 0 0 0;
     }
   }
-  .prev { text-align: left; }
-  .next { text-align: right; }
-}
-.archives {
-  float: left;
-  width: 100%;
-  margin-top: 30px;
-  ul {
-    padding: 0px;
-    margin: 0px;
-    list-style-type: none;
+  .section-item-header,
+  .section-item-grey,
+  .section-item-copy {
+    margin-top: 10px;
+    flex-grow: 1;
+    width: 20%;
+    padding: 5px;
     font-size: 13px;
-    li {
-      padding-left: 22px;
-      background: url('/images/blog/bullet.jpg') no-repeat 0px 5px;
-      margin: 0 10px 15px 10px;
-      text-align: center;
-      float: left;
+    @media (max-width: $max-width-xs) {
+      width: auto;
+    }
+  }
+  .section-item-header {
+    font-family: "Archer-Book", Georgia, Serif;
+    font-size: 16px;
+    font-weight: normal
+  }
+  .section-item-grey {
+    font-family: "Archer-Book", Georgia, Serif;
+    clear: both;
+    font-weight: normal;
+    margin-top: 5px;
+    color: #777;
+    .job {
+      font-style: italic;
+      font-size: 13px;
+      color: #6f6f6f;
       a {
         font-weight: normal;
-        color: #777;
-      }
-      span {
-        color: #c1c1c1;
-        font-style: italic;
-        display: block;
-        padding-top: 6px
+        color: #6f6f6f;
       }
     }
   }
 }
 
-/***********************responsive***********************/
+.about {
+  @include main-container;
+  p {
+    margin: 0 0 8px 0;
+    a {
+      font-family: Georgia;
+      font-style: italic;
+    }
+    // Oversized word
+    span {
+      float: left;
+      margin: 26px 20px 20px 0;
+      font-size: 50px;
+      font-family: "Archer-LightItalic", Georgia, serif;
+      @media (max-width: $max-width-md) {
+        font-size: 40px;
+      }
+      @media (max-width: $max-width-sm) {
+        font-size: 25px;
+        margin: 16px 20px 10px 0;
+      }
+    }
+  }
+}
 
-body {
-  // Medium devices i.e. Small Desktop (< 1200px)
-  @media (max-width: 1199px) {
-    .portfolio {
-      .full-width {
-        .section { margin: 0px; }
-      }
-      .web {
-        .small-thumb { @include thumb-container(32%, 100px); }
-      }
-      .print {
-        .small-thumb { @include thumb-container(46.5%, 341px); }
-        .group-float {
-          max-width: 52%;
-          .small-thumb {
-            @include thumb-container(100%, 170px);
-          }
-        }
-        .small-thumb {
-          &.abstract { @include thumb-container(43%, 98px); }
-        }
-        .small-thumb {
-          &.signage { @include thumb-container(55%, 98px); }
-        }
-      }
-    }
-    .content {
-      header {
-        .logo {
-          font-size: 50px;
-          padding-top: 7px;
-        }
-      }
-    }
-    .blog {
-      .post {
-        .title-date { margin-left: 84px; }
-        .blog_post {
-          .block {
-            h4 { font-size: 19px; }
-          }
-        }
-        .blog-content {
-          p { font-size: 13px; }
-        }
-      }
-      .pagination {
-        .prev, .next {
-          a { font-size: 16px; }
-        }
-      }
+.intro {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: space-between;
+  align-items: stretch;
+  align-content: center;
+  @media (max-width: $max-width-xs) {
+    flex-direction: column;
+  }
+  .intro-description {
+    flex-grow: 1;
+    padding: 15px;
+    width: 50%;
+    @media (max-width: $max-width-xs) {
+      width: 100%;
+      padding: 0px;
     }
   }
-  // Small devices i.e. Tablets & Mobile (< 992px)
-  @media (max-width: 991px) {
-    .content {
-      header {
-        .logo {
-          font-size: 35px;
-          padding-top: 20px;
-        }
-      }
-    }
-    .portfolio {
-      .section {
-        h1 {
-          font-size: 24px;
-        }
-        p { font-size: 1.2em; }
-      }
-    }
-    .about {
-      .resume {
-        summary { width: 50%; }
-        .category {
-          figure {
-            .data {
-              label { font-size: 8px; }
-            }
-          }
-          .slide_window {
-            .slide_tiles {
-              height: 450px;
-              .next_container { height: 450px; }
-              .slide_tiles_container {
-                .slide_inner {
-                  width: 967px;
-                  .table-row {
-                    .table-header, .table-data { width: 10%; }
-                  }
-                }
-              }
-            }
-          }
-        }
-      }
+}
+
+.section-label--left,
+.section-label--right {
+  @include black-container;
+  position: absolute;
+  top: -1px;
+}
+.section-label--left {
+  left: 0px;
+}
+.section-label--right {
+  right: 0px;
+}
+
+.resume {
+  background: url('/images/about/border_bg.jpg') #fff repeat-x top left;
+  border-top: 30px solid #fff;
+  margin: 0;
+  h1 {
+    background-color: #fff;
+    margin: -10px auto 0 auto;
+    width: 250px;
+    z-index: 5;
+    line-height: 1.3em;
+    font-size: 24px;
+    text-align: center;
+    font-weight: normal;
+    font-family: "Archer-Book", Georgia, Serif;
+    @media (max-width: $max-width-sm) {
+      font-size: 18px;
+      margin: -8px auto 0 auto;
+      width: 220px;
     }
   }
-  // Extra small devices i.e. Mobile (< 768px)
-  @media (max-width: 767px) {
-    .content {
-      .container {
-        &.header { padding: 0px; }
-      }
-      header {
-        .logo {
-          font-size: 30px;
-          padding-top: 27px;
-        }
-        .dots {
-          nav {
-            .nav-btn {
-              width: 60px
-            }
-            a {
-              &.nav-about, &.nav-portfolio, &.nav-blog {
-                padding: 30px 5px 0 5px;
-                font-size: 12px;
-                width: 60px
-              }
-            }
-          }
-        }
+  .resume-summary {
+    @include clearfix;
+    text-align: justify;
+    margin: 30px auto;
+    padding: 0 15px;
+    display: block;
+    font-weight: normal;
+    line-height: 1.5em;
+    @media (max-width: $max-width-xs) {
+      padding: 0px;
+    }
+  }
+  .resume-block {
+    @include clearfix;
+    position: relative;
+    border-top: 1px dotted $grey;
+    margin: 10px 0 20px 0;
+    padding-top: 35px;
+    @media (max-width: $max-width-xs) {
+      padding-top: 20px;
+      margin: 5px 0 10px 0;
+    }
+    .resume-education--desktop,
+    .resume-jobs--desktop {
+      display: block;
+      margin-top: 30px;
+      @media (max-width: $max-width-xs) {
+        display: none;
       }
     }
-    .portfolio {
-      .section {
-        h1 {
-          font-size: 17px;
-        }
-        p { font-size: 1em; }
+    .resume-education--mobile,
+    .resume-jobs--mobile {
+      display: none;
+      @media (max-width: $max-width-xs) {
+        display: block;
+        margin: 30px 0;
       }
     }
-    .blog {
-      .post {
-        .title-date { margin-left: 84px; }
-        .blog_post {
-          .block {
-            h4 {
-              font-size: 30px;
-              background: none;
-              padding: 30px 10px;
-            }
-          }
-        }
-        .blog-content {
-          p { padding: 0 10px; }
-        }
-      }
-      .pagination {
-        padding: 0 10px;
-        .prev, .next {
-          a { font-size: 14px; }
-        }
-      }
-    }
-    .archives {
+    .resume-skills {
+      float: left;
+      text-align: left;
       ul {
-        li {
-          height: 55px;
-          width: 42%;
-          text-align: left;
-        }
-      }
-    }
-    .about {
-      .casual-intro {
-        padding: 10px;
-        margin: 0px;
-        max-width: 100%;
-        width: 100%;
-        span {
-          font-size: 30px;
-          margin: 10px;
-        }
-      }
-      .twitter-feed {
-        float: none;
-        text-align: center;
-        margin: 20px 0 0 0;
-      }
-      .resume {
-        .category {
-          .parent-table {
-            padding: 10px 10px 0 10px;
-            .table-row, .table-header, .table-data {
-              display: block;
-              width: 100%;
-              padding: 10px;
-              font-size: 13px;
-            }
-            &.contact-icons {
-              .table-data {
-                display: inline-block;
-                padding: 10px;
-              }
-            }
-            .table-row {
-              border-bottom: 1px dotted #d7d7d7;
-              &:last-child { border-bottom: none; }
-            }
-          }
-          figure {
-            height: auto;
-            margin-top: 25px;
-            > div {
-              float: none;
-              padding: 0px !important;
-              &.frontend,
-              &.programming,
-              &.design,
-              &.additional {
-                width: 76%;
-                height: auto;
-                margin-top: 0px;
-              }
-            }
-            .clear {
-              height: 1px;
-              margin: 0px;
-            }
-            .skill-list {
-              margin-top: 0px;
-              ul {
-                margin: 0px;
-                padding-left: 5px;
-                li {
-                  font-size: 9px;
-                  margin: 0px;
-                  padding: 0px 10px 0 0;
-                }
-              }
-            }
-            .data {
-              label { font-size: 9px; }
-            }
-          }
-        }
-      }
-    }
-    .close {
-      display: inline-block;
-      width: 20px;
-      height: 20px;
-      border-radius: 10px;
-      color: #fff;
-      line-height: 1.3em;
-      text-align: center;
-      background-color: rgba(0, 0, 0, 0.5);
-      margin: 0px;
-      top: -10px;
-      right: -10px;
-      font-size: 1.2em;
-      &:hover { color: #fff; }
-    }
-  }
-  // Extra small devices i.e. Mobile (< 632px)
-  @media (max-width: 631px) {
-    .content {
-      header {
-        .logo {
-          width: 50%;
-          font-size: 28px;
-        }
-        .dots { width: 50%; }
-      }
-    }
-    .blog {
-      .post {
-        margin: 0px;
         padding: 0px;
-        .blog_post {
-          h4 {
-            background-image: none;
-            padding: 20px 0;
+        margin: 20px 0 0 0;
+        li {
+          list-style-type: none;
+          text-align: right;
+          height: 17px;
+          margin: 0 10px 0 0;
+          padding-right: 10px;
+          font-style: italic;
+          font-family: Georgia;
+          font-weight: bold;
+          font-size: 11px;
+          background: url('/images/about/dash.jpg') no-repeat 100% 50%;
+          @media (max-width: $max-width-sm) {
+            font-size: 10px;
           }
         }
       }
     }
-    .pagination { padding: 0 10px; }
-    .about {
-      .resume {
-        summary {
-          width: 100%;
-          padding: 70px 10px 30px 10px;
+    .resume-jobs-window {
+      background-color: #FFFFFF;
+      position: relative;
+      z-index: 0;
+      .resume-jobs-wrapper {
+        overflow: hidden;
+        position: relative;
+        max-width: 1040px;
+        height: 470px;
+        .next_container {
+          z-index: 200;
+          width: 100px;
+          height: 480px;
+          background-color: rgba(255, 255, 255, 0.8);
+          position: absolute;
+          top: 0px;
+          right: 0px;
+          .next {
+            z-index: 400;
+            padding: 228px 20px 0 0px;
+            float: right;
+            i {
+              cursor: pointer;
+              font-size: 40px;
+            }
+          }
         }
-        .follow, .dload { top: 35px; }
+        .prev_container {
+          @extend .next_container;
+          background-color: rgba(255, 255, 255, 0.8);
+          display: none;
+          left: 0px;
+          .previous {
+            @extend .next;
+            padding: 228px 0px 0 20px;
+            float: left;
+          }
+        }
+        .resume-jobs-container {
+          left: 0;
+          position: absolute;
+          top: 0;
+          z-index: 100;
+          .resume-jobs-slide {
+            width: 1200px;
+            .table-row {
+              width: auto;
+              .table-header, .table-data { width: 16%; }
+            }
+          }
+        }
       }
     }
   }
-  // Extra small devices i.e. Mobile (< 442px)
-  @media (max-width: 441px) {
-    .portfolio {
-      .web {
-        .small-thumb {
-          @include thumb-container(320px, 100px);
-        }
-      }
-      .print {
-        .small-thumb {
-          @include thumb-container(320px, 341px);
-          &.signage { @include thumb-container(320px, 98px); }
-          &.abstract { @include thumb-container(320px, 98px); }
-        }
-        .group-float {
-          max-width: 322px;
-          .small-thumb {
-            @include thumb-container(320px, 170px);
+}
+
+// Bar graph
+figure {
+  margin: 0px auto;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  flex-wrap: nowrap;
+  align-content: center;
+  align-items: flex-start;
+  @media (max-width: $max-width-xs) {
+    flex-direction: column;
+  }
+  p {
+    position: absolute;
+    top: 75px;
+    left: 0px;
+    width: 100%;
+    text-align: center;
+    font-family: "Archer-Book", Georgia, Serif;
+    color: #000;
+    font-size: 10px;
+    z-index: 100;
+    padding: 0px;
+    margin: 0px;
+  }
+  .bar {
+    display: table-cell;
+    vertical-align: top;
+    padding: 0px;
+    font-style: italic;
+    font-size: 11px;
+    text-align: center;
+    z-index: 300;
+    .graph-header {
+      position: absolute;
+      top: 73px;
+      height: 18px;
+      left: 0px;
+      right: 0px;
+    }
+  }
+  > div {
+    margin-top: 25px;
+    font-size: 12px;
+    position: relative;
+    @media (max-width: $max-width-xs) {
+      height: auto;
+      width: 100%;
+    }
+    &.frontend {
+      .bar {
+        width: 14%;
+        .graph-header {
+          background-color: #f77c7f;
+          &.dark {
+            border-right: 15px solid #ff3f18;
           }
         }
       }
     }
-    .content {
-      header {
-        .logo {
-          font-size: 0px;
-          width: 28%;
+    &.programming {
+      .bar {
+        width: 25%;
+        .graph-header {
+          background-color: #fd835e;
+          &.dark {
+            border-right: 15px solid #ffb317;
+          }
         }
-        .dots { width: 72%; }
       }
     }
-    .about {
-      .table-row {
-        padding-bottom: 10px;
-        margin-bottom: 15px;
+    &.design {
+      .bar {
+        width: 25%;
+        .graph-header {
+          background-color: #ffdd4d;
+          &.dark {
+            border-right: 15px solid #c1e31a;
+          }
+        }
       }
+    }
+    &.additional {
+      .bar{
+        width: 50%;
+        .graph-header {
+          background-color: #26c6d6;
+          &.dark {
+            border-right: 15px solid #4fabec;
+          }
+        }
+      }
+    }
+    .beginner { @include graph(-75px) }
+    .intermediate { @include graph(-50px) }
+    .advanced { @include graph(-25px) }
+    .expert { @include graph(0px); }
+  }
+}
+
+.social {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  flex-wrap: nowrap;
+  align-content: center;
+  align-items: stretch;
+  width: 100%;
+  .social-item {
+    margin-top: 10px;
+    flex-grow: 0;
+    padding: 5px;
+    text-align: center;
+    padding: 15px;
+    border-radius: 100%;
+    font-size: 18px;
+    line-height: 25px;
+    width: 25px;
+    margin: 10px;
+    &:hover {
+      transition: .4s;
+      background-color: darken($highlighter, 5%);
     }
   }
 }
