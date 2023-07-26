@@ -2,10 +2,9 @@
 
 ## Running Locally
 
-    $ bundle exec rackup
-
-View at http://localhost:9292.
+    $ open static/index.html
 
 ## Deploying
 
+    $ bundle
     $ ruby deploy.rb
